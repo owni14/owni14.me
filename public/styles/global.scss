@@ -1,0 +1,79 @@
+@import "./reset";
+@import "./common";
+@import "./variables";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Pretendard-Medium";
+}
+
+html,
+body {
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: auto;
+    height: 100%;
+    width: 100%;
+    background-color: $black;
+    color: #fff;
+    @include flex("column", "space-between", "center");
+
+    #header,
+    #footer {
+        height: 8%;
+        width: 100%;
+    }
+    #main {
+        height: 92%;
+        width: 100%;
+    }
+}
+
+::selection {
+    background-color: #f9f9f9;
+    color: #fff;
+}
+
+button,
+img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    outline: none;
+    border: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+ul,
+li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+input,
+textarea {
+    outline: 0;
+    border: 0;
+    -webkit-border-radius: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #585858;
+    -webkit-box-shadow: 0 0 0 0 #222222 inset;
+}
