@@ -1,13 +1,15 @@
+"use client";
+import LangProvider from "@app/context/Language";
 import Footer from "./Footer";
 import Header from "./Header";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <>
+        <LangProvider>
             <Header />
-            {children}
+            <main>{children}</main>
             <Footer />
-        </>
+        </LangProvider>
     );
 };
 
