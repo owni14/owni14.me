@@ -1,5 +1,6 @@
 @import "@public/styles/_variables.scss";
 
+/* Header */
 #header {
     @include flex("row", "space-between", "center");
     .title {
@@ -17,17 +18,18 @@
 
             a {
                 font-size: 1.2rem;
-                font-family: "Pretendard-Regular";
                 color: #d9d9d9;
                 transition: all 0.3s ease;
 
                 &:hover {
-                    color: #fff;
+                    color: $white;
                     transition: all 0.3s ease;
                 }
 
                 &.active {
-                    font-family: "Pretendard-Bold";
+                    color: $white;
+                    transition: all 0.3s ease;
+                    text-decoration: underline;
                 }
             }
         }
@@ -62,6 +64,27 @@
                         transition: all 0.3s ease;
                     }
                 }
+            }
+        }
+    }
+}
+
+/* Footer */
+#footer {
+    @include flex("row", "space-between", "center");
+    font-size: 1.1rem;
+
+    .link-area {
+        @include flex("row", "flex-end", "center");
+        gap: 1.3rem;
+        svg {
+            fill: $white;
+            width: 1.8rem;
+            height: 1.8rem;
+            &:hover {
+                cursor: pointer;
+                fill: #d9d9d9;
+                transition: all 0.3s ease;
             }
         }
     }

@@ -6,7 +6,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Pretendard-Medium";
 }
 
 html,
@@ -18,6 +17,7 @@ body {
     width: 100%;
     background-color: $black;
     color: $white;
+    font-family: "Pretendard-Regular";
     @include flex("column", "space-between", "center");
 
     #header,
@@ -30,8 +30,9 @@ body {
         width: 100%;
     }
 }
+
 body {
-    padding: 0 18rem;
+    padding: 0 22rem;
 }
 
 a {
