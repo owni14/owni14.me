@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import "@public/styles/global.scss";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import Link from "next/link";
+import Layout from "./components/layout/page";
 
 export const metadata: Metadata = {
     title: "Min's Portfolio",
@@ -10,7 +14,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html>
-            <body>{children}</body>
+            <body>
+                <Layout>{children}</Layout>
+            </body>
         </html>
     );
 }

@@ -8,10 +8,10 @@ const Header = () => {
                 MIN
             </Link>
             <div className="link">
-                <Link href="/about">About</Link>
-                <Link href="/">Projects</Link>
-                <Link href="/">Skills</Link>
-                <Link href="/">Career</Link>
+                <Link href="/">About</Link>
+                <Link href="/pages/projects">Projects</Link>
+                <Link href="/pages/skills">Skills</Link>
+                <Link href="/pages/career">Career</Link>
             </div>
         </div>
     );
