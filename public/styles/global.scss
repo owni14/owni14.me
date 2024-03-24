@@ -17,7 +17,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: $black;
-    color: #fff;
+    color: $white;
     @include flex("column", "space-between", "center");
 
     #header,
@@ -30,10 +30,18 @@ body {
         width: 100%;
     }
 }
+body {
+    padding: 0 18rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 ::selection {
-    background-color: #f9f9f9;
-    color: #fff;
+    background-color: $white;
+    color: $black;
 }
 
 button,

@@ -5,7 +5,7 @@ const App = () => {
     return (
         <>
             <Header />
-            <main id="main">test</main>
+            <main id="main">main</main>
             <Footer />
         </>
     );
