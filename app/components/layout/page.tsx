@@ -2,12 +2,13 @@
 import LangProvider from "@app/context/Language";
 import Footer from "./Footer";
 import Header from "./Header";
+import { useRef } from "react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <LangProvider>
             <Header />
-            <main>{children}</main>
+            <main id="root">{children}</main>
             <Footer />
         </LangProvider>
     );

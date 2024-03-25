@@ -1,19 +1,19 @@
 export const NAV = [
     {
+        id: "about",
         title: "About",
-        href: "/",
     },
     {
+        id: "projects",
         title: "Projects",
-        href: "/pages/projects",
     },
     {
+        id: "skills",
         title: "Skills",
-        href: "/pages/skills",
     },
     {
+        id: "career",
         title: "Career",
-        href: "/pages/career",
     },
 ];
 

@@ -1,17 +1,28 @@
 import Link from "next/link";
 import "./styles.scss";
-import { usePathname } from "next/navigation";
 import { LANG_TOGGLE, NAV } from "./consts";
 import cx from "classNames";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { LangContext } from "@app/context/Language";
 
 const Header = () => {
-    const path = usePathname();
     const { lang, setLang } = useContext(LangContext);
 
+    /** Toggle click */
     const onClickToggle = (lang: string) => {
         setLang(lang);
+    };
+
+    /** Link click */
+    const onClickLink = (e: React.SyntheticEvent) => {
+        e.preventDefault();
+        const target = e.target as HTMLAnchorElement;
+        const id = target.getAttribute("href")?.replace("#", "");
+        const element = document.getElementById(String(id));
+
+        element?.scrollIntoView({
+            behavior: "smooth",
+        });
     };
 
     return (
@@ -20,13 +31,13 @@ const Header = () => {
                 MIN
             </Link>
             <div className="right-area">
-                <div className="nav-link">
+                <ul className="nav-link">
                     {NAV.map(item => (
-                        <Link href={item.href} className={path === item.href ? "active" : ""}>
-                            {item.title}
-                        </Link>
+                        <li onClick={onClickLink} className={"about" === item.id ? "active" : ""}>
+                            <a href={`#${item.id}`}>{item.title}</a>
+                        </li>
                     ))}
-                </div>
+                </ul>
                 <div className="language-wrppaer">
                     <div className="border-area">
                         {LANG_TOGGLE.map(item => (

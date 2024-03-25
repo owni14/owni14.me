@@ -2,6 +2,10 @@
 
 /* Header */
 #header {
+    position: sticky;
+    top: 0;
+    padding: 2rem 0;
+    background-color: $black;
     @include flex("row", "space-between", "center");
     .title {
         font-family: "Pretendard-Bold";
@@ -16,7 +20,8 @@
             @include flex("row", "space-between", "center");
             gap: 1.5rem;
 
-            a {
+            li {
+                list-style: none;
                 font-size: 1.2rem;
                 color: #d9d9d9;
                 transition: all 0.3s ease;
@@ -73,6 +78,7 @@
 #footer {
     @include flex("row", "space-between", "center");
     font-size: 1.1rem;
+    padding: 2rem 0;
 
     .link-area {
         @include flex("row", "flex-end", "center");
