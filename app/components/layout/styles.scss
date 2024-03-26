@@ -5,8 +5,8 @@
     position: sticky;
     top: 0;
     padding: 2rem 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
     @include flex("row", "space-between", "center");
 
     .title {

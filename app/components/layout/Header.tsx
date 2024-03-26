@@ -1,10 +1,10 @@
 import Link from "next/link";
-import "./styles.scss";
 import { LANG_TOGGLE, defaultNav } from "./consts";
 import cx from "classNames";
 import { useContext, useState } from "react";
 import { LangContext } from "@app/context/Language";
 import { INav } from "./types";
+import "./styles.scss";
 
 const Header = () => {
     const { lang, setLang } = useContext(LangContext);
