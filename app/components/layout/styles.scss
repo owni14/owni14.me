@@ -4,9 +4,10 @@
 #header {
     position: sticky;
     top: 0;
-    padding: 2rem 0;
+    padding: 2rem 22rem;
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
+    z-index: 100;
     @include flex("row", "space-between", "center");
 
     .title {

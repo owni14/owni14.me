@@ -1,5 +1,4 @@
 @import "./reset";
-@import "./common";
 @import "./variables";
 
 * {
@@ -29,7 +28,9 @@ body {
 }
 
 body {
-    padding: 0 22rem;
+    #root {
+        padding: 0 22rem;
+    }
 }
 
 a {
