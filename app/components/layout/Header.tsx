@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { LANG_TOGGLE, defaultNav } from "./consts";
 import cx from "classNames";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LangContext } from "@app/context/Language";
 import { INav } from "./types";
 import "./styles.scss";
@@ -9,6 +9,32 @@ import "./styles.scss";
 const Header = () => {
     const { lang, setLang } = useContext(LangContext);
     const [navBar, setNavBar] = useState<INav[]>(defaultNav);
+    const [scrollY, setScrollY] = useState<number>(window.scrollY);
+
+    /** Todo
+     * 현재 링크 누르게 되면 useEffect 겹쳐서 나오는 현상 수저 필요
+     * 스크롤 할때마다 useEffect타게 되니 성능 개선 필요.
+     * debounce or throttle
+     */
+    useEffect(() => {
+        navBar.forEach(nav => {
+            const targetOffset = document.getElementById(nav.id)?.offsetTop as number;
+            const headerHeight = document.getElementById("header")?.offsetHeight as number;
+            if (targetOffset - headerHeight < scrollY) {
+                onActiveNav(nav.id);
+            }
+        });
+
+        window.addEventListener("scroll", onScroll);
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+        };
+    }, [scrollY]);
+
+    /** Scroll handler */
+    const onScroll = () => {
+        setScrollY(window.scrollY);
+    };
 
     /** Toggle click */
     const onClickToggle = (lang: string) => {
