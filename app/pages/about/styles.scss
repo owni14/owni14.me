@@ -3,39 +3,40 @@
 #about {
     @include flex("row", "flex-start", "center");
     gap: 5rem;
-    height: calc(100vh - 11.138rem);
 
-    img {
-        height: 23rem;
-        width: 23rem;
-        border-radius: 50%;
-        filter: drop-shadow(0 0 150px $white);
-        transition: all 0.3s linear;
-        &:hover {
+    .image-wrapper {
+        width: 30%;
+        img {
+            height: 30%;
+            border-radius: 50%;
             filter: drop-shadow(0 0 100px $white);
             transition: all 0.3s linear;
+            &:hover {
+                filter: drop-shadow(0 0 70px $white);
+                transition: all 0.3s linear;
+            }
         }
     }
 
     .text-wrapper {
         @include flex("column", "flex-start", "flex-start");
-        width: 100%;
+        width: 70%;
         gap: 0.7rem;
         .link-key {
             border: 1px solid transparent;
             padding: 0.7rem 1.5rem;
             border-radius: 0.4rem;
             background-image: linear-gradient(180deg, #242424, #191919);
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
         }
         .text-area {
             .text {
                 white-space: pre-line;
-                font-size: 1.7rem;
+                font-size: 1.3rem;
                 line-height: 2.4rem;
                 margin-bottom: 1rem;
-                max-width: 50rem;
+                width: inherit;
             }
         }
     }

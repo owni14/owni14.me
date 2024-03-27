@@ -77,19 +77,19 @@ const Header = () => {
             </Link>
             <div className="right-area">
                 <ul className="nav-link">
-                    {navBar.map(item => (
-                        <li onClick={onClickLink} className={cx({ active: item.active })}>
-                            <a href={`#${item.id}`}>{item.title}</a>
+                    {navBar.map(nav => (
+                        <li onClick={onClickLink} className={cx({ active: nav.active })}>
+                            <a href={`#${nav.id}`}>{nav.title}</a>
                         </li>
                     ))}
                 </ul>
                 <div className="language-wrppaer">
                     <div className="border-area">
-                        {LANG_TOGGLE.map(item => (
+                        {LANG_TOGGLE.map(toggle => (
                             <div
-                                className={cx("toggle", { active: lang === item })}
-                                onClick={() => onClickToggle(item)}>
-                                {item}
+                                className={cx("toggle", { active: lang === toggle })}
+                                onClick={() => onClickToggle(toggle)}>
+                                {toggle}
                             </div>
                         ))}
                     </div>

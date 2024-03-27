@@ -1,3 +1,5 @@
+@import "@public/styles/_variables.scss";
+
 #projects {
-    padding: 20rem;
+    @include flex("row", "flex-start", "center");
 }

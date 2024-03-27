@@ -1,11 +1,13 @@
 import Image from "next/image";
-import "./styles.scss";
 import Me from "@public/images/me.png";
+import "./styles.scss";
 
 const About = () => {
     return (
         <div id="about">
-            <Image src={Me} alt="me.png" />
+            <div className="image-wrapper">
+                <Image src={Me} alt="me.png" />
+            </div>
             <div className="text-wrapper">
                 <div className="link-key">About</div>
                 <div className="text-area">

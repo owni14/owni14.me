@@ -25,11 +25,15 @@ body {
     #main {
         width: 100%;
     }
-}
-
-body {
     #root {
         padding: 0 22rem;
+    }
+
+    #about,
+    #projects,
+    #skills,
+    #career {
+        height: calc(100vh - 5.563rem);
     }
 }
 
