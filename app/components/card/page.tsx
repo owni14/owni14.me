@@ -1,3 +1,4 @@
+"use client";
 import { ICard } from "./types";
 import Image from "next/image";
 import "./styles.scss";

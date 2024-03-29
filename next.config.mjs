@@ -3,13 +3,7 @@ import path from "path";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     basePath: "/portfolio",
-    assetPrefix: "/portfolio",
     output: "export",
-    exportPathMap: function () {
-        return {
-            "/": { page: "/" },
-        };
-    },
     webpack: config => {
         config.resolve.alias["@app"] = path.resolve(process.cwd(), "app");
         config.resolve.alias["@public"] = path.resolve(process.cwd(), "public");
