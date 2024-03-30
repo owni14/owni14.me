@@ -2,17 +2,23 @@
 
 #about {
     @include flex("row", "center", "center");
-
+    gap: 3rem;
     .image-wrapper {
         img {
-            width: 80%;
+            width: 70%;
             height: 100%;
             border-radius: 50%;
-            filter: drop-shadow(0 0 100px $white);
-            transition: all 0.3s linear;
-            &:hover {
-                filter: drop-shadow(0 0 60px $white);
-                transition: all 0.3s linear;
+            animation: twinkling 7s infinite;
+            @keyframes twinkling {
+                0% {
+                    filter: drop-shadow(0 0 60px $white);
+                }
+                50% {
+                    filter: drop-shadow(0 0 100px $white);
+                }
+                100% {
+                    filter: drop-shadow(0 0 60px $white);
+                }
             }
         }
     }
@@ -26,7 +32,7 @@
             p {
                 display: inline;
                 color: $white;
-                font-size: 2.2rem;
+                font-size: 1.7rem;
                 white-space: nowrap;
                 margin-bottom: 0.5rem;
                 width: auto;
@@ -36,7 +42,7 @@
                 }
             }
             .greet {
-                font-size: 2.7rem;
+                font-size: 2rem;
                 animation: greetTyping 1s steps(10) 1 forwards;
             }
             .introduce {
@@ -45,25 +51,24 @@
             }
             .desc {
                 visibility: hidden;
-                border-right: 1px solid $white;
                 animation: descTyping 4s 3.8s steps(40) 1 forwards;
             }
 
             @keyframes greetTyping {
-                from {
+                0% {
                     border-right: 1px solid $white;
                     width: 0%;
                 }
                 99% {
                     border-right: 1px solid $white;
                 }
-                to {
-                    width: 12rem;
+                100% {
+                    width: 9rem;
                 }
             }
 
             @keyframes introduceTyping {
-                from {
+                0% {
                     border-right: 1px solid $white;
                     visibility: visible;
                     width: 0%;
@@ -71,20 +76,24 @@
                 99% {
                     border-right: 1px solid $white;
                 }
-                to {
+                100% {
                     visibility: visible;
-                    width: 29rem;
+                    width: 22rem;
                 }
             }
 
             @keyframes descTyping {
-                from {
+                0% {
+                    border-right: 1px solid $white;
                     visibility: visible;
                     width: 0%;
                 }
-                to {
+                99% {
+                    border-right: 1px solid $white;
+                }
+                100% {
                     visibility: visible;
-                    width: 53.6rem;
+                    width: 41.5rem;
                 }
             }
         }

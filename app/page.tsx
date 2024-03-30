@@ -7,8 +7,8 @@ const Page = () => {
     return (
         <>
             <About />
-            <Projects />
             <Skills />
+            <Projects />
             <Career />
         </>
     );

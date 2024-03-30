@@ -1,5 +1,17 @@
 @import "@public/styles/_variables.scss";
 
 #projects {
-    @include flex("row", "flex-start", "center");
+    @include flex("column", "center", "center");
+
+    .title {
+        font-family: "Pretendard-Medium";
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+
+    .card-wrapper {
+        @include flex("row", "center", "center");
+        gap: 1.3rem;
+        flex-wrap: wrap;
+    }
 }

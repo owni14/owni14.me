@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Me from "@public/images/me.png";
-import "./styles.scss";
 import Category from "@app/components/category/page";
+import "./styles.scss";
 
 const About = () => {
     return (

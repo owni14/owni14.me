@@ -6,12 +6,12 @@ export const defaultNav: INav[] = [
         title: "About",
     },
     {
-        id: "projects",
-        title: "Projects",
-    },
-    {
         id: "skills",
         title: "Skills",
+    },
+    {
+        id: "projects",
+        title: "Projects",
     },
     {
         id: "career",
