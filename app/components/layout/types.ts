@@ -2,5 +2,4 @@
 export interface INav {
     id: string;
     title: string;
-    active: boolean;
 }

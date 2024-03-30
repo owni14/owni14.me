@@ -1,49 +1,41 @@
 import Link from "next/link";
 import { LANG_TOGGLE, defaultNav } from "./consts";
+import cx from "classnames";
 import { useContext, useEffect, useState } from "react";
 import { LangContext } from "@app/context/Language";
 import { INav } from "./types";
-import cx from "classNames";
 import "./styles.scss";
 
 const Header = () => {
     const { lang, setLang } = useContext(LangContext);
     const [navBar, setNavBar] = useState<INav[]>(defaultNav);
-    const [scrollY, setScrollY] = useState<number>(window.scrollY);
+    const [visibleSection, setVisibleSection] = useState<string>(defaultNav[0].id);
 
-    /** Todo
-     * 현재 링크 누르게 되면 useEffect 겹쳐서 나오는 현상 수저 필요
-     * 스크롤 할때마다 useEffect타게 되니 성능 개선 필요.
-     * debounce or throttle
-     */
     useEffect(() => {
-        navBar.forEach(nav => {
-            const targetOffset = document.getElementById(nav.id)?.offsetTop as number;
-            const headerHeight = document.getElementById("header")?.offsetHeight as number;
-            if (targetOffset - headerHeight < scrollY) {
-                onActiveNav(nav.id);
-            }
-        });
+        const targetSections = document.querySelectorAll("section");
 
-        window.addEventListener("scroll", onScroll);
-        return () => {
-            window.removeEventListener("scroll", onScroll);
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.5,
         };
-    }, [scrollY]);
 
-    /** Scroll handler */
-    const onScroll = () => {
-        setScrollY(window.scrollY);
-    };
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setVisibleSection(entry.target.getAttribute("id") as string); // about / projects / skills / career
+                }
+            });
+        }, options);
+
+        targetSections.forEach(section => {
+            observer.observe(section);
+        });
+    }, []);
 
     /** Toggle click */
     const onClickToggle = (lang: string) => {
         setLang(lang);
-    };
-
-    /** Activate nav bar */
-    const onActiveNav = (id: string) => {
-        setNavBar(prev => prev.map(nav => ({ ...nav, active: nav.id === id })));
     };
 
     /** Link click */
@@ -53,7 +45,8 @@ const Header = () => {
         const targetId = target.getAttribute("href")?.replace("#", "");
         const targetHeight = document.getElementById(String(targetId))?.offsetTop;
         const headerHeight = document.getElementById("header")?.offsetHeight;
-        onActiveNav(targetId as string);
+
+        history.pushState(null, "", `#${targetId}`);
 
         if (targetHeight !== undefined && headerHeight !== undefined) {
             window.scrollTo({
@@ -66,7 +59,7 @@ const Header = () => {
     /** Logo click */
     const onClickLogo = (e: React.SyntheticEvent) => {
         e.preventDefault();
-        onActiveNav(navBar[0].id);
+        history.pushState(null, "", "/");
         window.scrollTo({ behavior: "smooth", top: 0 });
     };
 
@@ -78,7 +71,7 @@ const Header = () => {
             <div className="right-area">
                 <ul className="nav-link">
                     {navBar.map(nav => (
-                        <li onClick={onClickLink} className={cx({ active: nav.active })}>
+                        <li onClick={onClickLink} className={cx({ active: visibleSection === nav.id })}>
                             <a href={`#${nav.id}`}>{nav.title}</a>
                         </li>
                     ))}
