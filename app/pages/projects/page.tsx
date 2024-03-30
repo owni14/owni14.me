@@ -13,7 +13,9 @@ const Projects = () => {
                     <Card
                         src={project.src}
                         alt={project.alt}
+                        title={project.title}
                         desc={project.desc}
+                        tags={project.tags}
                         link={project.link}
                         code={project.code}
                     />

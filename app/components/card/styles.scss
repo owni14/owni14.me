@@ -1,54 +1,73 @@
 @import "@public/styles/_variables.scss";
 
 #card {
-    .card-wrapper {
+    .card-detail {
         position: relative;
         width: 20rem;
-        height: 20rem;
-        border: 1px solid transparent;
+        height: 23rem;
+        border: 1px solid #191919;
+        background-color: #242424;
         border-radius: 1rem;
         overflow: auto;
-
+        transition: all 0.7s ease;
+        &:hover {
+            border: 1px solid #d9d9d9;
+            transition: all 1s ease;
+        }
         img {
+            border-top-right-radius: 1rem;
+            border-top-left-radius: 1rem;
             width: 100%;
-            height: 100%;
+            height: 50%;
         }
 
-        .back-of-card {
-            @include flex("column", "center", "center");
-            gap: 1rem;
-            position: absolute;
-            background-color: transparent;
-            color: transparent;
-            top: 0;
+        .info {
+            @include flex("column", "space-between", "center");
             width: 100%;
-            height: 100%;
-            transition: all 0.4s ease;
-            font-family: "Pretendard-Medium";
-            font-size: 1.4rem;
-            white-space: pre-line;
+            height: 50%;
+            padding: 0.7rem;
+            gap: 1rem;
+            .project-title {
+                font-family: "Pretendard-Medium";
+                font-size: 1rem;
+            }
+            .text-area {
+                @include flex("column", "flex-start", "flex-start");
+                color: #d9d9d9;
+                font-size: 0.9rem;
+                line-height: 1.2rem;
+                gap: 0.3rem;
+                width: 100%;
 
-            div {
-                @include flex("row", "center", "center");
-                gap: 2rem;
-                a {
-                    width: 2.5rem;
-                    height: 2.5rem;
-                }
-                svg {
+                .project-tags-area {
+                    @include flex("row", "flex-start", "center");
+                    gap: 0.3rem;
+                    flex-wrap: wrap;
                     width: 100%;
                     height: 100%;
-                    &:hover {
-                        cursor: pointer;
+                    .tags-detail {
+                        border: 1px solid transparent;
+                        background-color: #363636;
+                        padding: 0 0.2rem;
+                        border-radius: 0.4rem;
                     }
                 }
             }
-
-            &:hover {
-                background-color: rgba(217, 217, 217, 0.7);
-                transition: all 0.4s ease;
-                color: $black;
-                fill: $black;
+            .link-area {
+                @include flex("row", "space-between", "center");
+                width: 100%;
+                .link-detail {
+                    @include flex("row", "flex-start", "center");
+                    gap: 0.3rem;
+                    svg {
+                        width: 0.8rem;
+                        height: 0.8rem;
+                    }
+                    a {
+                        font-size: 0.8rem;
+                        text-decoration: underline;
+                    }
+                }
             }
         }
     }

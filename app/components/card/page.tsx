@@ -1,23 +1,36 @@
 import { ICard } from "./types";
 import Image from "next/image";
-import { TbEyeSearch } from "react-icons/tb";
-import { FaCode } from "react-icons/fa";
+import { FaGithub, FaLink } from "react-icons/fa";
 import "./styles.scss";
 
-const Card = ({ src, alt, desc, link, code }: ICard) => {
+const Card = ({ src, alt, title, desc, tags, link, code }: ICard) => {
     return (
         <div id="card">
-            <div className="card-wrapper">
+            <div className="card-detail">
                 <Image src={src} alt={alt} />
-                <div className="back-of-card">
-                    <p>{desc}</p>
-                    <div>
-                        <a target="_blank" href={link}>
-                            <TbEyeSearch />
-                        </a>
-                        <a target="_blank" href={code}>
-                            <FaCode />
-                        </a>
+                <div className="info">
+                    <p className="project-title">{title}</p>
+                    <div className="text-area">
+                        <p className="project-desc">{desc}</p>
+                        <div className="project-tags-area">
+                            {tags.map(tag => (
+                                <div className="tags-detail">{tag}</div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="link-area">
+                        <div className="link-detail">
+                            <FaLink />
+                            <a target="_blank" href={link}>
+                                Live Preview
+                            </a>
+                        </div>
+                        <div className="link-detail">
+                            <FaGithub />
+                            <a target="_blank" href={code}>
+                                View Code
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
