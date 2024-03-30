@@ -2,7 +2,6 @@ import path from "path";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "export",
     webpack: config => {
         config.resolve.alias["@app"] = path.resolve(process.cwd(), "app");
         config.resolve.alias["@public"] = path.resolve(process.cwd(), "public");
