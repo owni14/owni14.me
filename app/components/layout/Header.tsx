@@ -4,6 +4,7 @@ import cx from "classnames";
 import { useContext, useEffect, useState } from "react";
 import { LangContext } from "@app/context/Language";
 import { INav } from "./types";
+import { PiListBold } from "react-icons/pi";
 import "./styles.scss";
 
 const Header = () => {
@@ -45,13 +46,14 @@ const Header = () => {
         const targetId = target.getAttribute("href")?.replace("#", "");
         const targetHeight = document.getElementById(String(targetId))?.offsetTop;
         const headerHeight = document.getElementById("header")?.offsetHeight;
+        const isClickAbout = targetId === "about";
 
-        history.pushState(null, "", `#${targetId}`);
+        history.pushState(null, "", isClickAbout ? "/" : `#${targetId}`);
 
         if (targetHeight !== undefined && headerHeight !== undefined) {
             window.scrollTo({
                 behavior: "smooth",
-                top: targetHeight - headerHeight,
+                top: isClickAbout ? 0 : targetHeight - headerHeight,
             });
         }
     };

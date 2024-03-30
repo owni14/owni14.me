@@ -3,20 +3,52 @@
 #card {
     .card-wrapper {
         position: relative;
-        width: 19rem;
-        height: 19rem;
+        width: 20rem;
+        height: 20rem;
         border: 1px solid transparent;
         border-radius: 1rem;
         overflow: auto;
 
         img {
-            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .back-of-card {
+            @include flex("column", "center", "center");
+            gap: 1rem;
+            position: absolute;
+            background-color: transparent;
+            color: transparent;
+            top: 0;
             width: 100%;
             height: 100%;
             transition: all 0.4s ease;
+            font-family: "Pretendard-Medium";
+            font-size: 1.4rem;
+            white-space: pre-line;
+
+            div {
+                @include flex("row", "center", "center");
+                gap: 2rem;
+                a {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
             &:hover {
+                background-color: rgba(217, 217, 217, 0.7);
                 transition: all 0.4s ease;
-                filter: contrast(30%);
+                color: $black;
+                fill: $black;
             }
         }
     }

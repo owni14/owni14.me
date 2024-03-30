@@ -1,42 +1,91 @@
 @import "@public/styles/_variables.scss";
 
 #about {
-    @include flex("row", "flex-start", "center");
-    gap: 5rem;
+    @include flex("row", "center", "center");
 
     .image-wrapper {
-        width: 30%;
         img {
-            height: 30%;
+            width: 80%;
+            height: 100%;
             border-radius: 50%;
             filter: drop-shadow(0 0 100px $white);
             transition: all 0.3s linear;
             &:hover {
-                filter: drop-shadow(0 0 70px $white);
+                filter: drop-shadow(0 0 60px $white);
                 transition: all 0.3s linear;
             }
         }
     }
 
     .text-wrapper {
-        @include flex("column", "flex-start", "flex-start");
-        width: 70%;
+        @include flex("column", "center", "flex-start");
         gap: 0.7rem;
-        .link-key {
-            border: 1px solid transparent;
-            padding: 0.7rem 1.5rem;
-            border-radius: 0.4rem;
-            background-image: linear-gradient(180deg, #242424, #191919);
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
+
         .text-area {
-            .text {
-                white-space: pre-line;
-                font-size: 1.3rem;
-                line-height: 2.4rem;
-                margin-bottom: 1rem;
-                width: inherit;
+            @include flex("column", "center", "flex-start");
+            p {
+                display: inline;
+                color: $white;
+                font-size: 2.2rem;
+                white-space: nowrap;
+                margin-bottom: 0.5rem;
+                width: auto;
+                overflow: hidden;
+                &:first-child {
+                    margin-bottom: 1rem;
+                }
+            }
+            .greet {
+                font-size: 2.7rem;
+                animation: greetTyping 1s steps(10) 1 forwards;
+            }
+            .introduce {
+                visibility: hidden;
+                animation: introduceTyping 2.5s 1.2s steps(24) 1 forwards;
+            }
+            .desc {
+                visibility: hidden;
+                border-right: 1px solid $white;
+                animation: descTyping 4s 3.8s steps(40) 1 forwards;
+            }
+
+            @keyframes greetTyping {
+                from {
+                    border-right: 1px solid $white;
+                    width: 0%;
+                }
+                99% {
+                    border-right: 1px solid $white;
+                }
+                to {
+                    width: 12rem;
+                }
+            }
+
+            @keyframes introduceTyping {
+                from {
+                    border-right: 1px solid $white;
+                    visibility: visible;
+                    width: 0%;
+                }
+                99% {
+                    border-right: 1px solid $white;
+                }
+                to {
+                    visibility: visible;
+                    width: 29rem;
+                }
+            }
+
+            @keyframes descTyping {
+                from {
+                    visibility: visible;
+                    width: 0%;
+                }
+                to {
+                    visibility: visible;
+                    width: 53.6rem;
+                }
             }
         }
     }

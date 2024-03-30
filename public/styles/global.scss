@@ -18,15 +18,14 @@ body {
     font-family: "Pretendard-Regular";
     @include flex("column", "space-between", "center");
 
+    #root {
+        width: 100%;
+        padding: 0 22rem;
+    }
     #header,
     #footer {
         width: 100%;
-    }
-    #main {
-        width: 100%;
-    }
-    #root {
-        padding: 0 22rem;
+        padding: 2rem 22rem;
     }
 
     #about,

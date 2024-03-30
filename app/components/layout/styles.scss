@@ -4,7 +4,6 @@
 #header {
     position: sticky;
     top: 0;
-    padding: 2rem 22rem;
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     z-index: 100;
@@ -47,7 +46,7 @@
                 border: 1px solid $white;
                 border-radius: 0.4rem;
                 max-height: 1.7rem;
-                @include flex("row", "space-evenly");
+                @include flex("row", "space-evenly", "center");
 
                 .toggle {
                     float: left;
@@ -81,7 +80,6 @@
 #footer {
     @include flex("row", "space-between", "center");
     font-size: 1.1rem;
-    padding: 2rem 22rem;
 
     .link-area {
         @include flex("row", "flex-end", "center");
