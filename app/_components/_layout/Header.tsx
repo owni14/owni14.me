@@ -66,7 +66,7 @@ const Header = () => {
 
     return (
         <div id="header">
-            <Link className="title" href="/" as={`/`} onClick={onClickLogo}>
+            <Link className="title" href="https://owni14.github.io/portfolio/" as={`/`} onClick={onClickLogo}>
                 MIN
             </Link>
             <div className="right-area">
