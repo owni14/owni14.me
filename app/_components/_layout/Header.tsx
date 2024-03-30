@@ -2,7 +2,7 @@ import Link from "next/link";
 import { LANG_TOGGLE, defaultNav } from "./consts";
 import cx from "classnames";
 import { useContext, useEffect, useState } from "react";
-import { LangContext } from "@app/context/Language";
+import { LangContext } from "@app/_context/Language";
 import { INav } from "./types";
 import "./styles.scss";
 

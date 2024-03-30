@@ -1,5 +1,5 @@
 "use client";
-import LangProvider from "@app/context/Language";
+import LangProvider from "@app/_context/Language";
 import Footer from "./Footer";
 import Header from "./Header";
 
