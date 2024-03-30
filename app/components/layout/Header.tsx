@@ -4,7 +4,6 @@ import cx from "classnames";
 import { useContext, useEffect, useState } from "react";
 import { LangContext } from "@app/context/Language";
 import { INav } from "./types";
-import { PiListBold } from "react-icons/pi";
 import "./styles.scss";
 
 const Header = () => {
@@ -72,16 +71,17 @@ const Header = () => {
             </Link>
             <div className="right-area">
                 <ul className="nav-link">
-                    {navBar.map(nav => (
-                        <li onClick={onClickLink} className={cx({ active: visibleSection === nav.id })}>
+                    {navBar?.map(nav => (
+                        <li key={nav.id} onClick={onClickLink} className={cx({ active: visibleSection === nav.id })}>
                             <a href={`#${nav.id}`}>{nav.title}</a>
                         </li>
                     ))}
                 </ul>
                 <div className="language-wrppaer">
                     <div className="border-area">
-                        {LANG_TOGGLE.map(toggle => (
+                        {LANG_TOGGLE?.map(toggle => (
                             <div
+                                key={toggle}
                                 className={cx("toggle", { active: lang === toggle })}
                                 onClick={() => onClickToggle(toggle)}>
                                 {toggle}

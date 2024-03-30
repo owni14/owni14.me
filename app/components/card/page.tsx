@@ -13,8 +13,10 @@ const Card = ({ src, alt, title, desc, tags, link, code }: ICard) => {
                     <div className="text-area">
                         <p className="project-desc">{desc}</p>
                         <div className="project-tags-area">
-                            {tags.map(tag => (
-                                <div className="tags-detail">{tag}</div>
+                            {tags?.map(tag => (
+                                <div key={tag} className="tags-detail">
+                                    {tag}
+                                </div>
                             ))}
                         </div>
                     </div>

@@ -14,7 +14,6 @@ import {
     SiFigma,
 } from "react-icons/si";
 import { FaSass } from "react-icons/fa";
-
 import "./styles.scss";
 
 const Skills = () => {
