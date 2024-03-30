@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Me from "@public/images/me.png";
-import Category from "@app/components/category/page";
+import Category from "@app/_components/_category";
 import "./styles.scss";
 
 const About = () => {

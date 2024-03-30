@@ -1,6 +1,6 @@
-import Card from "@app/components/card/page";
+import Card from "@app/_components/_card";
 import { PROJECTS } from "./consts";
-import Category from "@app/components/category/page";
+import Category from "@app/_components/_category";
 import "./styles.scss";
 
 const Projects = () => {
