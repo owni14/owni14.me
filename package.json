@@ -2,11 +2,13 @@
     "name": "portfolio",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://owni14.github.io/portfolio/",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "deploy": "next build && next export && touch out/.nojekyll && git add -f out/ && git commit -m 'deploy to gh-pages' && git subtree push --prefix out main gh-pages"
     },
     "dependencies": {
         "classnames": "^2.5.1",
