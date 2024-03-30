@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { LANG_TOGGLE, defaultNav } from "./consts";
-import cx from "classNames";
 import { useContext, useEffect, useState } from "react";
 import { LangContext } from "@app/context/Language";
 import { INav } from "./types";
+import cx from "classNames";
 import "./styles.scss";
 
 const Header = () => {

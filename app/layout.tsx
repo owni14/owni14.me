@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "@public/styles/global.scss";
 import Layout from "./components/layout/page";
-import LangProvider from "./context/Language";
 
 export const metadata: Metadata = {
     title: "Min's Portfolio",
