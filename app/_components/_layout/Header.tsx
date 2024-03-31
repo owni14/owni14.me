@@ -4,10 +4,12 @@ import cx from "classnames";
 import { useContext, useEffect, useState } from "react";
 import { LangContext } from "@app/_context/Language";
 import "./styles.scss";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
     const { lang, setLang } = useContext(LangContext);
     const [visibleSection, setVisibleSection] = useState<string>(Nav[0].id);
+    const { t } = useTranslation("intro");
 
     useEffect(() => {
         const targetSections = document.querySelectorAll("section");
@@ -21,9 +23,7 @@ const Header = () => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const targetId = entry.target.getAttribute("id") as string; // about / projects / skills / career
-                    setVisibleSection(targetId);
-                    history.pushState(null, "", targetId === "about" ? "/" : `#${targetId}`);
+                    setVisibleSection(entry.target.getAttribute("id") as string); // about / projects / skills / career
                 }
             });
         }, options);
@@ -67,7 +67,7 @@ const Header = () => {
     return (
         <div id="header">
             <Link className="title" href="https://owni14.github.io/portfolio/" as={`/`} onClick={onClickLogo}>
-                MIN
+                {t("test")}
             </Link>
             <div className="right-area">
                 <ul className="nav-link">

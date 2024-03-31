@@ -1,6 +1,6 @@
 @import "@public/styles/_variables.scss";
 
-#projects {
+#project {
     @include flex("column", "center", "center");
 
     .title {

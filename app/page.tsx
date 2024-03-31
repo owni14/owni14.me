@@ -1,7 +1,7 @@
 import About from "./pages/about/page";
 import Career from "./pages/career/page";
-import Projects from "./pages/projects/page";
-import Skills from "./pages/skills/page";
+import Projects from "./pages/project/page";
+import Skills from "./pages/skill/page";
 
 const Page = () => {
     return (

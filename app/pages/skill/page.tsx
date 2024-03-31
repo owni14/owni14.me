@@ -2,10 +2,10 @@ import Category from "@app/_components/_category";
 import { SKILLS } from "./consts";
 import "./styles.scss";
 
-const Skills = () => {
+const Skill = () => {
     return (
-        <section id="skills">
-            <Category category="Skills" />
+        <section id="skill">
+            <Category category="Skill" />
             <p className="title">사용할 수 있는 기술 및 도구</p>
             <div className="icon-wrapper">
                 {SKILLS.map(skill => (
@@ -19,4 +19,4 @@ const Skills = () => {
     );
 };
 
-export default Skills;
+export default Skill;
