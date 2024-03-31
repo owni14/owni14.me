@@ -1,2 +1,111 @@
+@import "@public/styles/_variables.scss";
+
 #career {
+    @include flex("column", "center", "center");
+
+    .title {
+        font-family: "Pretendard-Medium";
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+
+    .career-wrapper {
+        @include flex("column", "center", "center");
+        gap: 2rem;
+        width: 100%;
+        .career-detail-area {
+            @include flex("column", "center", "center");
+            width: 90%;
+            border: 1px solid transparent;
+            background-color: #242424;
+            border-radius: 1rem;
+            padding: 1.5rem;
+
+            .career-fold-detail {
+                @include flex("column", "center", "center");
+                width: 100%;
+                border: 1px solid transparent;
+                background-color: #242424;
+                border-radius: 1rem;
+                font-family: "Pretendard-Medium";
+                font-size: 1.2rem;
+                gap: 0.5rem;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                margin-bottom: 1rem;
+
+                &.fold {
+                    border-bottom-left-radius: 1rem;
+                    border-bottom-right-radius: 1rem;
+                    margin-bottom: 0;
+                }
+
+                .summary {
+                    width: 100%;
+                    @include flex("row", "space-between", "center");
+
+                    .period-area {
+                        @include flex("row", "flex-end", "center");
+                        gap: 1rem;
+
+                        button {
+                            &:hover {
+                                cursor: pointer;
+                            }
+                            background-color: transparent;
+                            svg {
+                                width: inherit;
+                                height: inherit;
+                                fill: $white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .career-detail {
+                width: 100%;
+                background-color: #242424;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                font-family: "Pretendard-Medium";
+                transition: max-height 0.3s ease;
+                font-size: 1.2rem;
+                max-height: 13rem;
+
+                &.fold {
+                    overflow: hidden;
+                    max-height: 0;
+                    padding: 0;
+                    transition: max-height 0.3s ease;
+                }
+
+                .detail {
+                    @include flex("column", "center", "center");
+                    border-top: 1px solid $white;
+                    gap: 1.5rem;
+                    padding-top: 1rem;
+
+                    .company-area {
+                        width: 100%;
+                        @include flex("row", "flex-start", "center");
+                        gap: 2rem;
+                        .company-detail {
+                            @include flex("row", "flex-start", "center");
+                            font-size: 1rem;
+                            color: #d9d9d9;
+                            gap: 0.5rem;
+                        }
+                        .job-description {
+                            @include flex("row", "flex-start", "center");
+                            font-family: "Pretendard-Regular";
+                        }
+                        .tag-detail {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

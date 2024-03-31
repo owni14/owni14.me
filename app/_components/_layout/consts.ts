@@ -1,6 +1,6 @@
 import { INav } from "./types";
 
-export const defaultNav: INav[] = [
+export const Nav: INav[] = [
     {
         id: "about",
         title: "About",

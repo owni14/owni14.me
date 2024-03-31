@@ -1,15 +1,13 @@
 import Link from "next/link";
-import { LANG_TOGGLE, defaultNav } from "./consts";
+import { LANG_TOGGLE, Nav } from "./consts";
 import cx from "classnames";
 import { useContext, useEffect, useState } from "react";
 import { LangContext } from "@app/_context/Language";
-import { INav } from "./types";
 import "./styles.scss";
 
 const Header = () => {
     const { lang, setLang } = useContext(LangContext);
-    const [navBar, setNavBar] = useState<INav[]>(defaultNav);
-    const [visibleSection, setVisibleSection] = useState<string>(defaultNav[0].id);
+    const [visibleSection, setVisibleSection] = useState<string>(Nav[0].id);
 
     useEffect(() => {
         const targetSections = document.querySelectorAll("section");
@@ -23,7 +21,9 @@ const Header = () => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    setVisibleSection(entry.target.getAttribute("id") as string); // about / projects / skills / career
+                    const targetId = entry.target.getAttribute("id") as string; // about / projects / skills / career
+                    setVisibleSection(targetId);
+                    history.pushState(null, "", targetId === "about" ? "/" : `#${targetId}`);
                 }
             });
         }, options);
@@ -71,7 +71,7 @@ const Header = () => {
             </Link>
             <div className="right-area">
                 <ul className="nav-link">
-                    {navBar?.map(nav => (
+                    {Nav.map(nav => (
                         <li key={nav.id} onClick={onClickLink} className={cx({ active: visibleSection === nav.id })}>
                             <a href={`#${nav.id}`}>{nav.title}</a>
                         </li>

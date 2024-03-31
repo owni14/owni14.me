@@ -4,12 +4,14 @@ import Category from "@app/_components/_category";
 import "./styles.scss";
 
 const Projects = () => {
+    const sortedProjects = [...PROJECTS].reverse();
+
     return (
         <section id="projects">
             <Category category="Projects" />
             <p className="title">진행한 프로젝트</p>
             <div className="card-wrapper">
-                {PROJECTS.map(project => (
+                {sortedProjects.map(project => (
                     <Card
                         key={project.id}
                         src={project.src}

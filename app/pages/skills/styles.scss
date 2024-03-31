@@ -34,14 +34,13 @@
                 &.html {
                     fill: #e5532f;
                 }
-                &.css {
-                    fill: #1e77b9;
+                &.css,
+                &.typescript,
+                &.recoil {
+                    fill: #037cfd;
                 }
                 &.javascript {
                     fill: yellow;
-                }
-                &.typescript {
-                    fill: #3278c6;
                 }
                 &.react,
                 &.react-native {

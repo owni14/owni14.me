@@ -2,6 +2,7 @@ import { ICard } from "./types";
 import Image from "next/image";
 import { FaGithub, FaLink } from "react-icons/fa";
 import "./styles.scss";
+import Tag from "../_tag";
 
 const Card = ({ src, alt, title, desc, tags, link, code }: ICard) => {
     return (
@@ -12,13 +13,7 @@ const Card = ({ src, alt, title, desc, tags, link, code }: ICard) => {
                     <p className="project-title">{title}</p>
                     <div className="text-area">
                         <p className="project-desc">{desc}</p>
-                        <div className="project-tags-area">
-                            {tags?.map(tag => (
-                                <div key={tag} className="tags-detail">
-                                    {tag}
-                                </div>
-                            ))}
-                        </div>
+                        <Tag tags={tags} />
                     </div>
                     <div className="link-area">
                         <div className="link-detail">

@@ -1,7 +1,6 @@
 @import "@public/styles/_variables.scss";
 
 #card {
-    border: 1px solid transparent;
     border-radius: 1rem;
     animation: twingkling 10s infinite;
     @keyframes twingkling {
@@ -16,10 +15,9 @@
         }
     }
     .card-detail {
-        position: relative;
         width: 20rem;
-        height: 23rem;
-        border: 1px solid #191919;
+        height: 25rem;
+        border: 1px solid transparent;
         background-color: #242424;
         border-radius: 1rem;
         overflow: auto;
@@ -52,20 +50,6 @@
                 line-height: 1.2rem;
                 gap: 0.3rem;
                 width: 100%;
-
-                .project-tags-area {
-                    @include flex("row", "flex-start", "center");
-                    gap: 0.3rem;
-                    flex-wrap: wrap;
-                    width: 100%;
-                    height: 100%;
-                    .tags-detail {
-                        border: 1px solid transparent;
-                        background-color: #363636;
-                        padding: 0 0.2rem;
-                        border-radius: 0.4rem;
-                    }
-                }
             }
             .link-area {
                 @include flex("row", "space-between", "center");
