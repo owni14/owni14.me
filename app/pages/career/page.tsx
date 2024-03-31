@@ -4,7 +4,7 @@ import { FaPlus, FaMinus, FaLink } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Tag from "@app/_components/_tag";
 import cx from "classnames";
-import React, { MouseEventHandler, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CAREER } from "./consts";
 import { IFold } from "./types";
 import "./styles.scss";
@@ -39,7 +39,7 @@ const Career = () => {
                                 <div className="period-area">
                                     <p className="period">{career.period}</p>
                                     <button name={career.id} onClick={onClickFold}>
-                                        {isFold ? <FaPlus /> : <FaMinus />}
+                                        {isFold[idx]?.id === career.id && isFold[idx]?.state ? <FaPlus /> : <FaMinus />}
                                     </button>
                                 </div>
                             </div>

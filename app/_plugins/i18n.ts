@@ -4,17 +4,10 @@ import { localeEN, localeKR } from "./locales";
 
 i18next.use(initReactI18next).init({
     resources: {
-        ko: {
-            intro: {
-                test: "테스트",
-            },
-        },
-        en: {
-            intro: {
-                test: "test",
-            },
-        },
+        ko: localeKR,
+        en: localeEN,
     },
+    lng: "ko",
     fallbackLng: ["en", "ko"],
     supportedLngs: ["en", "ko"],
     keySeparator: false,

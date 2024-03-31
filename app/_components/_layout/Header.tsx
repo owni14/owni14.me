@@ -1,15 +1,13 @@
 import Link from "next/link";
 import { LANG_TOGGLE, Nav } from "./consts";
 import cx from "classnames";
-import { useContext, useEffect, useState } from "react";
-import { LangContext } from "@app/_context/Language";
+import { useEffect, useState } from "react";
+import i18next from "i18next";
 import "./styles.scss";
-import { useTranslation } from "react-i18next";
 
 const Header = () => {
-    const { lang, setLang } = useContext(LangContext);
+    const [lang, setLang] = useState("ko");
     const [visibleSection, setVisibleSection] = useState<string>(Nav[0].id);
-    const { t } = useTranslation("intro");
 
     useEffect(() => {
         const targetSections = document.querySelectorAll("section");
@@ -35,6 +33,7 @@ const Header = () => {
 
     /** Toggle click */
     const onClickToggle = (lang: string) => {
+        i18next.changeLanguage(lang);
         setLang(lang);
     };
 
@@ -67,7 +66,7 @@ const Header = () => {
     return (
         <div id="header">
             <Link className="title" href="https://owni14.github.io/portfolio/" as={`/`} onClick={onClickLogo}>
-                {t("test")}
+                MIN
             </Link>
             <div className="right-area">
                 <ul className="nav-link">

@@ -20,6 +20,18 @@
             background-color: #242424;
             border-radius: 1rem;
             padding: 1.5rem;
+            animation: twingkling 10s infinite;
+            @keyframes twingkling {
+                0% {
+                    box-shadow: 1px 1px 100px 10px #242424;
+                }
+                50% {
+                    box-shadow: 1px 1px 100px 30px #242424;
+                }
+                100% {
+                    box-shadow: 1px 1px 100px 10px #242424;
+                }
+            }
 
             .career-fold-detail {
                 @include flex("column", "center", "center");
@@ -69,7 +81,7 @@
                 border-bottom-left-radius: 1rem;
                 border-bottom-right-radius: 1rem;
                 font-family: "Pretendard-Medium";
-                transition: max-height 0.3s ease;
+                transition: max-height 0.5s ease;
                 font-size: 1.2rem;
                 max-height: 13rem;
 
@@ -77,7 +89,7 @@
                     overflow: hidden;
                     max-height: 0;
                     padding: 0;
-                    transition: max-height 0.3s ease;
+                    transition: max-height 0.5s ease;
                 }
 
                 .detail {
