@@ -3,6 +3,7 @@ import path from "path";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: "export",
+    basePath: "/portfolio",
     assetPrefix: ".",
     images: {
         unoptimized: true,
