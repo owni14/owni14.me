@@ -1,12 +1,17 @@
+"use client";
 import Category from "@app/_components/_category";
 import { SKILLS } from "./consts";
 import "./styles.scss";
+import { useTranslation } from "react-i18next";
+import { NAMESPACE } from "@app/consts";
 
 const Skill = () => {
+    const { t } = useTranslation(NAMESPACE.SKILL);
+
     return (
         <section id="skill">
             <Category category="Skill" />
-            <p className="title">사용할 수 있는 기술 및 도구</p>
+            <p className="title">{t("title")}</p>
             <div className="icon-wrapper">
                 {SKILLS.map(skill => (
                     <div key={skill.id} className="icon-area">

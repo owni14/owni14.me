@@ -2,7 +2,7 @@ import * as ko from "./ko";
 import * as en from "./en";
 
 interface localeType {
-    [key: string]: { [key: string]: string };
+    [key: string]: { [key: string]: string | { [key: string]: string } };
 }
 
 export const localeKR: localeType = { ...ko };

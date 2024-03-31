@@ -1,15 +1,19 @@
+"use client";
 import Card from "@app/_components/_card";
-import { PROJECTS } from "./consts";
+import { getProjects } from "./consts";
 import Category from "@app/_components/_category";
 import "./styles.scss";
+import { useTranslation } from "react-i18next";
+import { NAMESPACE } from "@app/consts";
 
 const Project = () => {
-    const sortedProjects = [...PROJECTS].reverse();
+    const { t } = useTranslation(NAMESPACE.PROJECT);
+    const sortedProjects = [...getProjects()].reverse();
 
     return (
         <section id="project">
             <Category category="Project" />
-            <p className="title">진행한 프로젝트</p>
+            <p className="title">{t("title")}</p>
             <div className="card-wrapper">
                 {sortedProjects.map(project => (
                     <Card

@@ -1,1 +1,9 @@
-{}
+{
+    "title": "Here is a quick summary of my most developer career",
+    "embrace": {
+        "job": "Frontend Web Developer @Embrace",
+        "period": "April 2024 - Prsent",
+        "location": "Seoul, South Korea",
+        "jobDesc": "I was in charge of the front-end, and I used React to develop the TVING back office(B2B)."
+    }
+}

@@ -4,18 +4,22 @@ import { FaPlus, FaMinus, FaLink } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Tag from "@app/_components/_tag";
 import cx from "classnames";
-import React, { useEffect, useState } from "react";
-import { CAREER } from "./consts";
+import React, { useEffect, useMemo, useState } from "react";
 import { IFold } from "./types";
 import "./styles.scss";
+import { getCareer } from "./consts";
+import { useTranslation } from "react-i18next";
+import { NAMESPACE } from "@app/consts";
 
 const Career = () => {
+    const { t } = useTranslation(NAMESPACE.CAREER);
     const [isFold, setIsFold] = useState<IFold[]>([]);
+    const careers = getCareer();
 
     /** Initial set up */
     useEffect(() => {
-        setIsFold(CAREER.map(career => ({ id: career.id, state: true })));
-    }, [CAREER]);
+        setIsFold(careers.map(career => ({ id: career.id, state: true })));
+    }, []);
 
     /** Click plus or minus button */
     const onClickFold = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -26,9 +30,9 @@ const Career = () => {
     return (
         <section id="career">
             <Category category="Career" />
-            <p className="title">경력 사항에 대한 요약</p>
+            <p className="title">{t("title")}</p>
             <div className="career-wrapper">
-                {CAREER.map((career, idx) => (
+                {careers.map((career, idx) => (
                     <div key={career.id} className="career-detail-area">
                         <div
                             className={cx("career-fold-detail", {
