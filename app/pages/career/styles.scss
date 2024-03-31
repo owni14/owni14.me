@@ -22,6 +22,11 @@
             border-radius: 1rem;
             padding: 1.5rem;
             animation: twingkling 10s infinite;
+            transition: all 0.7s ease;
+            &:hover {
+                border: 1px solid #d9d9d9;
+                transition: all 0.7s ease;
+            }
             @keyframes twingkling {
                 0% {
                     box-shadow: 1px 1px 100px 10px #242424;

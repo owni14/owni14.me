@@ -4,7 +4,7 @@ import { FaPlus, FaMinus, FaLink } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Tag from "@app/_components/_tag";
 import cx from "classnames";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IFold } from "./types";
 import "./styles.scss";
 import { getCareer } from "./consts";
