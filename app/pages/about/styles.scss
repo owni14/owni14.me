@@ -3,10 +3,11 @@
 #about {
     @include flex("row", "center", "center");
     gap: 3rem;
+    flex-wrap: wrap;
     .image-wrapper {
         img {
-            width: 70%;
-            height: 100%;
+            width: 15rem;
+            height: 15rem;
             border-radius: 50%;
             animation: twinkling 7s infinite;
             @keyframes twinkling {
@@ -32,7 +33,7 @@
             p {
                 display: inline;
                 color: $white;
-                font-size: 1.7rem;
+                font-size: 1.5rem;
                 white-space: nowrap;
                 margin-bottom: 0.5rem;
                 width: auto;
@@ -42,7 +43,7 @@
                 }
             }
             .greet {
-                font-size: 2rem;
+                font-size: 1.8rem;
                 animation: greetTyping 1s steps(10) 1 forwards;
             }
             .introduce {

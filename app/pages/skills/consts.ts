@@ -38,17 +38,12 @@ export const SKILLS: ISkills[] = [
     },
     {
         id: "react",
-        icon: SiTypescript,
-        title: "React",
-    },
-    {
-        id: "react",
         icon: SiReact,
         title: "React",
     },
     {
         id: "react-native",
-        icon: SiTypescript,
+        icon: SiReact,
         title: "React-Native",
     },
     {

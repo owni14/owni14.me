@@ -16,16 +16,17 @@ body {
     background-color: $black;
     color: $white;
     font-family: "Pretendard-Regular";
+    flex-wrap: wrap;
     @include flex("column", "space-between", "center");
 
     #root {
         width: 100%;
-        padding: 0 22rem;
+        padding: 0 20rem;
     }
     #header,
     #footer {
         width: 100%;
-        padding: 2rem 22rem;
+        padding: 2rem 20rem;
     }
 
     #about,
