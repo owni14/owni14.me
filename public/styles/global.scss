@@ -22,11 +22,41 @@ body {
     #root {
         width: 100%;
         padding: 0 20rem;
+        @include responsive(desktop-l) {
+            padding: 0 13rem;
+        }
+        @include responsive(desktop) {
+            padding: 0 8rem;
+        }
+        @include responsive(tablet) {
+            padding: 0 4rem;
+        }
+        @include responsive(mobile-l) {
+            padding: 0 3rem;
+        }
+        @include responsive(mobile) {
+            padding: 0 2rem;
+        }
     }
     #header,
     #footer {
         width: 100%;
         padding: 2rem 20rem;
+        @include responsive(desktop-l) {
+            padding: 1.5rem 13rem;
+        }
+        @include responsive(desktop) {
+            padding: 0.7rem 8rem;
+        }
+        @include responsive(tablet) {
+            padding: 0.5rem 4rem;
+        }
+        @include responsive(mobile-l) {
+            padding: 0.3rem 3rem;
+        }
+        @include responsive(mobile) {
+            padding: 0.2rem 2rem;
+        }
     }
 
     #about,
