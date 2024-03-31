@@ -2,13 +2,13 @@
 import Card from "@app/_components/_card";
 import { getProjects } from "./consts";
 import Category from "@app/_components/_category";
-import "./styles.scss";
 import { useTranslation } from "react-i18next";
 import { NAMESPACE } from "@app/consts";
+import "./styles.scss";
 
 const Project = () => {
     const { t } = useTranslation(NAMESPACE.PROJECT);
-    const sortedProjects = [...getProjects()].reverse();
+    const sortedProjects = [...getProjects(t)].reverse();
 
     return (
         <section id="project">

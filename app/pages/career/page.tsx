@@ -6,15 +6,15 @@ import Tag from "@app/_components/_tag";
 import cx from "classnames";
 import React, { useEffect, useState } from "react";
 import { IFold } from "./types";
-import "./styles.scss";
 import { getCareer } from "./consts";
 import { useTranslation } from "react-i18next";
 import { NAMESPACE } from "@app/consts";
+import "./styles.scss";
 
 const Career = () => {
     const { t } = useTranslation(NAMESPACE.CAREER);
     const [isFold, setIsFold] = useState<IFold[]>([]);
-    const careers = getCareer();
+    const careers = getCareer(t);
 
     /** Initial set up */
     useEffect(() => {

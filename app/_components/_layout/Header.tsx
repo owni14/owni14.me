@@ -3,7 +3,6 @@ import { LANG_TOGGLE, Nav } from "./consts";
 import cx from "classnames";
 import { useEffect, useState } from "react";
 import i18next from "i18next";
-import "./styles.scss";
 
 const Header = () => {
     const [lang, setLang] = useState("ko");

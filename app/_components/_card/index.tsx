@@ -1,8 +1,8 @@
 import { ICard } from "./types";
 import Image from "next/image";
 import { FaGithub, FaLink } from "react-icons/fa";
-import "./styles.scss";
 import Tag from "../_tag";
+import "./styles.scss";
 
 const Card = ({ src, alt, title, desc, tags, link, code }: ICard) => {
     return (

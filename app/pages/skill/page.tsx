@@ -1,9 +1,9 @@
 "use client";
 import Category from "@app/_components/_category";
 import { SKILLS } from "./consts";
-import "./styles.scss";
 import { useTranslation } from "react-i18next";
 import { NAMESPACE } from "@app/consts";
+import "./styles.scss";
 
 const Skill = () => {
     const { t } = useTranslation(NAMESPACE.SKILL);

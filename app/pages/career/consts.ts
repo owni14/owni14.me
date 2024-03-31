@@ -1,10 +1,7 @@
-import { useTranslation } from "react-i18next";
 import { IGetCareer } from "./types";
-import { NAMESPACE } from "@app/consts";
+import { TFunction } from "i18next";
 
-export const getCareer = (): IGetCareer[] => {
-    const { t } = useTranslation(NAMESPACE.CAREER);
-
+export const getCareer = (t: TFunction): IGetCareer[] => {
     return [
         {
             id: "embrace",

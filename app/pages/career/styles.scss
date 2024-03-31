@@ -89,15 +89,18 @@
                 border-bottom-left-radius: 1rem;
                 border-bottom-right-radius: 1rem;
                 font-family: "Pretendard-Medium";
-                transition: max-height 0.5s ease;
+                overflow: visible;
+                transition: max-height 0.7s ease, opacity 1.5s ease;
                 font-size: 1.2rem;
                 max-height: 13rem;
+                opacity: 1;
 
                 &.fold {
                     overflow: hidden;
                     max-height: 0;
                     padding: 0;
-                    transition: max-height 0.5s ease;
+                    opacity: 0;
+                    transition: all 0.7s ease;
                 }
 
                 .detail {

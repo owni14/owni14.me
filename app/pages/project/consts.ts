@@ -1,12 +1,9 @@
 import TodoList from "@public/images/todoListProject.png";
 import Portfolio from "@public/images/portfolio.png";
 import { IProjects } from "./types";
-import { useTranslation } from "react-i18next";
-import { NAMESPACE } from "@app/consts";
+import { TFunction } from "i18next";
 
-export const getProjects = (): IProjects[] => {
-    const { t } = useTranslation(NAMESPACE.PROJECT);
-
+export const getProjects = (t: TFunction): IProjects[] => {
     return [
         {
             id: "todoListWithTDD",

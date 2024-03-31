@@ -7,5 +7,3 @@ interface localeType {
 
 export const localeKR: localeType = { ...ko };
 export const localeEN: localeType = { ...en };
-
-export default { localeKR, localeEN };
