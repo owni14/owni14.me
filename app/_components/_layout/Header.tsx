@@ -60,7 +60,7 @@ const Header = () => {
     /** Logo click */
     const onClickLogo = (e: React.SyntheticEvent) => {
         e.preventDefault();
-        history.pushState(null, "", "/");
+        history.pushState(null, "", "/portfolio");
         window.scrollTo({ behavior: "smooth", top: 0 });
     };
 
