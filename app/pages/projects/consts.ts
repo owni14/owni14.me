@@ -20,7 +20,7 @@ export const PROJECTS: IProjects[] = [
         title: "포트폴리오",
         desc: "저를 소개하는 포트폴리오이며, 잘 써보지 않은 스타일을 적용하며 이쁘게 보여지도록 노력하였습니다. 또한, i18n으로 다국어를 지원하여 영어로도 볼 수 있게 구현하였습니다.",
         tags: ["next.js", "typescript", "sass", "i18n"],
-        link: "https://github.com/owni14/portfolio",
+        link: "https://owni14.github.io/portfolio/",
         code: "https://github.com/owni14/portfolio",
     },
 ];

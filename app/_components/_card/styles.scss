@@ -1,6 +1,20 @@
 @import "@public/styles/_variables.scss";
 
 #card {
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    animation: twingkling 10s infinite;
+    @keyframes twingkling {
+        0% {
+            box-shadow: 1px 1px 100px 10px #242424;
+        }
+        50% {
+            box-shadow: 1px 1px 100px 30px #242424;
+        }
+        100% {
+            box-shadow: 1px 1px 100px 10px #242424;
+        }
+    }
     .card-detail {
         position: relative;
         width: 20rem;
