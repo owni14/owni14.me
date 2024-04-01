@@ -4,6 +4,10 @@
     @include flex("row", "center", "center");
     gap: 3rem;
     flex-wrap: wrap;
+    &.isEn {
+        @include flex("column", "center", "center");
+        gap: 5rem;
+    }
 
     @include responsive(tablet) {
         @include flex("column", "center", "center");
@@ -19,6 +23,26 @@
             height: 15rem;
             border-radius: 50%;
             animation: twinkling 7s infinite;
+            &.isEn {
+                width: 14rem;
+                height: 14rem;
+                @include responsive(desktop-l) {
+                    width: 10.5rem;
+                    height: 10.5rem;
+                }
+                @include responsive(desktop) {
+                    width: 8.5rem;
+                    height: 8.5rem;
+                }
+                @include responsive(tablet) {
+                    width: 7rem;
+                    height: 7rem;
+                }
+                @include responsive(mobile-l) {
+                    width: 5.5rem;
+                    height: 5.5rem;
+                }
+            }
             @keyframes twinkling {
                 0% {
                     filter: drop-shadow(0 0 40px $white);
@@ -52,6 +76,10 @@
     .text-wrapper {
         @include flex("column", "center", "flex-start");
         gap: 0.7rem;
+
+        &.isEn {
+            align-items: center;
+        }
 
         @include responsive(tablet) {
             align-items: center;
@@ -99,6 +127,9 @@
             .greet {
                 font-size: 1.8rem;
                 animation: greetTyping 1s steps(10) 1 forwards;
+                &.isEn {
+                    animation: enGreetTyping 1s steps(8) 1 forwards;
+                }
                 @include responsive(desktop-l) {
                     font-size: 1.2rem;
                 }
@@ -115,10 +146,16 @@
             .introduce {
                 visibility: hidden;
                 animation: introduceTyping 2.5s 1.2s steps(24) 1 forwards;
+                &.isEn {
+                    animation: enIntroduceTyping 2.5s 1.2s steps(24) 1 forwards;
+                }
             }
             .desc {
                 visibility: hidden;
                 animation: descTyping 4s 3.8s steps(40) 1 forwards;
+                &.isEn {
+                    animation: enDescTyping 6s 3.8s steps(45) 1 forwards;
+                }
             }
 
             @keyframes greetTyping {
@@ -161,6 +198,49 @@
                 100% {
                     visibility: visible;
                     width: 37.5rem;
+                }
+            }
+
+            @keyframes enGreetTyping {
+                0% {
+                    border-right: 1px solid $white;
+                    width: 0%;
+                }
+                99% {
+                    border-right: 1px solid $white;
+                }
+                100% {
+                    width: 5rem;
+                }
+            }
+
+            @keyframes enIntroduceTyping {
+                0% {
+                    border-right: 1px solid $white;
+                    visibility: visible;
+                    width: 0%;
+                }
+                99% {
+                    border-right: 1px solid $white;
+                }
+                100% {
+                    visibility: visible;
+                    width: 17rem;
+                }
+            }
+
+            @keyframes enDescTyping {
+                0% {
+                    border-right: 1px solid $white;
+                    visibility: visible;
+                    width: 0%;
+                }
+                99% {
+                    border-right: 1px solid $white;
+                }
+                100% {
+                    visibility: visible;
+                    width: 42rem;
                 }
             }
         }

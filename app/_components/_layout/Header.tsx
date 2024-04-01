@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { LANG_TOGGLE, Nav } from "./consts";
 import cx from "classnames";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import i18next from "i18next";
+import { LangContext } from "@app/contexts/Language";
 
 const Header = () => {
     const [lang, setLang] = useState("ko");
+    const { setLang: setCtxLang } = useContext(LangContext);
     const [visibleSection, setVisibleSection] = useState<string>(Nav[0].id);
 
     useEffect(() => {
@@ -33,6 +35,7 @@ const Header = () => {
     /** Toggle click */
     const onClickToggle = (lang: string) => {
         i18next.changeLanguage(lang);
+        setCtxLang(lang);
         setLang(lang);
     };
 

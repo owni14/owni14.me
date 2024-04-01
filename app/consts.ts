@@ -5,3 +5,9 @@ export const NAMESPACE = {
     PROJECT: "project",
     CAREER: "career",
 };
+
+/** Language const */
+export const LANGUAGE = {
+    ENGLISH: "en",
+    KOREAN: "ko",
+};

@@ -21,10 +21,10 @@
         background-color: #242424;
         border-radius: 1rem;
         overflow: auto;
-        transition: all 0.7s ease;
+        transition: all 0.5s ease-in-out;
         &:hover {
             border: 1px solid #d9d9d9;
-            transition: all 0.7s ease;
+            transition: all 0.5s ease-in-out;
         }
         img {
             border-top-right-radius: 1rem;
