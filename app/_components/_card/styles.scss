@@ -31,6 +31,14 @@
             border-top-left-radius: 1rem;
             width: 100%;
             height: 50%;
+            @include responsive(tablet) {
+                border-top-right-radius: 0.6rem;
+                border-top-left-radius: 0.6rem;
+            }
+            @include responsive(mobile-l) {
+                border-top-right-radius: 0.4rem;
+                border-top-left-radius: 0.4rem;
+            }
         }
 
         .info {
@@ -42,6 +50,21 @@
             .project-title {
                 font-family: "Pretendard-Medium";
                 font-size: 1rem;
+                @include responsive(desktop-l) {
+                    font-size: 0.8rem;
+                }
+                @include responsive(desktop) {
+                    font-size: 0.65rem;
+                }
+                @include responsive(tablet) {
+                    font-size: 0.5rem;
+                }
+                @include responsive(mobile-l) {
+                    font-size: 0.35rem;
+                }
+                @include responsive(mobile) {
+                    font-size: 0.3rem;
+                }
             }
             .text-area {
                 @include flex("column", "flex-start", "flex-start");
@@ -50,6 +73,26 @@
                 line-height: 1.2rem;
                 gap: 0.3rem;
                 width: 100%;
+                @include responsive(desktop-l) {
+                    font-size: 0.7rem;
+                    gap: 0.2rem;
+                }
+                @include responsive(desktop) {
+                    font-size: 0.6rem;
+                    line-height: 0.85rem;
+                }
+                @include responsive(tablet) {
+                    font-size: 0.4rem;
+                    line-height: 0.55rem;
+                }
+                @include responsive(mobile-l) {
+                    font-size: 0.3rem;
+                    line-height: 0.4rem;
+                }
+                @include responsive(mobile) {
+                    font-size: 0.25rem;
+                    list-style: 0.2rem;
+                }
             }
             .link-area {
                 @include flex("row", "space-between", "center");
@@ -60,12 +103,98 @@
                     svg {
                         width: 0.8rem;
                         height: 0.8rem;
+                        @include responsive(desktop-l) {
+                            width: 0.6rem;
+                            height: 0.6rem;
+                        }
+                        @include responsive(desktop) {
+                            width: 0.45rem;
+                            height: 0.45rem;
+                        }
+                        @include responsive(tablet) {
+                            width: 0.35rem;
+                            height: 0.35rem;
+                        }
+                        @include responsive(mobile-l) {
+                            width: 0.25rem;
+                            height: 0.25rem;
+                        }
+                        @include responsive(mobile) {
+                            width: 0.2rem;
+                            height: 0.2rem;
+                        }
                     }
                     a {
                         font-size: 0.8rem;
                         text-decoration: underline;
+                        @include responsive(desktop-l) {
+                            font-size: 0.6rem;
+                        }
+                        @include responsive(desktop) {
+                            font-size: 0.5rem;
+                        }
+                        @include responsive(tablet) {
+                            font-size: 0.4rem;
+                        }
+                        @include responsive(mobile-l) {
+                            font-size: 0.3rem;
+                        }
+                        @include responsive(mobile) {
+                            font-size: 0.25rem;
+                        }
+                    }
+                    @include responsive(mobile-l) {
+                        gap: 0.15rem;
                     }
                 }
+            }
+            @include responsive(tablet) {
+                padding: 0.5rem;
+            }
+            @include responsive(mobile-l) {
+                padding: 0.3rem;
+            }
+            @include responsive(mobile) {
+                gap: 0.2rem;
+                padding: 0.15rem;
+            }
+        }
+        @include responsive(desktop-l) {
+            width: 16rem;
+            height: 20rem;
+        }
+        @include responsive(desktop) {
+            width: 13rem;
+            height: 17rem;
+        }
+        @include responsive(tablet) {
+            border-radius: 0.6rem;
+            width: 8.6rem;
+            height: 11rem;
+        }
+        @include responsive(mobile-l) {
+            border-radius: 0.4rem;
+            width: 6rem;
+            height: 8rem;
+        }
+        @include responsive(mobile) {
+            width: 5rem;
+            height: 7rem;
+        }
+    }
+    @include responsive(tablet) {
+        border-radius: 0.4rem;
+        border-radius: 0.6rem;
+        animation: twingkling 10s infinite;
+        @keyframes twingkling {
+            0% {
+                box-shadow: 1px 1px 100px 7px #242424;
+            }
+            50% {
+                box-shadow: 1px 1px 100px 13px #242424;
+            }
+            100% {
+                box-shadow: 1px 1px 100px 7px #242424;
             }
         }
     }

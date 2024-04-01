@@ -7,5 +7,12 @@
         @include flex("row", "center", "center");
         gap: 1.3rem;
         flex-wrap: wrap;
+
+        @include responsive(tablet) {
+            gap: 1rem;
+        }
+        @include responsive(mobile-l) {
+            gap: 0.5rem;
+        }
     }
 }
