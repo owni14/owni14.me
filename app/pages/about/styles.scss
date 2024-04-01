@@ -2,7 +2,7 @@
 
 #about {
     @include flex("row", "center", "center");
-    gap: 3rem;
+    gap: 2rem;
     flex-wrap: wrap;
     &.isEn {
         @include flex("column", "center", "center");
@@ -19,10 +19,21 @@
 
     .image-wrapper {
         img {
-            width: 15rem;
-            height: 15rem;
+            width: 14.1rem;
+            height: 14.1rem;
             border-radius: 50%;
             animation: twinkling 7s infinite;
+            @keyframes twinkling {
+                0% {
+                    filter: drop-shadow(0 0 40px $white);
+                }
+                50% {
+                    filter: drop-shadow(0 0 80px $white);
+                }
+                100% {
+                    filter: drop-shadow(0 0 40px $white);
+                }
+            }
             &.isEn {
                 width: 14rem;
                 height: 14rem;
@@ -43,17 +54,6 @@
                     height: 5.5rem;
                 }
             }
-            @keyframes twinkling {
-                0% {
-                    filter: drop-shadow(0 0 40px $white);
-                }
-                50% {
-                    filter: drop-shadow(0 0 80px $white);
-                }
-                100% {
-                    filter: drop-shadow(0 0 40px $white);
-                }
-            }
             @include responsive(desktop-l) {
                 width: 10.5rem;
                 height: 10.5rem;
@@ -69,6 +69,20 @@
             @include responsive(mobile-l) {
                 width: 5.5rem;
                 height: 5.5rem;
+            }
+            @include responsive(tablet) {
+                animation: twinkling 7s infinite;
+                @keyframes twinkling {
+                    0% {
+                        filter: drop-shadow(0 0 30px $white);
+                    }
+                    50% {
+                        filter: drop-shadow(0 0 50px $white);
+                    }
+                    100% {
+                        filter: drop-shadow(0 0 30px $white);
+                    }
+                }
             }
         }
     }
@@ -91,7 +105,7 @@
             p {
                 display: inline;
                 color: $white;
-                font-size: 1.5rem;
+                font-size: 1.4rem;
                 white-space: nowrap;
                 margin-bottom: 0.5rem;
                 width: auto;
@@ -121,83 +135,94 @@
                     font-size: 0.6rem;
                 }
                 @include responsive(mobile-l) {
-                    font-size: 0.5rem;
+                    font-size: 0.45rem;
                 }
             }
             .greet {
                 font-size: 1.8rem;
-                animation: greetTyping 1s steps(10) 1 forwards;
+                border-right: 1px solid $white;
+                animation: greetTyping 3.5s steps(30) 1 forwards;
+                max-width: 8.5rem;
                 &.isEn {
                     animation: enGreetTyping 1s steps(8) 1 forwards;
                 }
                 @include responsive(desktop-l) {
                     font-size: 1.2rem;
+                    max-width: 6rem;
                 }
                 @include responsive(desktop) {
                     font-size: 0.9rem;
+                    max-width: 4.3rem;
                 }
                 @include responsive(tablet) {
                     font-size: 0.8rem;
                 }
                 @include responsive(mobile-l) {
-                    font-size: 0.7rem;
+                    font-size: 0.55rem;
+                    max-width: 3.5rem;
                 }
             }
             .introduce {
                 visibility: hidden;
-                animation: introduceTyping 2.5s 1.2s steps(24) 1 forwards;
+                animation: introduceTyping 5s 1.5s steps(44) 1 forwards;
+                border-right: 1px solid $white;
+                max-width: 21rem;
                 &.isEn {
                     animation: enIntroduceTyping 2.5s 1.2s steps(24) 1 forwards;
+                }
+                @include responsive(desktop-l) {
+                    max-width: 13.2rem;
+                }
+                @include responsive(desktop) {
+                    max-width: 9.3rem;
                 }
             }
             .desc {
                 visibility: hidden;
-                animation: descTyping 4s 3.8s steps(40) 1 forwards;
+                border-right: 1px solid $white;
+                animation: descTyping 5s 4.5s steps(50) 1 forwards;
+                max-width: 38rem;
                 &.isEn {
                     animation: enDescTyping 6s 3.8s steps(45) 1 forwards;
+                }
+                @include responsive(desktop-l) {
+                    max-width: 25rem;
+                }
+                @include responsive(desktop) {
+                    max-width: 17rem;
                 }
             }
 
             @keyframes greetTyping {
                 0% {
-                    border-right: 1px solid $white;
                     width: 0%;
                 }
-                99% {
-                    border-right: 1px solid $white;
-                }
                 100% {
-                    width: 9rem;
+                    width: 100%;
+                    border-right: none;
                 }
             }
 
             @keyframes introduceTyping {
                 0% {
-                    border-right: 1px solid $white;
                     visibility: visible;
                     width: 0%;
                 }
-                99% {
-                    border-right: 1px solid $white;
-                }
                 100% {
                     visibility: visible;
-                    width: 20rem;
+                    width: 100%;
+                    border-right: none;
                 }
             }
 
             @keyframes descTyping {
                 0% {
-                    border-right: 1px solid $white;
                     visibility: visible;
                     width: 0%;
                 }
-                99% {
-                    border-right: 1px solid $white;
-                }
                 100% {
+                    width: 100%;
                     visibility: visible;
-                    width: 37.5rem;
                 }
             }
 
