@@ -13,6 +13,7 @@ import {
     SiFigma,
     SiReactquery,
     SiRecoil,
+    SiI18Next,
 } from "react-icons/si";
 import { FaSass } from "react-icons/fa";
 import { ISkills } from "./types";
@@ -52,6 +53,11 @@ export const SKILLS: ISkills[] = [
         id: "react-query",
         icon: SiReactquery,
         title: "React-Query",
+    },
+    {
+        id: "i18n",
+        icon: SiI18Next,
+        title: "I18Next",
     },
     {
         id: "recoil",

@@ -39,5 +39,21 @@
         font-family: "Pretendard-Medium";
         font-size: 1.3rem;
         margin-bottom: 2rem;
+
+        @include responsive(desktop-l) {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        @include responsive(desktop) {
+            font-size: 0.85rem;
+            margin-bottom: 1.3rem;
+        }
+        @include responsive(tablet) {
+            font-size: 0.6rem;
+            margin-bottom: 1rem;
+        }
+        @include responsive(mobile-l) {
+            margin-bottom: 0.7rem;
+        }
     }
 }

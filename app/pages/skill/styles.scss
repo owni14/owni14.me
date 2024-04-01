@@ -8,6 +8,20 @@
         padding: 0 8rem;
         gap: 2rem;
         flex-wrap: wrap;
+        @include responsive(desktop-l) {
+            padding: 0 3.5rem;
+        }
+        @include responsive(desktop) {
+            padding: 0 2rem;
+        }
+        @include responsive(tablet) {
+            padding: 0 1rem;
+            gap: 1rem;
+        }
+        @include responsive(mobile-l) {
+            padding: 0;
+            gap: 0.5rem;
+        }
 
         .icon-area {
             @include flex("column", "center", "center");
@@ -21,35 +35,66 @@
 
             p {
                 font-size: 1.2rem;
+                @include responsive(desktop-l) {
+                    font-size: 0.9rem;
+                }
+                @include responsive(desktop) {
+                    font-size: 0.65rem;
+                }
+                @include responsive(tablet) {
+                    font-size: 0.5rem;
+                }
+                @include responsive(mobile-l) {
+                    font-size: 0.3rem;
+                }
             }
 
             svg {
                 width: 6rem;
                 height: 6rem;
-                &.html {
-                    fill: #e5532f;
+
+                @include responsive(desktop-l) {
+                    width: 5rem;
+                    height: 5rem;
                 }
-                &.css,
-                &.typescript,
-                &.recoil {
-                    fill: #037cfd;
+                @include responsive(desktop) {
+                    width: 3rem;
+                    height: 3rem;
                 }
-                &.javascript {
-                    fill: yellow;
+                @include responsive(tablet) {
+                    width: 2rem;
+                    height: 2rem;
                 }
-                &.react,
-                &.react-native {
-                    fill: #0b7eaa;
+                @include responsive(mobile-l) {
+                    width: 1.5rem;
+                    height: 1.5rem;
                 }
-                &.tailwind {
-                    fill: #40baff;
-                }
-                &.sass {
-                    fill: #ce6b9d;
-                }
-                &.git {
-                    fill: #de4b36;
-                }
+
+                // 추후 색상 적용 예정(fill로는 한계가 있어 보임)
+                // &.html {
+                //     fill: #e5532f;
+                // }
+                // &.css,
+                // &.typescript,
+                // &.recoil {
+                //     fill: #037cfd;
+                // }
+                // &.javascript {
+                //     fill: yellow;
+                // }
+                // &.react,
+                // &.react-native {
+                //     fill: #0b7eaa;
+                // }
+                // &.tailwind {
+                //     fill: #40baff;
+                // }
+                // &.sass {
+                //     fill: #ce6b9d;
+                // }
+                // &.git {
+                //     fill: #de4b36;
+                // }
             }
         }
     }
