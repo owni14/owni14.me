@@ -6,7 +6,7 @@
 
 ### Deploy
 
--   Git Actions
+-   Vercel
 
 ### Enviroment
 
