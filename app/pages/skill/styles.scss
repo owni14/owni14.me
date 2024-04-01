@@ -3,11 +3,6 @@
 #skill {
     @include flex("column", "center", "center");
 
-    .title {
-        font-family: "Pretendard-Medium";
-        font-size: 1.3rem;
-        margin-bottom: 2rem;
-    }
     .icon-wrapper {
         @include flex("row", "center", "center");
         padding: 0 8rem;

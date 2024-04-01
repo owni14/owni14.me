@@ -10,8 +10,7 @@ const Skill = () => {
 
     return (
         <section id="skill">
-            <Category category="Skill" />
-            <p className="title">{t("title")}</p>
+            <Category category="Skill" title={t("title")} />
             <div className="icon-wrapper">
                 {SKILLS.map(skill => (
                     <div key={skill.id} className="icon-area">

@@ -12,8 +12,7 @@ const Project = () => {
 
     return (
         <section id="project">
-            <Category category="Project" />
-            <p className="title">{t("title")}</p>
+            <Category category="Project" title={t("title")} />
             <div className="card-wrapper">
                 {sortedProjects.map(project => (
                     <Card

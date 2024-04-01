@@ -29,8 +29,7 @@ const Career = () => {
 
     return (
         <section id="career">
-            <Category category="Career" />
-            <p className="title">{t("title")}</p>
+            <Category category="Career" title={t("title")} />
             <div className="career-wrapper">
                 {careers.map((career, idx) => (
                     <div key={career.id} className="career-detail-area">

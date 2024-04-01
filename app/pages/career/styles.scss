@@ -3,13 +3,6 @@
 #career {
     @include flex("column", "center", "center");
 
-    .title {
-        font-family: "Pretendard-Medium";
-        font-size: 1.3rem;
-        margin-bottom: 2rem;
-        z-index: 10;
-    }
-
     .career-wrapper {
         @include flex("column", "center", "center");
         gap: 2rem;
