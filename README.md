@@ -96,4 +96,4 @@ portfolio
 [typescript]: https://www.typescriptlang.org/
 [sass]: https://sass-lang.com/
 [i18next]: https://www.i18next.com/
-[portfolio]: (https://owni14.github.io/portfolio/)
+[portfolio]: https://owni14.github.io/portfolio/
