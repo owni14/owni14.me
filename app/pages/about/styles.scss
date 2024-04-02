@@ -2,19 +2,19 @@
 
 #about {
     @include flex("row", "center", "center");
-    gap: 2rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
     &.isEn {
         @include flex("column", "center", "center");
         gap: 5rem;
     }
 
-    @include responsive(tablet) {
+    @include responsive(desktop-l) {
         @include flex("column", "center", "center");
-        gap: 2rem;
-        @include responsive(mobile-l) {
-            gap: 1.5rem;
-        }
+        gap: 4rem;
+    }
+    @include responsive(tablet) {
+        gap: 2.5rem;
     }
 
     .image-wrapper {
@@ -35,8 +35,8 @@
                 }
             }
             &.isEn {
-                width: 14rem;
-                height: 14rem;
+                width: 15rem;
+                height: 15rem;
                 @include responsive(desktop-l) {
                     width: 10.5rem;
                     height: 10.5rem;
@@ -55,20 +55,20 @@
                 }
             }
             @include responsive(desktop-l) {
-                width: 10.5rem;
-                height: 10.5rem;
+                width: 14rem;
+                height: 14rem;
             }
             @include responsive(desktop) {
+                width: 11.5rem;
+                height: 11.5rem;
+            }
+            @include responsive(tablet) {
                 width: 8.5rem;
                 height: 8.5rem;
             }
-            @include responsive(tablet) {
+            @include responsive(mobile) {
                 width: 7rem;
                 height: 7rem;
-            }
-            @include responsive(mobile-l) {
-                width: 5.5rem;
-                height: 5.5rem;
             }
             @include responsive(tablet) {
                 animation: twinkling 7s infinite;
@@ -113,29 +113,23 @@
                 @include responsive(tablet) {
                     margin-bottom: 0.3rem;
                 }
-                @include responsive(mobile-l) {
-                    margin-bottom: 0.2rem;
-                }
                 &:first-child {
                     margin-bottom: 1rem;
                     @include responsive(tablet) {
-                        margin-bottom: 0.6rem;
-                    }
-                    @include responsive(mobile-l) {
-                        margin-bottom: 0.4rem;
+                        margin-bottom: 0.5rem;
                     }
                 }
                 @include responsive(desktop-l) {
-                    font-size: 1rem;
+                    font-size: 1.2rem;
                 }
                 @include responsive(desktop) {
-                    font-size: 0.7rem;
+                    font-size: 1rem;
                 }
                 @include responsive(tablet) {
-                    font-size: 0.6rem;
+                    font-size: 0.8rem;
                 }
                 @include responsive(mobile-l) {
-                    font-size: 0.45rem;
+                    font-size: 0.74rem;
                 }
             }
             .greet {
@@ -147,19 +141,20 @@
                     animation: enGreetTyping 1s steps(8) 1 forwards;
                 }
                 @include responsive(desktop-l) {
-                    font-size: 1.2rem;
-                    max-width: 6rem;
+                    font-size: 1.5rem;
+                    max-width: 7rem;
                 }
                 @include responsive(desktop) {
-                    font-size: 0.9rem;
-                    max-width: 4.3rem;
+                    font-size: 1.3rem;
+                    max-width: 6rem;
                 }
                 @include responsive(tablet) {
-                    font-size: 0.8rem;
+                    font-size: 1rem;
+                    max-width: 4.7rem;
                 }
-                @include responsive(mobile-l) {
-                    font-size: 0.55rem;
-                    max-width: 3.5rem;
+                @include responsive(tablet) {
+                    font-size: 0.9rem;
+                    max-width: 4.3rem;
                 }
             }
             .introduce {
@@ -171,10 +166,10 @@
                     animation: enIntroduceTyping 2.5s 1.2s steps(24) 1 forwards;
                 }
                 @include responsive(desktop-l) {
-                    max-width: 13.2rem;
+                    max-width: 15.5rem;
                 }
                 @include responsive(desktop) {
-                    max-width: 9.3rem;
+                    max-width: 14.5rem;
                 }
             }
             .desc {
@@ -186,10 +181,10 @@
                     animation: enDescTyping 6s 3.8s steps(45) 1 forwards;
                 }
                 @include responsive(desktop-l) {
-                    max-width: 25rem;
+                    max-width: 30rem;
                 }
                 @include responsive(desktop) {
-                    max-width: 17rem;
+                    max-width: 24.5rem;
                 }
             }
 
