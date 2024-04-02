@@ -206,6 +206,38 @@
                 fill: rgba(217, 217, 217, 0.7);
                 transition: all 0.4s ease-in-out;
             }
+            @include responsive(desktop) {
+                width: 1.4rem;
+                height: 1.4rem;
+            }
+            @include responsive(tablet) {
+                width: 1rem;
+                height: 1rem;
+            }
+            @include responsive(mobile-l) {
+                width: 0.6rem;
+                height: 0.6rem;
+            }
         }
+        @include responsive(desktop) {
+            gap: 1rem;
+        }
+        @include responsive(tablet) {
+            gap: 0.7rem;
+        }
+        @include responsive(mobile-l) {
+            gap: 0.3rem;
+        }
+    }
+    @include responsive(desktop) {
+        font-size: 0.8rem;
+    }
+    @include responsive(tablet) {
+        font-size: 0.6rem;
+    }
+    @include responsive(mobile-l) {
+        font-size: 0.4rem;
+    }
+    @include responsive(mobile) {
     }
 }
