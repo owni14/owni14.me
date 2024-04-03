@@ -2,24 +2,23 @@
 
 #career {
     @include flex("column", "center", "center");
-
     .career-wrapper {
         @include flex("column", "center", "center");
         gap: 2rem;
         width: 100%;
-        .career-detail-area {
+        margin: 0 10%;
+
+        .career-detail {
             @include flex("column", "center", "center");
-            width: 90%;
+            width: 100%;
+            overflow: hidden;
+            max-height: 100vh;
+            flex-direction: column;
+            flex-flow: wrap;
             border: 1px solid transparent;
             background-color: #242424;
             border-radius: 1rem;
-            padding: 1.5rem;
             animation: twingkling 10s infinite;
-            transition: all 0.5s ease-in-out;
-            &:hover {
-                border: 1px solid #d9d9d9;
-                transition: all 0.5s ease-in-out;
-            }
             @keyframes twingkling {
                 0% {
                     box-shadow: 1px 1px 100px 10px #242424;
@@ -32,198 +31,80 @@
                 }
             }
 
-            .career-fold-detail {
-                @include flex("column", "center", "center");
-                width: 100%;
+            transition: border 0.4s ease-in-out;
+            &:hover {
+                cursor: pointer;
+                border: 1px solid #d9d9d9;
+                transition: border 0.4s ease-in-out;
+                transition: max-height 0.4s ease-in-out;
+            }
+
+            &.fold {
+                max-height: 4.78rem;
+                transition: max-height 0.4s ease-in-out;
+            }
+
+            .career-title-area {
+                @include flex("row", "space-between", "center");
+                width: inherit;
+                height: inherit;
                 border: 1px solid transparent;
                 background-color: #242424;
                 border-radius: 1rem;
-                font-family: "Pretendard-Medium";
-                font-size: 1.2rem;
-                gap: 0.5rem;
+                padding: 1.5rem;
+                max-height: 10rem;
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
-                margin-bottom: 1rem;
-                transition: all 0.5s ease-in-out;
 
                 &.fold {
                     border-bottom-left-radius: 1rem;
                     border-bottom-right-radius: 1rem;
-                    transition: all 0.5s ease-in-out;
-                    margin-bottom: 0;
                 }
 
-                .summary {
-                    width: 100%;
-                    @include flex("row", "space-between", "center");
-
-                    .period-area {
-                        @include flex("row", "flex-end", "center");
-                        gap: 1rem;
-
-                        button {
-                            &:hover {
-                                cursor: pointer;
-                            }
-                            background-color: transparent;
-                            svg {
-                                width: 1rem;
-                                height: 1rem;
-                                fill: $white;
-                                @include responsive(desktop) {
-                                    width: 0.7rem;
-                                    height: 0.7rem;
-                                }
-                                @include responsive(tablet) {
-                                    width: 0.6rem;
-                                    height: 0.6rem;
-                                }
-                                @include responsive(mobile-l) {
-                                    width: 0.5rem;
-                                    height: 0.5rem;
-                                }
-                            }
+                p {
+                    font-size: 1.3rem;
+                    font-family: "Pretendard-Medium";
+                    &:last-child {
+                        &::after {
+                            content: "-";
+                            margin-left: 1.5rem;
+                            font-size: 1.7rem;
                         }
-                        @include responsive(desktop) {
-                            gap: 0.5rem;
+                        &.fold {
+                            &::after {
+                                content: "+";
+                            }
                         }
                     }
                 }
-                @include responsive(desktop-l) {
-                    font-size: 1rem;
-                }
-                @include responsive(desktop) {
-                    font-size: 0.85rem;
-                    margin-bottom: 0.5rem;
-                }
-                @include responsive(tablet) {
-                    font-size: 0.65rem;
-                }
-                @include responsive(mobile-l) {
-                    font-size: 0.5rem;
-                    margin-bottom: 0.2rem;
-                }
             }
 
-            .career-detail {
+            .career-info-area {
+                @include flex("column", "center", "center");
+                gap: 1.5rem;
                 width: 100%;
                 background-color: #242424;
-                border-bottom-left-radius: 1rem;
-                border-bottom-right-radius: 1rem;
-                font-family: "Pretendard-Medium";
-                transition: max-height 0.6s ease-in-out, opacity 1.4s ease-in-out;
-                font-size: 1.2rem;
-                max-height: 13rem;
-                opacity: 1;
+                padding: 0 1.5rem 1.5rem;
+                border-radius: 1rem;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
 
-                &.fold {
-                    overflow: hidden;
-                    max-height: 0;
-                    padding: 0;
-                    opacity: 0;
-                    transition: all 0.6s ease-in-out;
-                }
+                .company-area {
+                    @include flex("row", "flex-start", "center");
+                    width: inherit;
+                    gap: 2rem;
+                    font-size: 1.1rem;
 
-                .detail {
-                    @include flex("column", "center", "center");
-                    border-top: 1px solid $white;
-                    gap: 1.5rem;
-                    padding-top: 1rem;
-
-                    .company-area {
-                        width: 100%;
+                    &:first-child {
+                        border-top: 1px solid $white;
+                        padding: 1.5rem 0 0;
+                    }
+                    .company-detail {
                         @include flex("row", "flex-start", "center");
-                        gap: 2rem;
-                        font-size: 1rem;
-                        .company-detail {
-                            @include flex("row", "flex-start", "center");
-                            color: #d9d9d9;
-                            gap: 0.5rem;
-                            @include responsive(mobile-l) {
-                                gap: 0.3rem;
-                            }
-                        }
-                        .job-description {
-                            @include flex("row", "flex-start", "center");
-                            font-family: "Pretendard-Regular";
-                        }
-                        .tag-detail {
-                            padding: 0.7rem 0.4rem;
-                            @include responsive(desktop-l) {
-                                font-size: 0.8rem;
-                            }
-                            @include responsive(desktop) {
-                                padding: 0.6rem 0.4rem;
-                                font-size: 0.7rem;
-                            }
-                            @include responsive(tablet) {
-                                border-radius: 0.3rem;
-                                padding: 0.5rem 0.4rem;
-                                font-size: 0.5rem;
-                            }
-                            @include responsive(mobile-l) {
-                                border-radius: 0.2rem;
-                                padding: 0.3rem 0.2rem;
-                                font-size: 0.35rem;
-                            }
-                        }
-                        @include responsive(desktop-l) {
-                            font-size: 0.9rem;
-                            line-height: 1.1rem;
-                        }
-                        @include responsive(desktop) {
-                            font-size: 0.8rem;
-                        }
-                        @include responsive(tablet) {
-                            font-size: 0.6rem;
-                            line-height: 0.8rem;
-                        }
-                        @include responsive(mobile-l) {
-                            font-size: 0.4rem;
-                            line-height: 0.6rem;
-                        }
-                    }
-                    @include responsive(desktop) {
-                        gap: 1rem;
-                    }
-                    @include responsive(tablet) {
-                        gap: 0.7rem;
-                    }
-                    @include responsive(mobile-l) {
-                        padding-top: 0.4rem;
-                        gap: 0.35rem;
+                        color: #d9d9d9;
+                        gap: 0.5rem;
                     }
                 }
-            }
-            @include responsive(tablet) {
-                padding: 1rem;
-                animation: twingkling 10s infinite;
-                @keyframes twingkling {
-                    0% {
-                        box-shadow: 1px 1px 100px 7px #242424;
-                    }
-                    50% {
-                        box-shadow: 1px 1px 100px 13px #242424;
-                    }
-                    100% {
-                        box-shadow: 1px 1px 100px 7px #242424;
-                    }
-                }
-            }
-            @include responsive(desktop-l) {
-                padding: 1.25rem;
-            }
-            @include responsive(desktop) {
-                padding: 1rem;
-                border-radius: 0.8rem;
-            }
-            @include responsive(tablet) {
-                padding: 0.7rem;
-                border-radius: 0.7rem;
-            }
-            @include responsive(mobile-l) {
-                padding: 0.25rem;
-                border-radius: 0.4rem;
             }
         }
     }

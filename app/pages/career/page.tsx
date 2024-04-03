@@ -22,9 +22,11 @@ const Career = () => {
     }, []);
 
     /** Click plus or minus button */
-    const onClickFold = (e: React.MouseEvent<HTMLButtonElement>) => {
-        const { name } = e.currentTarget;
-        setIsFold(prev => prev.map(fold => (fold.id === name ? { ...fold, state: !fold.state } : fold)));
+    const onClickFold = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.preventDefault();
+        console.log(e.currentTarget);
+        const { id } = e.currentTarget;
+        setIsFold(prev => prev.map(fold => (fold.id === id ? { ...fold, state: !fold.state } : fold)));
     };
 
     return (
@@ -32,45 +34,83 @@ const Career = () => {
             <Category category="Career" title={t("title")} />
             <div className="career-wrapper">
                 {careers.map((career, idx) => (
-                    <div key={career.id} className="career-detail-area">
+                    <div
+                        id={career.id}
+                        key={career.id}
+                        className={cx("career-detail", {
+                            fold: isFold[idx]?.id === career.id ? isFold[idx]?.state : true,
+                        })}
+                        onClick={onClickFold}>
                         <div
-                            className={cx("career-fold-detail", {
+                            className={cx("career-title-area", {
                                 fold: isFold[idx]?.id === career.id ? isFold[idx]?.state : true,
                             })}>
-                            <div className="summary">
-                                <p className="job">{career.job}</p>
-                                <div className="period-area">
-                                    <p className="period">{career.period}</p>
-                                    <button name={career.id} onClick={onClickFold}>
-                                        {isFold[idx]?.id === career.id && isFold[idx]?.state ? <FaPlus /> : <FaMinus />}
-                                    </button>
+                            <p>{career.job}</p>
+                            <p
+                                className={cx("period", {
+                                    fold: isFold[idx]?.id === career.id ? isFold[idx]?.state : true,
+                                })}>
+                                {career.period}
+                            </p>
+                        </div>
+                        <div className="career-info-area">
+                            <div className="company-area">
+                                <div className="company-detail">
+                                    <FaLocationDot />
+                                    <p>{career.location}</p>
+                                </div>
+                                <div className="company-detail">
+                                    <FaLink />
+                                    <a href={career.link}>{career.link}</a>
                                 </div>
                             </div>
-                        </div>
-                        <div
-                            className={cx("career-detail", {
-                                fold: isFold[idx]?.id === career.id ? isFold[idx]?.state : true,
-                            })}>
-                            <div className="detail">
-                                <div className="company-area">
-                                    <div className="company-detail">
-                                        <FaLocationDot />
-                                        <p>{career.location}</p>
-                                    </div>
-                                    <div className="company-detail">
-                                        <FaLink />
-                                        <a href={career.link}>{career.link}</a>
-                                    </div>
-                                </div>
-                                <div className="company-area">
-                                    <div className="job-description">{career.jobDesc}</div>
-                                </div>
-                                <div className="company-area">
-                                    <Tag tags={career.tags} />
-                                </div>
+                            <div className="company-area">
+                                <div className="job-description">{career.jobDesc}</div>
+                            </div>
+                            <div className="company-area">
+                                <Tag tags={career.tags} />
                             </div>
                         </div>
                     </div>
+                    // <div key={career.id} className="career-detail-area">
+                    //     <div
+                    //         className={cx("career-fold-detail", {
+                    //             fold: isFold[idx]?.id === career.id ? isFold[idx]?.state : true,
+                    //         })}>
+                    //         <div className="summary">
+                    //             <p className="job">{career.job}</p>
+                    //             <div className="period-area">
+                    //                 <p className="period">{career.period}</p>
+                    //                 <button name={career.id} onClick={onClickFold}>
+                    //                     {isFold[idx]?.id === career.id && isFold[idx]?.state ? <FaPlus /> : <FaMinus />}
+                    //                 </button>
+                    //             </div>
+                    //         </div>
+                    //     </div>
+                    //     <div
+                    //         className={cx("career-detail", {
+                    //             fold: isFold[idx]?.id === career.id ? isFold[idx]?.state : true,
+                    //         })}>
+                    // <div className="detail">
+                    //     <div className="company-area">
+                    //         <div className="company-detail">
+                    //             <FaLocationDot />
+                    //             <p>{career.location}</p>
+                    //         </div>
+                    //         <div className="company-detail">
+                    //             <FaLink />
+                    //             <a href={career.link}>{career.link}</a>
+                    //         </div>
+                    //     </div>
+                    //     <div className="company-area">
+                    //         <div className="job-description">{career.jobDesc}</div>
+                    //     </div>
+                    //     <div className="company-area">
+                    //         <Tag tags={career.tags} />
+                    //     </div>
+                    // </div>
+                    //     </div>
+                    // </div>
                 ))}
             </div>
         </section>

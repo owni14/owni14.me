@@ -135,7 +135,7 @@
             .greet {
                 font-size: 1.8rem;
                 border-right: 1px solid $white;
-                animation: greetTyping 3.5s steps(30) 1 forwards;
+                animation: greetTyping 2s steps(30) 1 forwards;
                 max-width: 8.5rem;
                 &.isEn {
                     animation: enGreetTyping 1s steps(8) 1 forwards;
@@ -159,7 +159,7 @@
             }
             .introduce {
                 visibility: hidden;
-                animation: introduceTyping 5s 1.5s steps(44) 1 forwards;
+                animation: introduceTyping 3s 1s steps(44) 1 forwards;
                 border-right: 1px solid $white;
                 max-width: 21rem;
                 &.isEn {
@@ -175,7 +175,7 @@
             .desc {
                 visibility: hidden;
                 border-right: 1px solid $white;
-                animation: descTyping 5s 4.5s steps(50) 1 forwards;
+                animation: descTyping 2.5s 3s steps(50) 1 forwards;
                 max-width: 38rem;
                 &.isEn {
                     animation: enDescTyping 6s 3.8s steps(45) 1 forwards;
