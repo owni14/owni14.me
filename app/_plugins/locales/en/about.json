@@ -1,5 +1,7 @@
 {
     "greet": "Hello!",
     "introduce": "I'm a front-end developer.",
-    "desc": "I'm developing it based on positive thinking and responsibility."
+    "desc": "I'm developing it based on positive thinking and responsibility.",
+    "tabletDescTop": "I'm developing it",
+    "tabletDescBottom": "based on positive thinking and responsibility."
 }

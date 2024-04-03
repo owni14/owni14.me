@@ -1,6 +1,7 @@
 /* responsive variables */
 $breakpoint-mobile: 320px;
-$breakpoint-mobile-l: 658px;
+$breakpoint-mobile-m: 414px;
+$breakpoint-mobile-l: 568px;
 $breakpoint-tablet: 768px;
 $breakpoint-tablet-l: 1024px;
 $breakpoint-laptop: 1366px;
@@ -48,6 +49,11 @@ $link: #e9e9e9;
 @mixin responsive($point) {
     @if $point == mobile {
         @media (max-width: $breakpoint-mobile) {
+            @content;
+        }
+    }
+    @if $point == mobile-m {
+        @media (max-width: $breakpoint-mobile-m) {
             @content;
         }
     }

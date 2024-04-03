@@ -19,9 +19,17 @@
         @include flex("row", "flex-end", "center");
         gap: 3rem;
 
+        @include responsive(tablet) {
+            gap: 2rem;
+        }
+
         .nav-link {
             @include flex("row", "space-between", "center");
             gap: 2rem;
+
+            @include responsive(tablet) {
+                gap: 1.2rem;
+            }
 
             li {
                 list-style: none;
@@ -82,7 +90,7 @@
 /* Footer */
 #footer {
     @include flex("row", "space-between", "center");
-    font-size: 2.5rem;
+    font-size: 2.3rem;
 
     .link-area {
         @include flex("row", "flex-end", "center");

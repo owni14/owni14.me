@@ -5,6 +5,11 @@
     gap: 10rem;
     flex-wrap: wrap;
 
+    @include responsive(laptop) {
+        @include flex("column", "center", "center");
+        gap: 13rem;
+    }
+
     .image-wrapper {
         img {
             width: 35rem;
@@ -22,6 +27,21 @@
                     filter: drop-shadow(0 0 80px $white);
                 }
             }
+
+            @include responsive(laptop) {
+                animation: twinkling 7s infinite;
+                @keyframes twinkling {
+                    0% {
+                        filter: drop-shadow(0 0 50px $white);
+                    }
+                    50% {
+                        filter: drop-shadow(0 0 80px $white);
+                    }
+                    100% {
+                        filter: drop-shadow(0 0 50px $white);
+                    }
+                }
+            }
         }
     }
 
@@ -31,6 +51,9 @@
 
         .text-area {
             @include flex("column", "center", "flex-start");
+            @include responsive(tablet) {
+                flex-wrap: wrap;
+            }
             p {
                 display: inline;
                 color: $white;
@@ -47,7 +70,7 @@
                 font-size: 4rem;
                 border-right: 1px solid $white;
                 animation: greetTyping 2s steps(30) 1 forwards;
-                max-width: 18rem;
+                max-width: 18.5rem;
             }
             .introduce {
                 visibility: hidden;
@@ -60,6 +83,30 @@
                 border-right: 1px solid $white;
                 animation: descTyping 3s 3s steps(50) 1 forwards;
                 max-width: 75rem;
+                @include responsive(tablet) {
+                    display: none;
+                }
+            }
+            .tabletDesc {
+                display: none;
+                border-right: 1px solid $white;
+                gap: 0.4em;
+
+                @include responsive(tablet) {
+                    @include flex("column", "flex-start", "flex-start");
+                    visibility: hidden;
+                }
+                p {
+                    margin-bottom: 0;
+                }
+                .tabletTopDesc {
+                    animation: tabletDescTopTyping 3s 3.5s steps(50) 1 forwards;
+                    max-width: 50rem;
+                }
+                .tabletBottomDesc {
+                    animation: tabletDescBottomTyping 3s 6.6s steps(50) 1 forwards;
+                    max-width: 23rem;
+                }
             }
 
             @keyframes greetTyping {
@@ -77,6 +124,9 @@
                     visibility: visible;
                     width: 0%;
                 }
+                99% {
+                    border-right: 1px solid $white;
+                }
                 100% {
                     visibility: visible;
                     width: 100%;
@@ -89,9 +139,35 @@
                     visibility: visible;
                     width: 0%;
                 }
+
                 100% {
                     width: 100%;
                     visibility: visible;
+                }
+            }
+
+            @keyframes tabletDescTopTyping {
+                0% {
+                    visibility: visible;
+                    width: 0%;
+                }
+                99% {
+                    border-right: 1px solid $white;
+                }
+                100% {
+                    visibility: visible;
+                    border-right: none;
+                    width: 100%;
+                }
+            }
+            @keyframes tabletDescBottomTyping {
+                0% {
+                    visibility: visible;
+                    width: 0%;
+                }
+                100% {
+                    visibility: visible;
+                    width: 100%;
                 }
             }
         }

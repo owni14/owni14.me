@@ -71,45 +71,6 @@ const Career = () => {
                             </div>
                         </div>
                     </div>
-                    // <div key={career.id} className="career-detail-area">
-                    //     <div
-                    //         className={cx("career-fold-detail", {
-                    //             fold: isFold[idx]?.id === career.id ? isFold[idx]?.state : true,
-                    //         })}>
-                    //         <div className="summary">
-                    //             <p className="job">{career.job}</p>
-                    //             <div className="period-area">
-                    //                 <p className="period">{career.period}</p>
-                    //                 <button name={career.id} onClick={onClickFold}>
-                    //                     {isFold[idx]?.id === career.id && isFold[idx]?.state ? <FaPlus /> : <FaMinus />}
-                    //                 </button>
-                    //             </div>
-                    //         </div>
-                    //     </div>
-                    //     <div
-                    //         className={cx("career-detail", {
-                    //             fold: isFold[idx]?.id === career.id ? isFold[idx]?.state : true,
-                    //         })}>
-                    // <div className="detail">
-                    //     <div className="company-area">
-                    //         <div className="company-detail">
-                    //             <FaLocationDot />
-                    //             <p>{career.location}</p>
-                    //         </div>
-                    //         <div className="company-detail">
-                    //             <FaLink />
-                    //             <a href={career.link}>{career.link}</a>
-                    //         </div>
-                    //     </div>
-                    //     <div className="company-area">
-                    //         <div className="job-description">{career.jobDesc}</div>
-                    //     </div>
-                    //     <div className="company-area">
-                    //         <Tag tags={career.tags} />
-                    //     </div>
-                    // </div>
-                    //     </div>
-                    // </div>
                 ))}
             </div>
         </section>

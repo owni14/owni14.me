@@ -4,6 +4,10 @@
     @include flex("column", "center", "center");
     z-index: 10;
 
+    @include responsive(laptop) {
+        width: 100%;
+    }
+
     .category-card {
         font-family: "Pretendard-Bold";
         border: 1px solid transparent;

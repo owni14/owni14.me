@@ -25,6 +25,10 @@ const About = () => {
                     <p className={cx("greet", { isEn })}>{t("greet")}</p>
                     <p className={cx("introduce", { isEn })}>{t("introduce")}</p>
                     <p className={cx("desc", { isEn })}>{t("desc")}</p>
+                    <div className="tabletDesc">
+                        <p className={cx("tabletTopDesc", { isEn })}>{t("tabletDescTop")}</p>
+                        <p className={cx("tabletBottomDesc", { isEn })}>{t("tabletDescBottom")}</p>
+                    </div>
                 </div>
             </div>
         </section>

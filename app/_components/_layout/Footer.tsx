@@ -8,7 +8,7 @@ const Footer = () => {
 
     return (
         <div id="footer">
-            <p>{`© ${currentYear}. Minwoo Kim. All rights reserved.`}</p>
+            <p>{`© ${currentYear}. owni14. All rights reserved.`}</p>
             <div className="link-area">
                 <Link href="https://github.com/owni14">
                     <FaGithub />

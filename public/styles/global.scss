@@ -9,6 +9,33 @@
 
 html {
     font-size: calc(14px - 0.1vw);
+    @include responsive(desktop-l) {
+        font-size: calc(14px - 0.2vw);
+    }
+    @include responsive(desktop) {
+        font-size: calc(14px - 0.35vw);
+    }
+    @include responsive(laptop-l) {
+        font-size: calc(14px - 0.4vw);
+    }
+    @include responsive(laptop) {
+        font-size: calc(14px - 0.45vw);
+    }
+    @include responsive(tablet-l) {
+        font-size: calc(14px - 0.6vw);
+    }
+    @include responsive(tablet) {
+        font-size: calc(14px - 0.7vw);
+    }
+    @include responsive(mobile-l) {
+        font-size: calc(14px - 1.5vw);
+    }
+    @include responsive(mobile-m) {
+        font-size: calc(14px - 2.4vw);
+    }
+    @include responsive(mobile) {
+        font-size: calc(14px - 2.6vw);
+    }
 }
 
 body {
@@ -26,11 +53,35 @@ body {
     #root {
         width: 100%;
         padding: 0 20rem;
+        @include responsive(tablet-l) {
+            padding: 0 4rem;
+        }
+        @include responsive(tablet) {
+            padding: 0 2rem;
+        }
+        @include responsive(mobile-l) {
+            padding: 0 1.5rem;
+        }
+        @include responsive(mobile-l) {
+            padding: 0 0.5rem;
+        }
     }
     #header,
     #footer {
         width: 100%;
         padding: 3rem 20rem;
+        @include responsive(tablet-l) {
+            padding: 2.5rem 4rem;
+        }
+        @include responsive(tablet) {
+            padding: 2.5rem 2rem;
+        }
+        @include responsive(mobile-l) {
+            padding: 2.5rem 1.2rem;
+        }
+        @include responsive(mobile-m) {
+            padding: 2rem 0.5rem;
+        }
     }
 
     #about,

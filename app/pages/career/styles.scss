@@ -7,6 +7,13 @@
         gap: 2rem;
         margin: 0 16rem;
 
+        @include responsive(laptop) {
+            margin: 0 4rem;
+        }
+        @include responsive(tablet) {
+            margin: 0;
+        }
+
         .career-detail {
             @include flex("column", "center", "center");
             width: 100%;
@@ -29,16 +36,19 @@
                     box-shadow: 1px 1px 100px 10px #242424;
                 }
             }
-            transition: all 0.4s ease-out;
 
             &:hover {
                 cursor: pointer;
                 border: 1px solid #d9d9d9;
-                transition: all 0.4s ease-out;
+                transition: all 0.7s cubic-bezier(0.4, 0, 1, 1);
             }
 
             &.fold {
-                max-height: 7.2rem;
+                max-height: 8rem;
+                transition: all 0.4s cubic-bezier(0.1, 0.11, 0.36, 1);
+                @include responsive(mobile-l) {
+                    max-height: 6.8rem;
+                }
             }
 
             .career-title-area {
@@ -48,10 +58,15 @@
                 border: 1px solid transparent;
                 background-color: #242424;
                 border-radius: 1.5rem;
-                padding: 2rem;
-                max-height: 10rem;
+                padding: 2.5rem;
+                max-height: 8rem;
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
+
+                @include responsive(mobile-l) {
+                    padding: 1.5rem;
+                    max-height: 6.8rem;
+                }
 
                 &.fold {
                     border-bottom-left-radius: 1.5rem;
@@ -81,7 +96,10 @@
                 gap: 2.5rem;
                 width: 100%;
                 background-color: #242424;
-                padding: 0 2rem 2rem;
+                padding: 0 2.5rem 2.5rem;
+                @include responsive(mobile-l) {
+                    padding: 0 1.5rem 1.5rem;
+                }
                 border-radius: 1.5rem;
                 border-top-left-radius: 0;
                 border-top-right-radius: 0;
@@ -94,12 +112,19 @@
 
                     &:first-child {
                         border-top: 1px solid $white;
-                        padding: 2rem 0 0;
+                        padding: 2.5rem 0 0;
+
+                        @include responsive(mobile-l) {
+                            padding: 1.5rem 0 0;
+                        }
                     }
                     .company-detail {
                         @include flex("row", "flex-start", "center");
                         color: #d9d9d9;
                         gap: 1rem;
+                    }
+                    .job-description {
+                        line-height: 2.5rem;
                     }
                 }
             }
