@@ -5,85 +5,27 @@
 
     .icon-wrapper {
         @include flex("row", "center", "center");
-        padding: 0 8rem;
+        padding: 0 4rem;
         gap: 2rem;
         flex-wrap: wrap;
-        @include responsive(desktop-l) {
-            padding: 0 3.5rem;
-        }
-        @include responsive(desktop) {
-            padding: 0 2rem;
-        }
-        @include responsive(tablet) {
-            padding: 0 1rem;
-            gap: 1rem;
-        }
 
         .icon-area {
             @include flex("column", "center", "center");
-            gap: 0.5rem;
+            gap: 1rem;
             transition: all 0.4s ease-in-out;
 
             &:hover {
-                transform: translateY(-0.7rem);
+                transform: translateY(-1.5rem);
                 transition: all 0.4s ease-in-out;
             }
 
             p {
-                font-size: 1.2rem;
-                @include responsive(desktop-l) {
-                    font-size: 0.9rem;
-                }
-                @include responsive(desktop) {
-                    font-size: 0.7rem;
-                }
-                @include responsive(tablet) {
-                    font-size: 0.5rem;
-                }
+                font-size: 2rem;
             }
 
             svg {
-                width: 6rem;
-                height: 6rem;
-
-                @include responsive(desktop-l) {
-                    width: 5rem;
-                    height: 5rem;
-                }
-                @include responsive(desktop) {
-                    width: 3.8rem;
-                    height: 3.8rem;
-                }
-                @include responsive(tablet) {
-                    width: 2.8rem;
-                    height: 2.8rem;
-                }
-
-                // 추후 색상 적용 예정(fill로는 한계가 있어 보임)
-                // &.html {
-                //     fill: #e5532f;
-                // }
-                // &.css,
-                // &.typescript,
-                // &.recoil {
-                //     fill: #037cfd;
-                // }
-                // &.javascript {
-                //     fill: yellow;
-                // }
-                // &.react,
-                // &.react-native {
-                //     fill: #0b7eaa;
-                // }
-                // &.tailwind {
-                //     fill: #40baff;
-                // }
-                // &.sass {
-                //     fill: #ce6b9d;
-                // }
-                // &.git {
-                //     fill: #de4b36;
-                // }
+                width: 9rem;
+                height: 9rem;
             }
         }
     }

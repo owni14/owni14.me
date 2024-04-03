@@ -5,8 +5,7 @@
     .career-wrapper {
         @include flex("column", "center", "center");
         gap: 2rem;
-        width: 100%;
-        margin: 0 10%;
+        margin: 0 16rem;
 
         .career-detail {
             @include flex("column", "center", "center");
@@ -17,7 +16,7 @@
             flex-flow: wrap;
             border: 1px solid transparent;
             background-color: #242424;
-            border-radius: 1rem;
+            border-radius: 1.5rem;
             animation: twingkling 10s infinite;
             @keyframes twingkling {
                 0% {
@@ -30,18 +29,16 @@
                     box-shadow: 1px 1px 100px 10px #242424;
                 }
             }
+            transition: all 0.4s ease-out;
 
-            transition: border 0.4s ease-in-out;
             &:hover {
                 cursor: pointer;
                 border: 1px solid #d9d9d9;
-                transition: border 0.4s ease-in-out;
-                transition: max-height 0.4s ease-in-out;
+                transition: all 0.4s ease-out;
             }
 
             &.fold {
-                max-height: 4.78rem;
-                transition: max-height 0.4s ease-in-out;
+                max-height: 7.2rem;
             }
 
             .career-title-area {
@@ -50,25 +47,25 @@
                 height: inherit;
                 border: 1px solid transparent;
                 background-color: #242424;
-                border-radius: 1rem;
-                padding: 1.5rem;
+                border-radius: 1.5rem;
+                padding: 2rem;
                 max-height: 10rem;
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
 
                 &.fold {
-                    border-bottom-left-radius: 1rem;
-                    border-bottom-right-radius: 1rem;
+                    border-bottom-left-radius: 1.5rem;
+                    border-bottom-right-radius: 1.5rem;
                 }
 
                 p {
-                    font-size: 1.3rem;
+                    font-size: 2.2rem;
                     font-family: "Pretendard-Medium";
                     &:last-child {
                         &::after {
                             content: "-";
+                            font-size: 3rem;
                             margin-left: 1.5rem;
-                            font-size: 1.7rem;
                         }
                         &.fold {
                             &::after {
@@ -81,28 +78,28 @@
 
             .career-info-area {
                 @include flex("column", "center", "center");
-                gap: 1.5rem;
+                gap: 2.5rem;
                 width: 100%;
                 background-color: #242424;
-                padding: 0 1.5rem 1.5rem;
-                border-radius: 1rem;
+                padding: 0 2rem 2rem;
+                border-radius: 1.5rem;
                 border-top-left-radius: 0;
                 border-top-right-radius: 0;
 
                 .company-area {
                     @include flex("row", "flex-start", "center");
                     width: inherit;
-                    gap: 2rem;
-                    font-size: 1.1rem;
+                    gap: 5rem;
+                    font-size: 2rem;
 
                     &:first-child {
                         border-top: 1px solid $white;
-                        padding: 1.5rem 0 0;
+                        padding: 2rem 0 0;
                     }
                     .company-detail {
                         @include flex("row", "flex-start", "center");
                         color: #d9d9d9;
-                        gap: 0.5rem;
+                        gap: 1rem;
                     }
                 }
             }

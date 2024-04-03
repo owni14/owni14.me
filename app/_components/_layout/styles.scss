@@ -11,50 +11,21 @@
 
     .title {
         font-family: "Pretendard-Bold";
-        font-size: 1.5rem;
+        font-size: 3rem;
         width: 10%;
-
-        @include responsive(desktop-l) {
-            font-size: 1rem;
-        }
-        @include responsive(desktop) {
-            font-size: 0.95rem;
-        }
-        @include responsive(tablet) {
-            font-size: 0.8rem;
-        }
-        @include responsive(mobile) {
-            font-size: 0.6rem;
-        }
     }
 
     .right-area {
         @include flex("row", "flex-end", "center");
-        gap: 2rem;
+        gap: 3rem;
 
-        @include responsive(tablet) {
-            gap: 1rem;
-        }
-        @include responsive(mobile) {
-            gap: 0.8rem;
-        }
         .nav-link {
             @include flex("row", "space-between", "center");
-            gap: 1.5rem;
-
-            @include responsive(desktop) {
-                gap: 0.8rem;
-            }
-            @include responsive(tablet) {
-                gap: 0.7rem;
-            }
-            @include responsive(mobile) {
-                gap: 0.4rem;
-            }
+            gap: 2rem;
 
             li {
                 list-style: none;
-                font-size: 1.2rem;
+                font-size: 2.5rem;
                 color: #d9d9d9;
                 transition: all 0.4s ease-in-out;
 
@@ -68,72 +39,32 @@
                     transition: all 0.4s ease-in-out;
                     font-family: "Pretendard-Bold";
                 }
-                @include responsive(desktop) {
-                    font-size: 0.85rem;
-                }
-                @include responsive(tablet) {
-                    font-size: 0.65rem;
-                }
-                @include responsive(mobile) {
-                    font-size: 0.55rem;
-                }
             }
         }
         .language-wrppaer {
-            width: 4rem;
-
-            @include responsive(desktop) {
-                width: 2.5rem;
-            }
-            @include responsive(tablet) {
-                width: 1.8rem;
-            }
-            @include responsive(mobile) {
-                width: 1.5rem;
-            }
+            width: 6.5rem;
 
             .border-area {
                 @include flex("row", "space-evenly", "center");
                 border: 1px solid $white;
-                border-radius: 0.5rem;
-                height: 1.7rem;
-
-                @include responsive(desktop) {
-                    height: 1.2rem;
-                    border-radius: 0.3rem;
-                }
-                @include responsive(tablet) {
-                    height: 0.8rem;
-                    border-radius: 0.2rem;
-                }
-                @include responsive(mobile) {
-                    height: 0.7rem;
-                    border-radius: 0.2rem;
-                }
+                border-radius: 0.7rem;
+                height: 2.8rem;
+                font-size: 2rem;
 
                 .toggle {
                     float: left;
                     width: 50%;
-                    border-radius: 0.5rem;
+                    border-radius: 0.7rem;
                     text-align: center;
                     height: inherit;
-                    line-height: 1.5rem;
+                    line-height: 2.7rem;
                     transition: all 0.4s ease-in-out;
 
                     &.active {
                         background-color: $white;
                         color: $black;
-                        line-height: 1.5rem;
+                        line-height: 2.7rem;
                         text-align: center;
-                        @include responsive(desktop) {
-                            line-height: 1.2rem;
-                        }
-                        @include responsive(tablet) {
-                            line-height: 0.7rem;
-                        }
-                        @include responsive(mobile) {
-                            line-height: 0.6rem;
-                        }
                     }
 
                     &:hover {
@@ -141,20 +72,6 @@
                         background-color: rgba(217, 217, 217, 0.7);
                         color: $black;
                         transition: all 0.4s ease-in-out;
-                    }
-                    @include responsive(desktop) {
-                        font-size: 0.8rem;
-                        line-height: 1.2rem;
-                        border-radius: 0.3rem;
-                    }
-                    @include responsive(tablet) {
-                        font-size: 0.6rem;
-                        line-height: 0.7rem;
-                        border-radius: 0.2rem;
-                    }
-                    @include responsive(mobile) {
-                        font-size: 0.45rem;
-                        line-height: 0.6rem;
                     }
                 }
             }
@@ -165,52 +82,20 @@
 /* Footer */
 #footer {
     @include flex("row", "space-between", "center");
-    font-size: 1.1rem;
+    font-size: 2.5rem;
 
     .link-area {
         @include flex("row", "flex-end", "center");
-        gap: 1.3rem;
+        gap: 2rem;
         svg {
             fill: $white;
-            width: 1.8rem;
-            height: 1.8rem;
+            width: 4rem;
+            height: 4rem;
             &:hover {
                 cursor: pointer;
                 fill: rgba(217, 217, 217, 0.7);
                 transition: all 0.4s ease-in-out;
             }
-            @include responsive(desktop) {
-                width: 1.4rem;
-                height: 1.4rem;
-            }
-            @include responsive(tablet) {
-                width: 1rem;
-                height: 1rem;
-            }
-            @include responsive(mobile-l) {
-                width: 0.6rem;
-                height: 0.6rem;
-            }
         }
-        @include responsive(desktop) {
-            gap: 1rem;
-        }
-        @include responsive(tablet) {
-            gap: 0.7rem;
-        }
-        @include responsive(mobile-l) {
-            gap: 0.3rem;
-        }
-    }
-    @include responsive(desktop) {
-        font-size: 0.85rem;
-    }
-    @include responsive(tablet) {
-        font-size: 0.6rem;
-    }
-    @include responsive(mobile-l) {
-        font-size: 0.4rem;
-    }
-    @include responsive(mobile) {
     }
 }

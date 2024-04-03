@@ -7,45 +7,16 @@
     .category-card {
         font-family: "Pretendard-Bold";
         border: 1px solid transparent;
-        padding: 0.7rem 1.5rem;
-        border-radius: 0.4rem;
+        padding: 1.2rem 1.8rem;
+        border-radius: 1.2rem;
         background-image: linear-gradient(180deg, #242424, #191919);
-        font-size: 1.1rem;
+        font-size: 2.2rem;
         margin-bottom: 1rem;
-
-        @include responsive(desktop-l) {
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        @include responsive(desktop) {
-            padding: 0.4rem 0.9rem;
-            font-size: 0.85rem;
-        }
-        @include responsive(tablet) {
-            border-radius: 0.3rem;
-            padding: 0.35rem 0.7rem;
-            font-size: 0.65rem;
-            margin-bottom: 0.4rem;
-        }
     }
 
     .title {
         font-family: "Pretendard-Medium";
-        font-size: 1.3rem;
+        font-size: 2.5rem;
         margin-bottom: 2rem;
-
-        @include responsive(desktop-l) {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        @include responsive(desktop) {
-            font-size: 0.85rem;
-            margin-bottom: 1.3rem;
-        }
-        @include responsive(tablet) {
-            font-size: 0.65rem;
-            margin-bottom: 1rem;
-        }
     }
 }

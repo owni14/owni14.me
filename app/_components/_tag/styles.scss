@@ -11,26 +11,7 @@
     .tag-detail {
         border: 1px solid transparent;
         background-color: #363636;
-        padding: 0.65rem 0.4rem;
-        border-radius: 0.4rem;
-
-        @include responsive(desktop-l) {
-            padding: 0.5rem 0.3rem;
-        }
-        @include responsive(desktop) {
-            border-radius: 0.3rem;
-            padding: 0.4rem 0.3rem;
-        }
-        @include responsive(tablet) {
-            border-radius: 0.25rem;
-            padding: 0.3rem 0.2rem;
-        }
-        @include responsive(mobile-l) {
-            border-radius: 0.15rem;
-            padding: 0.3rem 0.2rem;
-        }
-    }
-    @include responsive(tablet) {
-        gap: 0.1rem;
+        padding: 1.4rem 1.2rem;
+        border-radius: 0.8rem;
     }
 }

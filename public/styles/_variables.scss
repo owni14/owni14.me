@@ -1,9 +1,12 @@
 /* responsive variables */
 $breakpoint-mobile: 320px;
-$breakpoint-mobile-l: 425px;
+$breakpoint-mobile-l: 658px;
 $breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
-$breakpoint-desktop-l: 1440px;
+$breakpoint-tablet-l: 1024px;
+$breakpoint-laptop: 1366px;
+$breakpoint-laptop-l: 1440px;
+$breakpoint-desktop: 1680px;
+$breakpoint-desktop-l: 1920px;
 
 /* font variables */
 $font-bold: 600;
@@ -55,6 +58,21 @@ $link: #e9e9e9;
     }
     @if $point == tablet {
         @media (max-width: $breakpoint-tablet) {
+            @content;
+        }
+    }
+    @if $point == tablet-l {
+        @media (max-width: $breakpoint-tablet-l) {
+            @content;
+        }
+    }
+    @if $point == laptop {
+        @media (max-width: $breakpoint-laptop) {
+            @content;
+        }
+    }
+    @if $point == laptop-l {
+        @media (max-width: $breakpoint-laptop-l) {
             @content;
         }
     }

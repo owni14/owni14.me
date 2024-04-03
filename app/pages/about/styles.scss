@@ -2,86 +2,24 @@
 
 #about {
     @include flex("row", "center", "center");
-    gap: 1.5rem;
+    gap: 10rem;
     flex-wrap: wrap;
-    &.isEn {
-        @include flex("column", "center", "center");
-        gap: 5rem;
-    }
-
-    @include responsive(desktop-l) {
-        @include flex("column", "center", "center");
-        gap: 4rem;
-    }
-    @include responsive(tablet) {
-        gap: 2.5rem;
-    }
 
     .image-wrapper {
         img {
-            width: 14.1rem;
-            height: 14.1rem;
+            width: 35rem;
+            height: 35rem;
             border-radius: 50%;
             animation: twinkling 7s infinite;
             @keyframes twinkling {
                 0% {
-                    filter: drop-shadow(0 0 40px $white);
-                }
-                50% {
                     filter: drop-shadow(0 0 80px $white);
                 }
+                50% {
+                    filter: drop-shadow(0 0 140px $white);
+                }
                 100% {
-                    filter: drop-shadow(0 0 40px $white);
-                }
-            }
-            &.isEn {
-                width: 15rem;
-                height: 15rem;
-                @include responsive(desktop-l) {
-                    width: 10.5rem;
-                    height: 10.5rem;
-                }
-                @include responsive(desktop) {
-                    width: 8.5rem;
-                    height: 8.5rem;
-                }
-                @include responsive(tablet) {
-                    width: 7rem;
-                    height: 7rem;
-                }
-                @include responsive(mobile-l) {
-                    width: 5.5rem;
-                    height: 5.5rem;
-                }
-            }
-            @include responsive(desktop-l) {
-                width: 14rem;
-                height: 14rem;
-            }
-            @include responsive(desktop) {
-                width: 11.5rem;
-                height: 11.5rem;
-            }
-            @include responsive(tablet) {
-                width: 8.5rem;
-                height: 8.5rem;
-            }
-            @include responsive(mobile) {
-                width: 7rem;
-                height: 7rem;
-            }
-            @include responsive(tablet) {
-                animation: twinkling 7s infinite;
-                @keyframes twinkling {
-                    0% {
-                        filter: drop-shadow(0 0 30px $white);
-                    }
-                    50% {
-                        filter: drop-shadow(0 0 50px $white);
-                    }
-                    100% {
-                        filter: drop-shadow(0 0 30px $white);
-                    }
+                    filter: drop-shadow(0 0 80px $white);
                 }
             }
         }
@@ -91,101 +29,37 @@
         @include flex("column", "center", "flex-start");
         gap: 0.7rem;
 
-        &.isEn {
-            align-items: center;
-        }
-
-        @include responsive(tablet) {
-            align-items: center;
-            gap: 0.5rem;
-        }
-
         .text-area {
             @include flex("column", "center", "flex-start");
             p {
                 display: inline;
                 color: $white;
-                font-size: 1.4rem;
+                font-size: 3rem;
                 white-space: nowrap;
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.8rem;
                 width: auto;
                 overflow: hidden;
-                @include responsive(tablet) {
-                    margin-bottom: 0.3rem;
-                }
                 &:first-child {
-                    margin-bottom: 1rem;
-                    @include responsive(tablet) {
-                        margin-bottom: 0.5rem;
-                    }
-                }
-                @include responsive(desktop-l) {
-                    font-size: 1.2rem;
-                }
-                @include responsive(desktop) {
-                    font-size: 1rem;
-                }
-                @include responsive(tablet) {
-                    font-size: 0.8rem;
-                }
-                @include responsive(mobile-l) {
-                    font-size: 0.74rem;
+                    margin-bottom: 1.5rem;
                 }
             }
             .greet {
-                font-size: 1.8rem;
+                font-size: 4rem;
                 border-right: 1px solid $white;
                 animation: greetTyping 2s steps(30) 1 forwards;
-                max-width: 8.5rem;
-                &.isEn {
-                    animation: enGreetTyping 1s steps(8) 1 forwards;
-                }
-                @include responsive(desktop-l) {
-                    font-size: 1.5rem;
-                    max-width: 7rem;
-                }
-                @include responsive(desktop) {
-                    font-size: 1.3rem;
-                    max-width: 6rem;
-                }
-                @include responsive(tablet) {
-                    font-size: 1rem;
-                    max-width: 4.7rem;
-                }
-                @include responsive(tablet) {
-                    font-size: 0.9rem;
-                    max-width: 4.3rem;
-                }
+                max-width: 18rem;
             }
             .introduce {
                 visibility: hidden;
                 animation: introduceTyping 3s 1s steps(44) 1 forwards;
                 border-right: 1px solid $white;
-                max-width: 21rem;
-                &.isEn {
-                    animation: enIntroduceTyping 2.5s 1.2s steps(24) 1 forwards;
-                }
-                @include responsive(desktop-l) {
-                    max-width: 15.5rem;
-                }
-                @include responsive(desktop) {
-                    max-width: 14.5rem;
-                }
+                max-width: 39rem;
             }
             .desc {
                 visibility: hidden;
                 border-right: 1px solid $white;
-                animation: descTyping 2.5s 3s steps(50) 1 forwards;
-                max-width: 38rem;
-                &.isEn {
-                    animation: enDescTyping 6s 3.8s steps(45) 1 forwards;
-                }
-                @include responsive(desktop-l) {
-                    max-width: 30rem;
-                }
-                @include responsive(desktop) {
-                    max-width: 24.5rem;
-                }
+                animation: descTyping 3s 3s steps(50) 1 forwards;
+                max-width: 75rem;
             }
 
             @keyframes greetTyping {
@@ -218,49 +92,6 @@
                 100% {
                     width: 100%;
                     visibility: visible;
-                }
-            }
-
-            @keyframes enGreetTyping {
-                0% {
-                    border-right: 1px solid $white;
-                    width: 0%;
-                }
-                99% {
-                    border-right: 1px solid $white;
-                }
-                100% {
-                    width: 5rem;
-                }
-            }
-
-            @keyframes enIntroduceTyping {
-                0% {
-                    border-right: 1px solid $white;
-                    visibility: visible;
-                    width: 0%;
-                }
-                99% {
-                    border-right: 1px solid $white;
-                }
-                100% {
-                    visibility: visible;
-                    width: 17rem;
-                }
-            }
-
-            @keyframes enDescTyping {
-                0% {
-                    border-right: 1px solid $white;
-                    visibility: visible;
-                    width: 0%;
-                }
-                99% {
-                    border-right: 1px solid $white;
-                }
-                100% {
-                    visibility: visible;
-                    width: 42rem;
                 }
             }
         }

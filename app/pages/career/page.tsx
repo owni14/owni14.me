@@ -24,7 +24,6 @@ const Career = () => {
     /** Click plus or minus button */
     const onClickFold = (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault();
-        console.log(e.currentTarget);
         const { id } = e.currentTarget;
         setIsFold(prev => prev.map(fold => (fold.id === id ? { ...fold, state: !fold.state } : fold)));
     };
