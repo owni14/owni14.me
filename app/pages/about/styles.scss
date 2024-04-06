@@ -107,7 +107,7 @@
             .desc {
                 visibility: hidden;
                 border-right: 1px solid $white;
-                animation: descTyping 3s 2s steps(50) 1 forwards;
+                animation: descTyping 3s 3s steps(50) 1 forwards;
                 max-width: 75rem;
                 @include responsive(tablet) {
                     display: none;
