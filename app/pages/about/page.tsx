@@ -15,19 +15,19 @@ const About = () => {
     const isEn = lang === LANGUAGE.ENGLISH;
 
     return (
-        <section id="about" className={cx({ isEn })}>
+        <section id="about">
             <div className="image-wrapper">
-                <Image className={cx({ isEn })} src={Me} alt="me.png" />
+                <Image src={Me} alt="me.png" />
             </div>
-            <div className={cx("text-wrapper", { isEn })}>
+            <div className="text-wrapper">
                 <Category category="About" />
                 <div className="text-area">
-                    <p className={cx("greet", { isEn })}>{t("greet")}</p>
-                    <p className={cx("introduce", { isEn })}>{t("introduce")}</p>
-                    <p className={cx("desc", { isEn })}>{t("desc")}</p>
+                    <p className="greet">{t("greet")}</p>
+                    <p className="introduce">{t("introduce")}</p>
+                    <p className="desc">{t("desc")}</p>
                     <div className="tabletDesc">
-                        <p className={cx("tabletTopDesc", { isEn })}>{t("tabletDescTop")}</p>
-                        <p className={cx("tabletBottomDesc", { isEn })}>{t("tabletDescBottom")}</p>
+                        <p className="tabletTopDesc">{t("tabletDescTop")}</p>
+                        <p className="tabletBottomDesc">{t("tabletDescBottom")}</p>
                     </div>
                 </div>
             </div>

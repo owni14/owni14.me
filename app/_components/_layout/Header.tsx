@@ -6,8 +6,7 @@ import i18next from "i18next";
 import { LangContext } from "@app/contexts/Language";
 
 const Header = () => {
-    const [lang, setLang] = useState("ko");
-    const { setLang: setCtxLang } = useContext(LangContext);
+    const { lang, setLang } = useContext(LangContext);
     const [visibleSection, setVisibleSection] = useState<string>(Nav[0].id);
 
     useEffect(() => {
@@ -35,7 +34,7 @@ const Header = () => {
     /** Toggle click */
     const onClickToggle = (lang: string) => {
         i18next.changeLanguage(lang);
-        setCtxLang(lang);
+        document.documentElement.lang = lang;
         setLang(lang);
     };
 

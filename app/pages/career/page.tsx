@@ -46,14 +46,17 @@ const Career = () => {
                             })}>
                             <p>{career.job}</p>
                             <p
-                                className={cx("period", {
+                                className={cx({
                                     fold: isFold[idx]?.id === career.id ? isFold[idx]?.state : true,
                                 })}>
                                 {career.period}
                             </p>
                         </div>
                         <div className="career-info-area">
-                            <div className="company-area">
+                            <div
+                                className={cx("company-area", {
+                                    fold: isFold[idx]?.id === career.id ? isFold[idx]?.state : true,
+                                })}>
                                 <div className="company-detail">
                                     <FaLocationDot />
                                     <p>{career.location}</p>

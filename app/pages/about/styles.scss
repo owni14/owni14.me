@@ -10,6 +10,11 @@
         gap: 13rem;
     }
 
+    &:lang(en) {
+        @include flex("column", "center", "center");
+        gap: 13rem;
+    }
+
     .image-wrapper {
         img {
             width: 35rem;
@@ -65,26 +70,59 @@
                 &:first-child {
                     margin-bottom: 1.5rem;
                 }
+                &:lang(en) {
+                    @include responsive(tablet-l) {
+                        white-space: pre-line;
+                    }
+                }
             }
             .greet {
                 font-size: 4rem;
                 border-right: 1px solid $white;
                 animation: greetTyping 2s steps(30) 1 forwards;
                 max-width: 18.5rem;
+                &:lang(en) {
+                    max-width: 11rem;
+                    @include responsive(tablet-l) {
+                        animation: none;
+                        border-right: none;
+                    }
+                }
             }
             .introduce {
                 visibility: hidden;
                 animation: introduceTyping 3s 1s steps(44) 1 forwards;
                 border-right: 1px solid $white;
                 max-width: 39rem;
+                &:lang(en) {
+                    max-width: 34.5rem;
+                    animation: introduceTyping 1.7s 1s steps(44) 1 forwards;
+                    @include responsive(tablet-l) {
+                        animation: none;
+                        visibility: visible;
+                        border-right: none;
+                    }
+                }
             }
             .desc {
                 visibility: hidden;
                 border-right: 1px solid $white;
-                animation: descTyping 3s 3s steps(50) 1 forwards;
+                animation: descTyping 3s 2s steps(50) 1 forwards;
                 max-width: 75rem;
                 @include responsive(tablet) {
                     display: none;
+                }
+                &:lang(en) {
+                    max-width: 83rem;
+                    animation: descTyping 3s 2.5s steps(50) 1 forwards;
+                    @include responsive(tablet-l) {
+                        animation: none;
+                        visibility: visible;
+                        border-right: none;
+                    }
+                    @include responsive(tablet) {
+                        display: block;
+                    }
                 }
             }
             .tabletDesc {
@@ -96,14 +134,19 @@
                     @include flex("column", "flex-start", "flex-start");
                     visibility: hidden;
                 }
+                &:lang(en) {
+                    display: none;
+                }
                 p {
                     margin-bottom: 0;
                 }
                 .tabletTopDesc {
+                    border-right: 1px solid $white;
                     animation: tabletDescTopTyping 3s 3.5s steps(50) 1 forwards;
                     max-width: 50rem;
                 }
                 .tabletBottomDesc {
+                    border-right: 1px solid $white;
                     animation: tabletDescBottomTyping 3s 6.6s steps(50) 1 forwards;
                     max-width: 23rem;
                 }

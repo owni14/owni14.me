@@ -14,6 +14,12 @@
             margin: 0;
         }
 
+        &:lang(en) {
+            @include responsive(tablet-l) {
+                margin: 0;
+            }
+        }
+
         .career-detail {
             @include flex("column", "center", "center");
             width: 100%;
@@ -76,7 +82,14 @@
                 p {
                     font-size: 2.2rem;
                     font-family: "Pretendard-Medium";
+                    &:lang(en) {
+                        @include responsive(tablet-l) {
+                            white-space: pre;
+                        }
+                    }
                     &:last-child {
+                        display: flex;
+                        align-items: center;
                         &::after {
                             content: "-";
                             font-size: 3rem;
@@ -111,6 +124,9 @@
                     font-size: 2rem;
 
                     &:first-child {
+                        &.fold {
+                            border-top: none;
+                        }
                         border-top: 1px solid $white;
                         padding: 2.5rem 0 0;
 
