@@ -1,6 +1,6 @@
 "use client";
 import Category from "@app/_components/_category";
-import { FaPlus, FaMinus, FaLink } from "react-icons/fa";
+import { FaLink } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Tag from "@app/_components/_tag";
 import cx from "classnames";

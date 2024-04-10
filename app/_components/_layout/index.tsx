@@ -2,9 +2,9 @@
 import Footer from "./Footer";
 import Header from "./Header";
 import "@app/_plugins/i18n";
-import "./styles.scss";
 import { LangProvider } from "@app/contexts/Language";
 import { ILayout } from "./types";
+import "./styles.scss";
 
 const Layout = ({ children }: ILayout) => {
     return (

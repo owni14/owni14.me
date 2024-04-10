@@ -4,7 +4,6 @@ import cx from "classnames";
 import { useContext, useEffect, useState } from "react";
 import i18next from "i18next";
 import { LangContext } from "@app/contexts/Language";
-import { AiOutlineGlobal } from "react-icons/ai";
 import LangSelectBox from "../_selectBox";
 
 const Header = () => {
@@ -17,7 +16,7 @@ const Header = () => {
         const options = {
             root: null,
             rootMargin: "0px",
-            threshold: 0.5,
+            threshold: 0.3,
         };
 
         const observer = new IntersectionObserver(entries => {

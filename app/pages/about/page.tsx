@@ -3,16 +3,11 @@ import Image from "next/image";
 import Me from "@public/images/me.png";
 import Category from "@app/_components/_category";
 import { useTranslation } from "react-i18next";
-import { LANGUAGE, NAMESPACE } from "@app/consts";
-import { useContext } from "react";
-import { LangContext } from "@app/contexts/Language";
-import cx from "classnames";
+import { NAMESPACE } from "@app/consts";
 import "./styles.scss";
 
 const About = () => {
     const { t } = useTranslation(NAMESPACE.ABOUT);
-    const { lang } = useContext(LangContext);
-    const isEn = lang === LANGUAGE.ENGLISH;
 
     return (
         <section id="about">

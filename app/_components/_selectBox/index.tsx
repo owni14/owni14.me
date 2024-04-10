@@ -1,5 +1,5 @@
 import { AiOutlineGlobal } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ISelectBox } from "./types";
 import cx from "classnames";
 import "./styles.scss";
@@ -10,7 +10,7 @@ const LangSelectBox = ({ onClickLang, list, activeLang }: ISelectBox) => {
     return (
         <div id="language-wrapper">
             <label onClick={() => setIsClick(prev => !prev)}>
-                <AiOutlineGlobal />
+                <AiOutlineGlobal className={cx({ isClick })} />
             </label>
             {isClick && (
                 <ul>

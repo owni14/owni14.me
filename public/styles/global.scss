@@ -36,6 +36,7 @@ html {
     @include responsive(mobile) {
         font-size: calc(14px - 2.6vw);
     }
+
     &:lang(en) {
         font-size: calc(14px - 0.21vw);
         @include responsive(desktop-l) {

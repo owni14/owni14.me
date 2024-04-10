@@ -5,7 +5,7 @@ import "@public/styles/global.scss";
 export const metadata: Metadata = {
     title: "Min's Portfolio",
     description: "Min's portfolio collection",
-    keywords: "React, Next.js, portfolio, blog, front-end, front, sass, github",
+    keywords: "React, Next.js, portfolio, blog, front-end, front, sass, github, developer",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
