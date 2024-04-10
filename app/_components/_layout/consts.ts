@@ -1,6 +1,6 @@
-import { INav } from "./types";
+import { ILangList, INav } from "./types";
 
-export const Nav: INav[] = [
+export const navList: INav[] = [
     {
         id: "about",
         title: "About",
@@ -19,4 +19,13 @@ export const Nav: INav[] = [
     },
 ];
 
-export const LANG_TOGGLE = ["ko", "en"];
+export const langList: ILangList[] = [
+    {
+        key: "ko",
+        name: "한국어",
+    },
+    {
+        key: "en",
+        name: "English",
+    },
+];

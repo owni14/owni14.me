@@ -1,13 +1,15 @@
 import Link from "next/link";
-import { LANG_TOGGLE, Nav } from "./consts";
+import { langList, navList } from "./consts";
 import cx from "classnames";
 import { useContext, useEffect, useState } from "react";
 import i18next from "i18next";
 import { LangContext } from "@app/contexts/Language";
+import { AiOutlineGlobal } from "react-icons/ai";
+import LangSelectBox from "../_selectBox";
 
 const Header = () => {
     const { lang, setLang } = useContext(LangContext);
-    const [visibleSection, setVisibleSection] = useState<string>(Nav[0].id);
+    const [visibleSection, setVisibleSection] = useState<string>(navList[0].id);
 
     useEffect(() => {
         const targetSections = document.querySelectorAll("section");
@@ -31,8 +33,8 @@ const Header = () => {
         });
     }, []);
 
-    /** Toggle click */
-    const onClickToggle = (lang: string) => {
+    /** Select box click */
+    const onClickLanguage = (lang: string) => {
         i18next.changeLanguage(lang);
         document.documentElement.lang = lang;
         setLang(lang);
@@ -70,24 +72,13 @@ const Header = () => {
             </Link>
             <div className="right-area">
                 <ul className="nav-link">
-                    {Nav.map(nav => (
+                    {navList.map(nav => (
                         <li key={nav.id} onClick={onClickLink} className={cx({ active: visibleSection === nav.id })}>
                             <a href={`#${nav.id}`}>{nav.title}</a>
                         </li>
                     ))}
                 </ul>
-                <div className="language-wrppaer">
-                    <div className="border-area">
-                        {LANG_TOGGLE?.map(toggle => (
-                            <div
-                                key={toggle}
-                                className={cx("toggle", { active: lang === toggle })}
-                                onClick={() => onClickToggle(toggle)}>
-                                {toggle}
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                <LangSelectBox list={langList} onClickLang={onClickLanguage} activeLang={lang} />
             </div>
         </div>
     );

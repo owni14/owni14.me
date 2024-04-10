@@ -7,3 +7,8 @@ export interface INav {
 export interface ILayout {
     children: React.ReactNode;
 }
+
+export interface ILangList {
+    key: string;
+    name: string;
+}
