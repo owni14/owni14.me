@@ -1,14 +1,29 @@
 import { AiOutlineGlobal } from "react-icons/ai";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ISelectBox } from "./types";
 import cx from "classnames";
 import "./styles.scss";
 
 const LangSelectBox = ({ onClickLang, list, activeLang }: ISelectBox) => {
     const [isClick, setIsClick] = useState<boolean>(false);
+    const selectBoxRef = useRef<HTMLDivElement>(null);
+
+    /** Out side click handler */
+    useEffect(() => {
+        const outsideClickHandler = (e: MouseEvent) => {
+            if (!selectBoxRef.current?.contains(e.target as Node)) {
+                setIsClick(false);
+            }
+        };
+        window.addEventListener("click", outsideClickHandler);
+
+        return () => {
+            window.removeEventListener("click", outsideClickHandler);
+        };
+    }, []);
 
     return (
-        <div id="language-wrapper">
+        <div id="language-wrapper" ref={selectBoxRef}>
             <label onClick={() => setIsClick(prev => !prev)}>
                 <AiOutlineGlobal className={cx({ isClick })} />
             </label>
