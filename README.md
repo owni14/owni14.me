@@ -21,9 +21,6 @@
 
 ```
 portfolio
-├─ .github
-│  ├─ workflows
-│  │  ├─ actions.yml
 ├─ .next
 ├─ app
 │  ├─ _components
