@@ -6,6 +6,6 @@
     },
     "portfolio": {
         "title": "Portfolio",
-        "desc": "It's a portfolio that introduces me, and I've tried to look pretty by applying a style that I haven't used well. Also, I've applied it by supporting multiple languages with i18n so that it can be seen in English."
+        "desc": "This is a portfolio that introduces me and shows several projects and brief career information. In addition, it supports multiple languages ​​using i18n so that it can be viewed in English."
     }
 }

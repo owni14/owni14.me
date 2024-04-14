@@ -12,7 +12,7 @@ const Card = ({ src, alt, title, desc, tags, link, code }: ICard) => {
                 <div className="info">
                     <p className="project-title">{title}</p>
                     <div className="text-area">
-                        <p className="project-desc">{desc}</p>
+                        <p>{desc}</p>
                         <Tag tags={tags} />
                     </div>
                     <div className="link-area">
