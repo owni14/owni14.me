@@ -17,13 +17,9 @@ const About = () => {
             <div className="text-wrapper">
                 <Category category="About" />
                 <div className="text-area">
-                    <p className="greet">{t("greet")}</p>
-                    <p className="introduce">{t("introduce")}</p>
-                    <p className="desc">{t("desc")}</p>
-                    <div className="tabletDesc">
-                        <p className="tabletTopDesc">{t("tabletDescTop")}</p>
-                        <p className="tabletBottomDesc">{t("tabletDescBottom")}</p>
-                    </div>
+                    <p>{t("introduce")}</p>
+                    <p>{t("firstDesc")}</p>
+                    <p>{t("secondDesc")}</p>
                 </div>
             </div>
         </section>

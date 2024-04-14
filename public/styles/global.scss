@@ -36,34 +36,6 @@ html {
     @include responsive(mobile) {
         font-size: calc(14px - 2.6vw);
     }
-
-    &:lang(en) {
-        font-size: calc(14px - 0.21vw);
-        @include responsive(desktop-l) {
-            font-size: calc(14px - 0.22vw);
-        }
-        @include responsive(desktop) {
-            font-size: calc(14px - 0.28vw);
-        }
-        @include responsive(laptop-l) {
-            font-size: calc(14px - 0.35vw);
-        }
-        @include responsive(laptop) {
-            font-size: calc(14px - 0.4vw);
-        }
-        @include responsive(tablet-l) {
-            font-size: calc(14px - 0.579vw);
-        }
-        @include responsive(tablet) {
-            font-size: calc(14px - 0.65vw);
-        }
-        @include responsive(mobile-l) {
-            font-size: calc(14px - 1.3vw);
-        }
-        @include responsive(mobile-m) {
-            font-size: calc(14px - 2.25vw);
-        }
-    }
 }
 
 body {
@@ -93,17 +65,6 @@ body {
         @include responsive(mobile-l) {
             padding: 0 0.5rem;
         }
-        &:lang(en) {
-            @include responsive(laptop) {
-                padding: 0 10rem;
-            }
-            @include responsive(tablet) {
-                padding: 0 2rem;
-            }
-            @include responsive(mobile-l) {
-                padding: 0 1.5rem;
-            }
-        }
     }
     #header,
     #footer {
@@ -120,17 +81,6 @@ body {
         }
         @include responsive(mobile-m) {
             padding: 2rem 0.5rem;
-        }
-        &:lang(en) {
-            @include responsive(laptop) {
-                padding: 2.5rem 10rem;
-            }
-            @include responsive(tablet) {
-                padding: 2.5rem 2rem;
-            }
-            @include responsive(mobile-l) {
-                padding: 2.5rem 1.2rem;
-            }
         }
     }
 

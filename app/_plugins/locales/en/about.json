@@ -1,5 +1,5 @@
 {
-    "greet": "Hello!",
-    "introduce": "I'm a front-end developer.",
-    "desc": "I'm developing it based on positive thinking and responsibility."
+    "introduce": "Hello!\nI'm a front-end developer who likes working out and developing.",
+    "firstDesc": "We value collaboration and communication the most,\nand strive to create a better project.",
+    "secondDesc": "By posting about development on my blog,\nI'm trying to get into the habit of organizing things once more."
 }
