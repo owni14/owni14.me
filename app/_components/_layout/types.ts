@@ -1,3 +1,5 @@
+import { IconType } from "react-icons";
+
 /** Header nav bar type */
 export interface INav {
     id: string;
@@ -11,4 +13,10 @@ export interface ILayout {
 export interface ILangList {
     key: string;
     name: string;
+}
+
+export interface IFooterList {
+    id: string;
+    link: string;
+    icon: IconType;
 }

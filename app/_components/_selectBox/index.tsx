@@ -8,7 +8,7 @@ const LangSelectBox = ({ onClickLang, list, activeLang }: ISelectBox) => {
     const [isClick, setIsClick] = useState<boolean>(false);
     const selectBoxRef = useRef<HTMLDivElement>(null);
 
-    /** Out side click handler */
+    /** Outside click handler */
     useEffect(() => {
         const outsideClickHandler = (e: MouseEvent) => {
             if (!selectBoxRef.current?.contains(e.target as Node)) {

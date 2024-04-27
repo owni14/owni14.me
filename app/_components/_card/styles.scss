@@ -3,6 +3,7 @@
 #card {
     border-radius: 3rem;
     animation: twingkling 10s infinite;
+
     @keyframes twingkling {
         0% {
             box-shadow: 1px 1px 100px 10px #242424;
@@ -40,6 +41,7 @@
             height: 50%;
             padding: 1.5rem;
             gap: 0.3rem;
+
             .project-title {
                 font-family: "Pretendard-Medium";
                 font-size: 2.3rem;
