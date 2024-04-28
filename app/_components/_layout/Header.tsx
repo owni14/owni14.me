@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import i18next from "i18next";
 import { LangContext } from "@app/contexts/Language";
 import LangSelectBox from "../_selectBox";
+import Hamburger from "../_hamburger";
 
 const Header = () => {
     const { lang, setLang } = useContext(LangContext);
@@ -69,6 +70,7 @@ const Header = () => {
             <Link className="title" href="https://www.owni14.me/" as={`/`} onClick={onClickLogo}>
                 MIN
             </Link>
+            <Hamburger />
             <div className="right-area">
                 <ul className="nav-link">
                     {navList.map(nav => (
