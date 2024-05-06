@@ -1,21 +1,33 @@
 {
-  "extends": "next/core-web-vitals",
-  "plugins": ["eslint-plugin-simple-import-sort", "unused-imports", "react", "import", "export"],
+  "root": true, // 프로젝트 루트 디렉토리를 기준으로 설정 적용
+  "env": {
+    "browser": true, // 브라우저 환경 설정
+    "es2021": true // ECMAScript 2021 사용
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended", // ESLint의 기본 규칙 사용
+    "plugin:react/recommended", // React 플러그인의 권장 규칙 사용
+    "plugin:prettier/recommended", // Prettier 플러그인의 권장 규칙 사용
+    "plugin:@typescript-eslint/recommended" // TypeScript 플러그인의 권장 규칙 사용
+  ],
+  "parser": "@typescript-eslint/parser", // TypeScript 파서 지정
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true // JSX 구문 사용
+    },
+    "ecmaVersion": 12, // ECMAScript 버전 설정
+    "sourceType": "module" // 모듈 형식의 코드 사용
+  },
+  "plugins": ["react", "@typescript-eslint"], // 사용할 플러그인 지정
   "rules": {
-    "indent": ["error", 4],
-    "import/extensions": ["error", "ignorePackages"],
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "@typescript-eslint/no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "varsIgnorePattern": "^_",
-        "args": "after-used",
-        "argsIgnorePattern": "^_"
-      }
-    ]
+    "quotes": ["error", "double", { "avoidEscape": true }], // double quotes사용 안할 경우, 에러
+    "no-console": ["warn", { "allow": ["warn", "error"] }], // 콘솔 사용시, 경고(warn, error시 제외)
+    "no-unexpected-multiline": 2, // 기대하지 않는 줄바꿈시, 에러
+    "no-extra-semi": 2, // 세미콜론 두번 사용시, 에러
+    "react-native/no-inline-styles": 1, // inline style 사용시, 경고
+    "react-native/no-unused-styles": 2, // 사용하지 않는 스타일 남아있는 경우, 에러
+    "no-unused-vars": 0, // typescript같이 사용하기 위해 기존 rules 무시
+    "@typescript-eslint/no-unused-vars": 2 // 사용하지 않는 변수, 에러
   }
 }
