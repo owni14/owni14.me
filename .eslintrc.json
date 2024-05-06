@@ -9,7 +9,8 @@
     "eslint:recommended", // ESLint의 기본 규칙 사용
     "plugin:react/recommended", // React 플러그인의 권장 규칙 사용
     "plugin:prettier/recommended", // Prettier 플러그인의 권장 규칙 사용
-    "plugin:@typescript-eslint/recommended" // TypeScript 플러그인의 권장 규칙 사용
+    "plugin:@typescript-eslint/recommended", // TypeScript 플러그인의 권장 규칙 사용
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser", // TypeScript 파서 지정
   "parserOptions": {
@@ -17,17 +18,18 @@
       "jsx": true // JSX 구문 사용
     },
     "ecmaVersion": 12, // ECMAScript 버전 설정
-    "sourceType": "module" // 모듈 형식의 코드 사용
+    "sourceType": "module", // 모듈 형식의 코드 사용
+    "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint"], // 사용할 플러그인 지정
+  "plugins": ["react", "@typescript-eslint", "eslint-plugin-prettier"], // 사용할 플러그인 지정
   "rules": {
     "quotes": ["error", "double", { "avoidEscape": true }], // double quotes사용 안할 경우, 에러
     "no-console": ["warn", { "allow": ["warn", "error"] }], // 콘솔 사용시, 경고(warn, error시 제외)
     "no-unexpected-multiline": 2, // 기대하지 않는 줄바꿈시, 에러
     "no-extra-semi": 2, // 세미콜론 두번 사용시, 에러
-    "react-native/no-inline-styles": 1, // inline style 사용시, 경고
-    "react-native/no-unused-styles": 2, // 사용하지 않는 스타일 남아있는 경우, 에러
     "no-unused-vars": 0, // typescript같이 사용하기 위해 기존 rules 무시
-    "@typescript-eslint/no-unused-vars": 2 // 사용하지 않는 변수, 에러
+    "@typescript-eslint/no-unused-vars": 2, // 사용하지 않는 변수, 에러
+    "react/react-in-jsx-scope": "off", // 최상단에 Import React from 'react 입력안해도 에러 안나게 수정
+    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }] // ts, tsx확장자 사용하게 수정
   }
 }

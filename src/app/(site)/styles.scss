@@ -1,6 +1,0 @@
-@import "@/styles/variables";
-
-#root {
-  height: 100%;
-  @include flex("column", "space-between", "center");
-}
