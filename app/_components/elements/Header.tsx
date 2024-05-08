@@ -1,5 +1,5 @@
 const Header = () => {
-  return <section>Header.tsx</section>;
+  return <section></section>;
 };
 
 export default Header;

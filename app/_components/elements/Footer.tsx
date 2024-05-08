@@ -1,5 +1,5 @@
 const Footer = () => {
-  return <section>Footer.tsx</section>;
+  return <section></section>;
 };
 
 export default Footer;
