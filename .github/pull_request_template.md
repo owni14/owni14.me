@@ -1,5 +1,3 @@
-## 🔍 Summary
-
 ## 🌟 Detailed changelog
 
 ## ✅ What type of PR is this? (check all applicable)
