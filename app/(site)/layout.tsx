@@ -1,8 +1,9 @@
-import Footer from "@/components/elements/Footer";
-import Header from "@/components/elements/Header";
+import type { Metadata } from "next";
+
+import Footer from "@/_components/layout/Footer";
+import Header from "@/_components/layout/Header";
 
 import "@/styles/global.scss";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Min's Blog",
