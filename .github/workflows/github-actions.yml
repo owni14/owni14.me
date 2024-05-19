@@ -29,15 +29,11 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      # Setup pnpm (to create global bin directory)
-      - name: Setup pnpm
-        env:
-          SHELL: bash
-        run: pnpm setup
-
-      # Add pnpm to PATH
-      - name: Add pnpm to PATH
-        run: echo "$HOME/.local/share/pnpm" >> $GITHUB_PATH
+      # Create PNPM_HOME directory and add it to PATH
+      - name: Setup PNPM_HOME
+        run: |
+          mkdir -p $PNPM_HOME
+          echo $PNPM_HOME >> $GITHUB_PATH
 
       # Install Vercel CLI
       - name: Install Vercel CLI
