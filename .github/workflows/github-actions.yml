@@ -19,9 +19,26 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      # Install pnpm
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      # Create PNPM_HOME directory and add it to PATH
+      - name: Setup PNPM_HOME
+        run: |
+          mkdir -p $PNPM_HOME
+          export PATH=$PNPM_HOME/bin:$PATH
+          echo "export PATH=$PNPM_HOME/bin:$PATH" >> $GITHUB_ENV
+
       # Install Vercel CLI
       - name: Install Vercel CLI
-        run: npm install global vercel@canary
+        run: pnpm add -g vercel@canary
 
       # Pull Vercel Environment Information
       - name: Pull Vercel Environment Information
