@@ -17,36 +17,29 @@ jobs:
   Vercel-Deploy-Build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      # Setup Node.js
-      - name: Setup Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: 18
 
-      # Install pnpm
-      - name: Install pnpm
-        run: npm install -g pnpm
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 9
+          run_install: false
 
-      # Create PNPM_HOME directory and add it to PATH
-      - name: Setup PNPM_HOME
-        run: |
-          mkdir -p ${{ runner.temp }}/.pnpm
-          echo "${{ runner.temp }}/.pnpm/bin" >> $GITHUB_PATH
-
-      # Install Vercel CLI
       - name: Install Vercel CLI
-        run: pnpm add -g vercel@canary
+        run: npm install --global vercel@canary
 
-      # Pull Vercel Environment Information
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
-      # Build Project Artifacts
       - name: Build Project Artifacts
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
-      # Deploy Project Artifacts to Vercel
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
