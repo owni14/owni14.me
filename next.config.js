@@ -2,6 +2,13 @@ const path = require("path");
 
 const nextConfig = {
   swcMinify: true,
+  experimental: {
+    modularizelmports: {
+      lodash: {
+        transform: "lodash/{{member}}",
+      },
+    },
+  },
   reactStrictMode: true, // React 엄격모드
   eslint: {
     ignoreDuringBuilds: true, // 빌드 중 ESLint오류 무시
