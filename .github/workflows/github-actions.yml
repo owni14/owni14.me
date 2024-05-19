@@ -31,6 +31,8 @@ jobs:
 
       # Setup pnpm (to create global bin directory)
       - name: Setup pnpm
+        env:
+          SHELL: bash
         run: pnpm setup
 
       # Add pnpm to PATH
