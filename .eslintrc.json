@@ -12,6 +12,7 @@
     "plugin:@typescript-eslint/recommended", // TypeScript 플러그인의 권장 규칙 사용
     "prettier"
   ],
+  "files": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "!next.config.js"],
   "parser": "@typescript-eslint/parser", // TypeScript 파서 지정
   "parserOptions": {
     "ecmaFeatures": {
