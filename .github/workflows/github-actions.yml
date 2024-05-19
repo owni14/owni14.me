@@ -32,9 +32,8 @@ jobs:
       # Create PNPM_HOME directory and add it to PATH
       - name: Setup PNPM_HOME
         run: |
-          mkdir -p $PNPM_HOME
-          export PATH=$PNPM_HOME/bin:$PATH
-          echo "export PATH=$PNPM_HOME/bin:$PATH" >> $GITHUB_ENV
+          mkdir -p ${{ runner.temp }}/.pnpm
+          echo "${{ runner.temp }}/.pnpm/bin" >> $GITHUB_PATH
 
       # Install Vercel CLI
       - name: Install Vercel CLI
