@@ -1,6 +1,6 @@
 'use client';
 
-import cx from 'classNames';
+import cx from 'classnames';
 import Link from 'next/link';
 import { useState } from 'react';
 import { navList } from './consts';
