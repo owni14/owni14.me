@@ -1,0 +1,50 @@
+@import '@/styles/variables.scss';
+
+/* Header section */
+#header {
+  width: 100%;
+  padding: 2rem 35rem;
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2rem);
+  z-index: 100;
+  @include flex('row', 'space-between', 'center');
+
+  .title {
+    font-family: 'Pretendard-Bold';
+    font-size: 2.5rem;
+    width: 10%;
+  }
+
+  .nav-wrapper {
+    @include flex('row', 'flex-end', 'center');
+    gap: 3rem;
+
+    .nav-link {
+      @include flex('row', 'space-between', 'center');
+      gap: 3rem;
+
+      li {
+        list-style: none;
+        font-size: 2rem;
+        color: $softGray;
+        transition: all 0.4s ease-in-out;
+        font-family: 'Pretendard-Regular';
+
+        &:hover {
+          cursor: pointer;
+          color: white;
+          transition: all 0.4s ease-in-out;
+        }
+
+        &.active {
+          font-family: 'Pretendard-Bold';
+          color: white;
+          transition: all 0.4s ease-in-out;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
