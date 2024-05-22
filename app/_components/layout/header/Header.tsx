@@ -1,5 +1,7 @@
 'use client';
 
+import Multilingual from '@/components/ui/multilingual/Multilingual';
+import { langList } from '@/components/ui/multilingual/consts';
 import cx from 'classnames';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -11,6 +13,7 @@ import './styles.scss';
  */
 const Header = () => {
   const [activeLink, setActiveLink] = useState<string>(navList[0].id);
+  const [activeLang, setActiveLang] = useState<string>('한국어');
 
   return (
     <section id="header">
@@ -25,6 +28,7 @@ const Header = () => {
             </li>
           ))}
         </ul>
+        <Multilingual list={langList} onClickLang={(lang: string) => setActiveLang(lang)} activeLang={activeLang} />
       </div>
     </section>
   );
