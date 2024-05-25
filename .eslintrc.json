@@ -42,6 +42,7 @@
         "newlines-between": "always"
       }
     ],
+    "prettier/prettier": 0,
     "import/first": "error",
     "import/newline-after-import": "error",
     "import/prefer-default-export": "off",
