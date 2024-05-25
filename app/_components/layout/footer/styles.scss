@@ -1,3 +1,26 @@
+@import "@/styles/variables.scss";
+
 /* Footer section */
 #footer {
+  @include flex("row", "space-between", "center");
+  width: 100%;
+  padding: 2rem 43rem;
+  p {
+    font-size: 1.8rem;
+  }
+
+  .link-area {
+    @include flex("row", "flex-end", "center");
+    gap: 2rem;
+    svg {
+      fill: white;
+      width: 2.5rem;
+      height: 2.5rem;
+      &:hover {
+        cursor: pointer;
+        fill: rgba(217, 217, 217, 0.7);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
 }

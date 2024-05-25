@@ -3,6 +3,7 @@
 #multilingual {
   position: relative;
   padding: 0.3rem;
+
   .language-wrapper {
     @include flex("row", "center", "center");
     gap: 0.5rem;

@@ -2,6 +2,7 @@
 
 /* Header section */
 #header {
+  @include flex("row", "space-between", "center");
   width: 100%;
   padding: 2rem 43rem;
   position: sticky;
@@ -9,7 +10,6 @@
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(2rem);
   z-index: 100;
-  @include flex("row", "space-between", "center");
 
   .title {
     font-family: "Pretendard-Bold";

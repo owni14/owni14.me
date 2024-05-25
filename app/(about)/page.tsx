@@ -1,5 +1,5 @@
-const Home = () => {
+const About = () => {
   return <section>준비중입니다.</section>;
 };
 
-export default Home;
+export default About;
