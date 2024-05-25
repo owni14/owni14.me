@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import cx from 'classnames';
-import { useState } from 'react';
-import './styles.scss';
+import cx from "classnames";
+import { useState } from "react";
+import "./styles.scss";
 
 const Hamburger = () => {
   const [isClick, setIsClick] = useState<boolean>(false);

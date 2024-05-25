@@ -2,21 +2,11 @@ const path = require("path");
 
 const nextConfig = {
   swcMinify: true,
-  experimental: {
-    modularizelmports: {
-      lodash: {
-        transform: "lodash/{{member}}",
-      },
-    },
-  },
   reactStrictMode: true, // React 엄격모드
   eslint: {
     ignoreDuringBuilds: true, // 빌드 중 ESLint오류 무시
   },
   pageExtensions: ["tsx", "ts", "jsx", "js"], // 페이지 확장자 설정
-  compiler: {
-    removeConsole: true,
-  },
   webpack: config => {
     config.resolve = {
       alias: {

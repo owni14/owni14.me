@@ -1,10 +1,10 @@
 export interface ISelectBox {
   onClickLang: (lang: string) => void;
   list: ILanguage[];
-  activeLang: string;
+  activeLang: string | undefined;
 }
 
 export interface ILanguage {
-  key: string;
+  id: string;
   name: string;
 }

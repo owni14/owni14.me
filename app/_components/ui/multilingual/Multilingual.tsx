@@ -1,10 +1,11 @@
-'use client';
+"use client";
 
-import cx from 'classnames';
-import { useState } from 'react';
-import { HiMiniLanguage } from 'react-icons/hi2';
-import './styles.scss';
-import { ISelectBox } from './types';
+import cx from "classnames";
+import { useState } from "react";
+import { HiMiniLanguage } from "react-icons/hi2";
+
+import "./styles.scss";
+import { ISelectBox } from "./types";
 
 /**
  * Multilingual component
@@ -23,11 +24,7 @@ const Multilingual = ({ onClickLang, list, activeLang }: ISelectBox) => {
       {isHover && (
         <ul>
           {list.map(lang => (
-            <li
-              key={lang.key}
-              className={cx({ active: activeLang === lang.name })}
-              onClick={() => onClickLang(lang.name)}
-            >
+            <li key={lang.id} className={cx({ active: activeLang === lang.id })} onClick={() => onClickLang(lang.id)}>
               {lang.name}
             </li>
           ))}

@@ -1,1 +1,1 @@
-export * from './Multilingual.tsx';
+export * from "./Multilingual.tsx";

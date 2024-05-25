@@ -1,5 +1,5 @@
-import * as en from './en';
-import * as ko from './ko';
+import * as en from "./en";
+import * as ko from "./ko";
 
 interface localeType {
   [key: string]: { [key: string]: string | { [key: string]: string } };
