@@ -20,7 +20,7 @@ const Header = (): JSX.Element => {
 
   return (
     <section id="header">
-      <Link className="title" href="/">
+      <Link className="title" href="/" onClick={() => setActiveLink(navList[0].id)}>
         {"Min's"}
       </Link>
       <div className="nav-wrapper">
