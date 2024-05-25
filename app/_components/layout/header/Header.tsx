@@ -11,9 +11,10 @@ import { navList } from "./consts";
 import "./styles.scss";
 
 /**
- * Header component
+ * Header layout
+ * @returns {JSX.Element} JSX element
  */
-const Header = () => {
+const Header = (): JSX.Element => {
   const [activeLink, setActiveLink] = useState<string>(navList[0].id);
   const [activeLang, setActiveLang] = useState<string | undefined>(langList[0].name);
 

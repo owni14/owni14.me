@@ -8,11 +8,13 @@ import "./styles.scss";
 import { ISelectBox } from "./types";
 
 /**
- * Multilingual component
- * @param onClickLang
- * @returns
+ * Multilingual UI
+ * @param {(lang:string) => void} onClickLang Click language
+ * @param {ILanguage[]} list Language list
+ * @param {string | undefined} activeLang Activated language
+ * @returns {JSX.Element} JSX element
  */
-const Multilingual = ({ onClickLang, list, activeLang }: ISelectBox) => {
+const Multilingual = ({ onClickLang, list, activeLang }: ISelectBox): JSX.Element => {
   const [isHover, setIsHover] = useState<boolean>(false);
 
   return (

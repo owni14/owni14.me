@@ -4,8 +4,13 @@ import "./styles.scss";
 
 import { footerList } from "./consts";
 
-const Footer = () => {
+/**
+ * Footer layout
+ * @returns {JSX.Element} JSX element
+ */
+const Footer = (): JSX.Element => {
   const currentYear = dayjs().year();
+
   return (
     <section id="footer">
       <p>{`© ${currentYear}. owni14. All rights reserved.`}</p>
