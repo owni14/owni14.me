@@ -1,4 +1,4 @@
-const About = () => {
+const About = async () => {
   return <section>about</section>;
 };
 

@@ -2,48 +2,53 @@
 
 /* Header section */
 #header {
-  @include flex("row", "space-between", "center");
   width: 100%;
-  padding: 2rem 43rem;
-  position: sticky;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(2rem);
-  z-index: 100;
+  .header-wrapper {
+    @include flex("row", "space-between", "center");
+    max-width: 1200px;
+    padding: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2rem);
+    z-index: 100;
 
-  .title {
-    font-family: "Pretendard-Bold";
-    font-size: 2.5rem;
-    width: 10%;
-  }
+    .title {
+      font-family: "Pretendard-Bold";
+      font-size: 2.2rem;
+      width: 10%;
+    }
 
-  .nav-wrapper {
-    @include flex("row", "flex-end", "center");
-    gap: 3rem;
+    .nav-wrapper {
+      @include flex("row", "flex-end", "center");
+      gap: 3rem;
 
-    .nav-link {
-      @include flex("row", "space-between", "center");
-      gap: 2.2rem;
+      .nav-link {
+        @include flex("row", "space-between", "center");
+        gap: 2.2rem;
 
-      li {
-        list-style: none;
-        font-size: 1.8rem;
-        padding: 0.5rem;
-        color: $softGray;
-        transition: all 0.3s ease-in-out;
-        font-family: "Pretendard-Regular";
-
-        &:hover {
-          cursor: pointer;
-          color: white;
+        li {
+          list-style: none;
+          font-size: 1.5rem;
+          padding: 0.5rem;
+          color: $softGray;
           transition: all 0.3s ease-in-out;
-        }
+          font-family: "Pretendard-Regular";
 
-        &.active {
-          font-family: "Pretendard-Bold";
-          color: white;
-          transition: all 0.3s ease-in-out;
-          font-weight: bold;
+          &:hover {
+            cursor: pointer;
+            color: white;
+            transition: all 0.3s ease-in-out;
+          }
+
+          &.active {
+            font-family: "Pretendard-Bold";
+            color: white;
+            transition: all 0.3s ease-in-out;
+            font-weight: bold;
+          }
         }
       }
     }

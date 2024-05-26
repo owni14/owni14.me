@@ -1,7 +1,7 @@
 export interface IMultilingualProps {
   onClickLang: (lang: string) => void;
   list: ILanguage[];
-  activeLang: string | undefined;
+  activeLang: ILanguage;
 }
 
 export interface ILanguage {

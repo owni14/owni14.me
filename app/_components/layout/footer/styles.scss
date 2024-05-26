@@ -2,24 +2,29 @@
 
 /* Footer section */
 #footer {
-  @include flex("row", "space-between", "center");
   width: 100%;
-  padding: 2rem 43rem;
-  p {
-    font-size: 1.8rem;
-  }
+  .footer-wrapper {
+    @include flex("row", "space-between", "center");
+    max-width: 1200px;
+    padding: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    p {
+      font-size: 1.5rem;
+    }
 
-  .link-area {
-    @include flex("row", "flex-end", "center");
-    gap: 2rem;
-    svg {
-      fill: white;
-      width: 2.5rem;
-      height: 2.5rem;
-      &:hover {
-        cursor: pointer;
-        fill: rgba(217, 217, 217, 0.7);
-        transition: all 0.3s ease-in-out;
+    .link-area {
+      @include flex("row", "flex-end", "center");
+      gap: 2rem;
+      svg {
+        fill: white;
+        width: 2.2rem;
+        height: 2.2rem;
+        &:hover {
+          cursor: pointer;
+          fill: rgba(217, 217, 217, 0.7);
+          transition: all 0.3s ease-in-out;
+        }
       }
     }
   }

@@ -13,16 +13,18 @@ const Footer = (): JSX.Element => {
 
   return (
     <section id="footer">
-      <p>{`© ${currentYear}. owni14. All rights reserved.`}</p>
-      <div className="link-area">
-        {footerList.map(foot => {
-          const FooterIcon = foot.icon;
-          return (
-            <Link key={foot.id} href={foot.link}>
-              <FooterIcon />
-            </Link>
-          );
-        })}
+      <div className="footer-wrapper">
+        <p>{`© ${currentYear}. owni14. All rights reserved.`}</p>
+        <div className="link-area">
+          {footerList.map(foot => {
+            const FooterIcon = foot.icon;
+            return (
+              <Link key={foot.id} href={foot.link}>
+                <FooterIcon />
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

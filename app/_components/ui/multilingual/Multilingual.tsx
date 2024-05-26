@@ -21,12 +21,16 @@ const Multilingual = ({ onClickLang, list, activeLang }: IMultilingualProps): JS
     <div id="multilingual" onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
       <div className="language-wrapper">
         <HiMiniLanguage />
-        {activeLang}
+        {activeLang.name}
       </div>
       {isHover && (
         <ul>
           {list.map(lang => (
-            <li key={lang.id} className={cx({ active: activeLang === lang.id })} onClick={() => onClickLang(lang.id)}>
+            <li
+              key={lang.id}
+              className={cx({ active: activeLang.id === lang.id })}
+              onClick={() => onClickLang(lang.id)}
+            >
               {lang.name}
             </li>
           ))}
