@@ -9,6 +9,15 @@
 
 html {
   font-size: calc(14px - 0.25vw);
+  @include responsive(tablet) {
+    font-size: calc(14px - 0.35vw);
+  }
+  @include responsive(mobile-l) {
+    font-size: calc(14px - 0.7vw);
+  }
+  @include responsive(mobile) {
+    font-size: calc(14px - 1vw);
+  }
   font-family: "Pretendard-Medium";
 }
 

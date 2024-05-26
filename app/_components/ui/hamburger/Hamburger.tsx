@@ -1,16 +1,17 @@
 "use client";
 
 import cx from "classnames";
-import { useState } from "react";
+
 import "./styles.scss";
+import { IHamburgerProps } from "./types";
 
 /**
  * Hamburger UI
+ * @param {boolean} isClick click state
+ * @param {React.Dispatch<React.SetStateAction<boolean>>} setIsClick Change click state
  * @returns {JSX.Element} JSX element
  */
-const Hamburger = (): JSX.Element => {
-  const [isClick, setIsClick] = useState<boolean>(false);
-
+const Hamburger = ({ isClick, setIsClick }: IHamburgerProps): JSX.Element => {
   return (
     <div id="hamburger" onClick={() => setIsClick(prev => !prev)}>
       <div className={cx({ change: isClick })}></div>

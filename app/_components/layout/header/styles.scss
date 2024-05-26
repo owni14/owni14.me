@@ -5,6 +5,21 @@
   width: 100%;
   .header-wrapper {
     @include flex("row", "space-between", "center");
+
+    &.tablet {
+      background-color: #242424;
+      @include flex("column", "flex-start", "flex-start");
+    }
+
+    .tablet-header {
+      width: 100%;
+      @include flex("row", "space-between", "center");
+      .tablet-header-nav {
+        @include flex("row", "flex-end", "center");
+        gap: 1rem;
+      }
+    }
+
     max-width: 1200px;
     padding: 1.5rem;
     margin-left: auto;
@@ -25,9 +40,27 @@
       @include flex("row", "flex-end", "center");
       gap: 3rem;
 
+      &.tablet {
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem;
+        background-image: linear-gradient(180deg, #242424, #101010);
+        border-bottom-left-radius: 2.5rem;
+        border-bottom-right-radius: 2.5rem;
+        @include flex("column", "flex-start", "flex-start");
+        gap: 2rem;
+      }
+
       .nav-link {
         @include flex("row", "space-between", "center");
         gap: 2.2rem;
+
+        &.tablet {
+          @include flex("column", "flex-start", "flex-start");
+          gap: 2rem;
+        }
 
         li {
           list-style: none;
