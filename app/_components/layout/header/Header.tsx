@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import Hamburger from "@/components/ui/hamburger/Hamburger";
-import { langList } from "@/components/ui/multilingual/consts";
+import { languageList } from "@/components/ui/multilingual/consts";
 import Multilingual from "@/components/ui/multilingual/Multilingual";
 import useDevice from "@/hooks/useDevice";
 
@@ -18,7 +18,7 @@ import { IActive } from "./types";
  * @returns {JSX.Element} JSX element
  */
 const Header = (): JSX.Element => {
-  const [active, setActive] = useState<IActive>({ link: navList[0].id, language: langList[0] });
+  const [active, setActive] = useState<IActive>({ link: navList[0].id, language: languageList[0] });
   const [isClickHamburger, setIsClickHamburger] = useState<boolean>(false);
   const { isTablet } = useDevice();
 
@@ -56,13 +56,15 @@ const Header = (): JSX.Element => {
   const handleLanguage = useCallback((id: string) => {
     setActive(prev => ({
       ...prev,
-      lang: langList.find(lang => lang.id === id) ?? langList[0],
+      language: languageList.find(language => language.id === id) ?? languageList[0],
     }));
   }, []);
 
   /* Multilingual renderer */
   const multilingualRenderer = useMemo(() => {
-    return <Multilingual list={langList} onClick={(id: string) => handleLanguage(id)} activeLang={active.language} />;
+    return (
+      <Multilingual list={languageList} onClick={(id: string) => handleLanguage(id)} activeLang={active.language} />
+    );
   }, [active.language, handleLanguage]);
 
   return (

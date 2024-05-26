@@ -1,6 +1,6 @@
 import { ILanguage } from "./types";
 
-export const langList: ILanguage[] = [
+export const languageList: ILanguage[] = [
   {
     id: "ko",
     name: "한국어",
