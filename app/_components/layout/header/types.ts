@@ -1,4 +1,4 @@
-/** Header nav bar type */
+/** Header nav bar */
 export interface INav {
   id: string;
   title: string;

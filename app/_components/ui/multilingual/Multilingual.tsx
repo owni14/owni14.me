@@ -5,7 +5,7 @@ import { useState } from "react";
 import { HiMiniLanguage } from "react-icons/hi2";
 
 import "./styles.scss";
-import { ISelectBox } from "./types";
+import { IMultilingualProps } from "./types";
 
 /**
  * Multilingual UI
@@ -14,7 +14,7 @@ import { ISelectBox } from "./types";
  * @param {string | undefined} activeLang Activated language
  * @returns {JSX.Element} JSX element
  */
-const Multilingual = ({ onClickLang, list, activeLang }: ISelectBox): JSX.Element => {
+const Multilingual = ({ onClickLang, list, activeLang }: IMultilingualProps): JSX.Element => {
   const [isHover, setIsHover] = useState<boolean>(false);
 
   return (

@@ -1,4 +1,4 @@
-export interface ISelectBox {
+export interface IMultilingualProps {
   onClickLang: (lang: string) => void;
   list: ILanguage[];
   activeLang: string | undefined;

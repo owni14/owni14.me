@@ -7,18 +7,13 @@ export const navList: INav[] = [
     path: "/",
   },
   {
-    id: "skill",
-    title: "Skill",
-    path: "/skill",
-  },
-  {
-    id: "project",
-    title: "Project",
-    path: "/project",
-  },
-  {
     id: "blog",
     title: "Blog",
     path: "/blog",
+  },
+  {
+    id: "category",
+    title: "Category",
+    path: "/category",
   },
 ];
