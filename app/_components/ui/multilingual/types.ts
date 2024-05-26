@@ -1,5 +1,5 @@
 export interface IMultilingualProps {
-  onClickLang: (lang: string) => void;
+  onClick: (lang: string) => void;
   list: ILanguage[];
   activeLang: ILanguage;
 }

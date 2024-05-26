@@ -1,8 +1,14 @@
+"use client";
+
+import cx from "classnames";
 import dayjs from "dayjs";
 import Link from "next/link";
-import "./styles.scss";
+
+import useDevice from "@/hooks/useDevice";
 
 import { footerList } from "./consts";
+
+import "./styles.scss";
 
 /**
  * Footer layout
@@ -10,10 +16,11 @@ import { footerList } from "./consts";
  */
 const Footer = (): JSX.Element => {
   const currentYear = dayjs().year();
+  const { isTablet } = useDevice();
 
   return (
     <section id="footer">
-      <div className="footer-wrapper">
+      <div className={cx("footer-wrapper", { tablet: isTablet })}>
         <p>{`© ${currentYear}. owni14. All rights reserved.`}</p>
         <div className="link-area">
           {footerList.map(foot => {

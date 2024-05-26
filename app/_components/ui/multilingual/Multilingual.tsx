@@ -9,12 +9,12 @@ import { IMultilingualProps } from "./types";
 
 /**
  * Multilingual UI
- * @param {(lang:string) => void} onClickLang Click language
+ * @param {(lang:string) => void} onClick Click language
  * @param {ILanguage[]} list Language list
  * @param {string | undefined} activeLang Activated language
  * @returns {JSX.Element} JSX element
  */
-const Multilingual = ({ onClickLang, list, activeLang }: IMultilingualProps): JSX.Element => {
+const Multilingual = ({ onClick, list, activeLang }: IMultilingualProps): JSX.Element => {
   const [isHover, setIsHover] = useState<boolean>(false);
 
   return (
@@ -26,11 +26,7 @@ const Multilingual = ({ onClickLang, list, activeLang }: IMultilingualProps): JS
       {isHover && (
         <ul>
           {list.map(lang => (
-            <li
-              key={lang.id}
-              className={cx({ active: activeLang.id === lang.id })}
-              onClick={() => onClickLang(lang.id)}
-            >
+            <li key={lang.id} className={cx({ active: activeLang.id === lang.id })} onClick={() => onClick(lang.id)}>
               {lang.name}
             </li>
           ))}

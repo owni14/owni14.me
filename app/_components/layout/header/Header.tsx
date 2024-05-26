@@ -3,11 +3,11 @@
 import cx from "classnames";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useMediaQuery } from "react-responsive";
 
 import Hamburger from "@/components/ui/hamburger/Hamburger";
 import { langList } from "@/components/ui/multilingual/consts";
 import Multilingual from "@/components/ui/multilingual/Multilingual";
+import useDevice from "@/hooks/useDevice";
 
 import { navList } from "./consts";
 import "./styles.scss";
@@ -18,16 +18,14 @@ import { IActive } from "./types";
  * @returns {JSX.Element} JSX element
  */
 const Header = (): JSX.Element => {
-  const [active, setActive] = useState<IActive>({ link: navList[0].id, lang: langList[0] });
-  const [tablet, setTablet] = useState<boolean>(false);
+  const [active, setActive] = useState<IActive>({ link: navList[0].id, language: langList[0] });
   const [isClickHamburger, setIsClickHamburger] = useState<boolean>(false);
+  const { isTablet } = useDevice();
 
-  const isTablet = useMediaQuery({ maxWidth: 768 });
   const headerRef = useRef<HTMLElement>(null);
 
   /* Check the tablet resolution */
   useEffect(() => {
-    setTablet(isTablet);
     setIsClickHamburger(false);
   }, [isTablet]);
 
@@ -45,8 +43,8 @@ const Header = (): JSX.Element => {
     };
   }, []);
 
-  /* Link click handler */
-  const onLinkClick = useCallback((id: string) => {
+  /* Click link */
+  const handleLink = useCallback((id: string) => {
     setActive(prev => ({
       ...prev,
       link: id,
@@ -54,66 +52,45 @@ const Header = (): JSX.Element => {
     setIsClickHamburger(false);
   }, []);
 
-  /* Navigation link renderer */
-  const navLinkRenderer = useMemo(() => {
-    return (
-      <ul className={cx("nav-link", { tablet: isClickHamburger })}>
-        {navList.map(nav => (
-          <li key={nav.id} className={cx({ active: active.link === nav.id })}>
-            <Link href={nav.path} onClick={() => onLinkClick(nav.id)}>
-              {nav.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    );
-  }, [isClickHamburger, active.link, onLinkClick]);
+  /* Change Language */
+  const handleLanguage = useCallback((id: string) => {
+    setActive(prev => ({
+      ...prev,
+      lang: langList.find(lang => lang.id === id) ?? langList[0],
+    }));
+  }, []);
 
   /* Multilingual renderer */
   const multilingualRenderer = useMemo(() => {
-    return (
-      <Multilingual
-        list={langList}
-        onClickLang={(id: string) =>
-          setActive(prev => ({
-            ...prev,
-            lang: langList.find(lang => lang.id === id) ?? langList[0],
-          }))
-        }
-        activeLang={active.lang}
-      />
-    );
-  }, [active.lang]);
+    return <Multilingual list={langList} onClick={(id: string) => handleLanguage(id)} activeLang={active.language} />;
+  }, [active.language, handleLanguage]);
 
   return (
     <section id="header" ref={headerRef}>
       <div className={cx("header-wrapper", { tablet: isClickHamburger })}>
-        <div className={cx({ "tablet-header": tablet })}>
-          <Link
-            className="title"
-            href="/"
-            onClick={() =>
-              setActive(prev => ({
-                ...prev,
-                link: navList[0].id,
-              }))
-            }
-          >
+        <div className={cx({ "tablet-header": isTablet })}>
+          <Link className="title" href="/" onClick={() => handleLink(navList[0].id)}>
             {"Min"}
           </Link>
-          {tablet && (
+          {isTablet && (
             <div className="tablet-header-nav">
               {multilingualRenderer}
               <Hamburger isClick={isClickHamburger} setIsClick={setIsClickHamburger} />
             </div>
           )}
         </div>
-        {(!tablet || isClickHamburger) && (
-          <div className={cx("nav-wrapper", { tablet: isClickHamburger })}>
-            {navLinkRenderer}
-            {!isClickHamburger && multilingualRenderer}
-          </div>
-        )}
+        <div className={cx("nav-wrapper", { tablet: isClickHamburger, hidden: isTablet && !isClickHamburger })}>
+          <ul className={cx("nav-link", { tablet: isClickHamburger })}>
+            {navList.map(nav => (
+              <li key={nav.id} className={cx({ active: active.link === nav.id })}>
+                <Link href={nav.path} onClick={() => handleLink(nav.id)}>
+                  {nav.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          {!isTablet && multilingualRenderer}
+        </div>
       </div>
     </section>
   );

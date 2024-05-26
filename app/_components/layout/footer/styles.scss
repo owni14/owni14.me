@@ -9,6 +9,12 @@
     padding: 1.5rem;
     margin-left: auto;
     margin-right: auto;
+
+    &.tablet {
+      @include flex("column", "flex-start", "center");
+      gap: 1.5rem;
+    }
+
     p {
       font-size: 1.5rem;
     }

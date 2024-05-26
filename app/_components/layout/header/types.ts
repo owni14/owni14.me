@@ -1,6 +1,5 @@
 import { ILanguage } from "@/components/ui/multilingual/types";
 
-/** Header nav bar */
 export interface INav {
   id: string;
   title: string;
@@ -9,5 +8,5 @@ export interface INav {
 
 export interface IActive {
   link: string;
-  lang: ILanguage;
+  language: ILanguage;
 }
