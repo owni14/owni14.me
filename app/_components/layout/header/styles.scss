@@ -38,7 +38,7 @@
 
     .nav-wrapper {
       @include flex("row", "flex-end", "center");
-      gap: 3rem;
+      gap: 2.2rem;
 
       &.tablet {
         position: absolute;
