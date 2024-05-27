@@ -1,0 +1,12 @@
+{
+  "editor.tokenColorCustomizations": {
+    "comments": "#FF8C00"
+  },
+  "javascript.suggest.paths": true,
+  "typescript.suggest.paths": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  }
+}
