@@ -3,6 +3,7 @@
 /* Footer section */
 #footer {
   width: 100%;
+  min-height: 5rem;
   .footer-wrapper {
     @include flex("row", "space-between", "center");
     max-width: 1200px;
@@ -12,7 +13,7 @@
 
     &.tablet {
       @include flex("column", "flex-start", "center");
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     p {

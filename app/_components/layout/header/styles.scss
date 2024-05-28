@@ -3,6 +3,7 @@
 /* Header section */
 #header {
   width: 100%;
+  min-height: 6rem;
   .header-wrapper {
     @include flex("row", "space-between", "center");
 

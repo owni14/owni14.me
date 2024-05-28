@@ -1,5 +1,7 @@
+import "./styles.scss";
+
 const About = async () => {
-  return <section>about</section>;
+  return <section id="about">about</section>;
 };
 
 export default About;
