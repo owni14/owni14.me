@@ -39,7 +39,14 @@
           "order": "asc",
           "caseInsensitive": true
         },
-        "newlines-between": "always"
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
       }
     ],
     "prettier/prettier": 0,

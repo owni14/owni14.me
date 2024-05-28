@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import "./styles.scss";
 
-import { NAMESPACE } from "../_plugins";
-
 import Me from "@/public/images/me.png";
+
+import { NAMESPACE } from "../_plugins";
 
 const About = () => {
   const { t } = useTranslation(NAMESPACE.ABOUT);
