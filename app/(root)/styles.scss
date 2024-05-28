@@ -1,2 +1,26 @@
+@import "@/styles/variables.scss";
+
 #about {
+  height: inherit;
+  @include flex("columns", "center", "center");
+
+  .introduce-wapper {
+    @include flex("row", "space-evenly", "center");
+    width: 100%;
+    img {
+      height: 28rem;
+      width: 28rem;
+      border-radius: 50%;
+    }
+    .introduce-sentence {
+      @include flex("column", "flex-start", "flex-start");
+      font-size: 2.5rem;
+      white-space: pre-line;
+      line-height: 3.5rem;
+      max-width: 70rem;
+      p {
+        margin-top: 2.5rem;
+      }
+    }
+  }
 }

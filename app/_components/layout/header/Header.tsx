@@ -1,6 +1,7 @@
 "use client";
 
 import cx from "classnames";
+import i18next from "i18next";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
@@ -58,6 +59,8 @@ const Header = (): JSX.Element => {
       ...prev,
       language: languageList.find(language => language.id === id) ?? languageList[0],
     }));
+    i18next.changeLanguage(id);
+    document.documentElement.lang = id;
   }, []);
 
   /* Multilingual renderer */

@@ -7,6 +7,7 @@ const nextConfig = {
   webpack: config => {
     config.resolve = {
       alias: {
+        "@public": path.join(__dirname, "/public"),
         "@components": path.join(__dirname, "app", "_components/"),
         "@utils": path.join(__dirname, "app", "_utils"),
         "@styles": path.join(__dirname, "app", "_styles"),
