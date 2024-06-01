@@ -6,18 +6,23 @@
 
   .introduce-wapper {
     @include flex("row", "space-evenly", "center");
+    @include responsive(laptop) {
+      @include flex("column", "space-evenly", "center");
+      gap: 5rem;
+    }
     width: 100%;
+
     img {
-      height: 28rem;
-      width: 28rem;
+      height: auto;
+      width: auto;
       border-radius: 50%;
     }
     .introduce-sentence {
       @include flex("column", "flex-start", "flex-start");
-      font-size: 2.5rem;
+      font-size: 2rem;
       white-space: pre-line;
-      line-height: 3.5rem;
-      max-width: 70rem;
+      line-height: 2.5rem;
+      max-width: 60rem;
       p {
         margin-top: 2.5rem;
       }
