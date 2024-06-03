@@ -7,6 +7,7 @@ import Me from "@/public/images/me.png";
 import "./styles.scss";
 
 import { NAMESPACE } from "../_plugins";
+
 import { SKILLS } from "./consts";
 
 const About = () => {
