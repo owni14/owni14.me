@@ -22,10 +22,11 @@ html {
 }
 
 body {
+  position: relative;
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   @include flex("column", "space-between", "center");
   background-color: black;
   color: white;
