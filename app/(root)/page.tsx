@@ -1,6 +1,5 @@
 "use client";
 
-import cx from "classnames";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
@@ -45,7 +44,7 @@ const About = () => {
   return (
     <section id="about">
       <section
-        className={cx("introduce-wapper", { isVisible: true })}
+        className="introduce-wapper"
         ref={el => {
           sectionRefs.current[0] = el;
         }}
