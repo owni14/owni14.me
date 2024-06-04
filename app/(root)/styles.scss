@@ -5,17 +5,23 @@
   @include flex("column", "center", "center");
 
   .introduce-wapper {
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     @include flex("row", "space-evenly", "center");
     @include responsive(laptop) {
-      @include flex("column", "space-evenly", "center");
+      @include flex("column", "center", "center");
       gap: 5rem;
     }
-    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+
+    &.isVisible {
+      opacity: 1;
+    }
 
     img {
-      height: auto;
-      width: auto;
+      height: 25rem;
+      width: 25rem;
       border-radius: 50%;
     }
     .introduce-sentence {
@@ -29,13 +35,20 @@
       }
     }
   }
+
   .skill-wrapper {
-    height: 100vh;
+    transition: all 0.4s;
+    min-height: 100vh;
     width: 100%;
     @include flex("column", "center", "center");
+    opacity: 0;
+
+    &.isVisible {
+      opacity: 1;
+    }
+
     .icon-wrapper {
       @include flex("row", "center", "center");
-      padding: 0 4rem;
       gap: 2rem;
       flex-wrap: wrap;
 
@@ -50,7 +63,7 @@
         }
 
         p {
-          font-size: 2rem;
+          font-size: 1.5rem;
         }
 
         svg {

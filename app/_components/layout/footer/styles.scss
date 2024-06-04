@@ -3,7 +3,7 @@
 /* Footer section */
 #footer {
   width: 100%;
-  min-height: 5rem;
+  min-height: 6rem;
   .footer-wrapper {
     @include flex("row", "space-between", "center");
     max-width: 1200px;
