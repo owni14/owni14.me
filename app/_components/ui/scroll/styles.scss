@@ -1,0 +1,53 @@
+@import "@/styles/variables.scss";
+
+#scroll {
+  @include flex("column", "center", "center");
+
+  span {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-left: 1px solid rgba(217, 217, 217, 0.7);
+    border-bottom: 1px solid rgba(217, 217, 217, 0.7);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: Scrolling 2s infinite;
+    animation: Scrolling 2s infinite;
+    opacity: 0;
+    box-sizing: border-box;
+    &:nth-child(1) {
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s;
+    }
+    &:nth-child(2) {
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+    }
+    @-webkit-keyframes Scrolling {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes Scrolling {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+  p {
+    color: rgba(217, 217, 217, 0.7);
+    font-size: 2rem;
+    padding: 1.5rem 0;
+  }
+}

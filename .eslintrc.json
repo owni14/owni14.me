@@ -34,15 +34,21 @@
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "internal", ["parent", "sibling"], "index", "object", "type"],
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
         "alphabetize": {
           "order": "asc",
           "caseInsensitive": true
         },
-        "newlines-between": "always"
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
       }
     ],
-    "prettier/prettier": 0,
     "import/first": "error",
     "import/newline-after-import": "error",
     "import/prefer-default-export": "off",

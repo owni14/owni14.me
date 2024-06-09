@@ -26,12 +26,12 @@
         "name": "next"
       }
     ],
-    "baseUrl": "./app",
     "paths": {
-      "@/components/*": ["_components/*"],
-      "@/utils/*": ["_utils/*"],
-      "@/styles/*": ["_styles/*"],
-      "@/hooks/*": ["_hooks/*"]
+      "@/public/*": ["./public/*"],
+      "@/components/*": ["./app/_components/*"],
+      "@/utils/*": ["./app/_utils/*"],
+      "@/styles/*": ["./app/_styles/*"],
+      "@/hooks/*": ["./app/_hooks/*"]
     }
   },
   "include": [

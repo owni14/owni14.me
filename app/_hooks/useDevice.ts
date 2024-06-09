@@ -4,7 +4,11 @@ import { useMediaQuery } from "react-responsive";
 import { defaultDevice } from "./consts";
 import { IDevice } from "./types";
 
-const useDevice = () => {
+/**
+ * Get current device for the page
+ * @returns {IDevice} Is it mobile or table, laptop, desktop
+ */
+const useDevice = (): IDevice => {
   const [device, setDevice] = useState<IDevice>(defaultDevice);
 
   const isMobile = useMediaQuery({ maxWidth: 320 });
