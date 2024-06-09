@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
+import Scroll from "@/components/ui/scroll/Scroll";
 import Me from "@/public/images/me.png";
 import "./styles.scss";
 
@@ -11,7 +12,7 @@ import { NAMESPACE } from "../_plugins";
 
 import { SKILLS } from "./consts";
 
-const About = () => {
+const Home = () => {
   const { t } = useTranslation(NAMESPACE.ABOUT);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
@@ -42,7 +43,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about">
+    <section id="home">
       <section
         className="introduce-wapper"
         ref={el => {
@@ -54,6 +55,7 @@ const About = () => {
           <p className="introduce-sentence">{t("topIntro")}</p>
           <p className="introduce-sentence">{t("midIntro")}</p>
         </div>
+        <Scroll />
       </section>
       <section
         className="skill-wrapper"
@@ -61,6 +63,7 @@ const About = () => {
           sectionRefs.current[1] = el;
         }}
       >
+        <p>{t("skill")}</p>
         <div className="icon-wrapper">
           {SKILLS.map(skill => {
             const SkillIcon = skill.icon;
@@ -77,4 +80,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Home;

@@ -2,8 +2,8 @@ import { INav } from "./types";
 
 export const navList: INav[] = [
   {
-    id: "about",
-    title: "About",
+    id: "home",
+    title: "Home",
     path: "/",
   },
   {
@@ -12,8 +12,8 @@ export const navList: INav[] = [
     path: "/blog",
   },
   {
-    id: "category",
-    title: "Category",
-    path: "/category",
+    id: "projects",
+    title: "Projects",
+    path: "/projects",
   },
 ];

@@ -1,12 +1,13 @@
 @import "@/styles/variables.scss";
 
-#about {
+#home {
   height: auto;
   @include flex("column", "center", "center");
 
   .introduce-wapper {
+    position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: calc(100vh - 6rem);
     @include flex("row", "space-evenly", "center");
     @include responsive(laptop) {
       @include flex("column", "center", "center");
@@ -38,6 +39,12 @@
     width: 100%;
     @include flex("column", "center", "center");
     opacity: 0;
+
+    p {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
 
     .icon-wrapper {
       @include flex("row", "center", "center");
