@@ -1,3 +1,4 @@
+import { TFunction } from "i18next";
 import { FaSass } from "react-icons/fa";
 import {
   SiCss3,
@@ -17,7 +18,7 @@ import {
   SiTypescript,
 } from "react-icons/si";
 
-import { ISkills } from "./types";
+import { IGetCareer, ISkills } from "./types";
 
 export const SKILLS: ISkills[] = [
   {
@@ -58,7 +59,7 @@ export const SKILLS: ISkills[] = [
   {
     id: "i18n",
     icon: SiI18Next,
-    title: "I18Next",
+    title: "i18Next",
   },
   {
     id: "recoil",
@@ -106,3 +107,17 @@ export const SKILLS: ISkills[] = [
     title: "Figma",
   },
 ];
+
+export const getCareer = (t: TFunction): IGetCareer[] => {
+  return [
+    {
+      id: "embrace",
+      job: t("embrace.job"),
+      period: t("embrace.period"),
+      location: t("embrace.location"),
+      link: "https://embracelabs.com/",
+      jobDesc: t("embrace.jobDesc"),
+      tags: ["React", "i18next", "Typescript", "React-Query", "React-Table", "Recoil", "dayjs", "React-Datepicker"],
+    },
+  ];
+};

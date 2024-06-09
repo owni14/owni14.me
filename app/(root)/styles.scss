@@ -26,7 +26,7 @@
       font-size: 2rem;
       white-space: pre-line;
       line-height: 2.5rem;
-      max-width: 60rem;
+      max-width: 70rem;
       p {
         margin-top: 2.5rem;
       }
@@ -40,7 +40,7 @@
     @include flex("column", "center", "center");
     opacity: 0;
 
-    p {
+    > p {
       text-align: center;
       font-size: 2rem;
       margin-bottom: 2rem;
@@ -66,8 +66,124 @@
         }
 
         svg {
-          width: 5rem;
-          height: 5rem;
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
+  }
+
+  .career-wrapper {
+    transition: all 0.4s;
+    min-height: 100vh;
+    width: 100%;
+    @include flex("column", "center", "center");
+    opacity: 0;
+
+    > p {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      z-index: 100;
+    }
+    .career-box {
+      @include flex("column", "center", "center");
+      gap: 2rem;
+      width: 100%;
+
+      .career-detail {
+        @include flex("column", "center", "center");
+        width: 100%;
+        overflow: hidden;
+        max-height: 100vh;
+        flex-direction: column;
+        flex-flow: wrap;
+        border: 1px solid transparent;
+        background-color: #242424;
+        border-radius: 1.5rem;
+
+        &:hover {
+          cursor: pointer;
+          border: 1px solid #d9d9d9;
+          transition: all 0.4s cubic-bezier(0.4, 0, 1, 1);
+        }
+
+        &.fold {
+          max-height: 6rem;
+          transition: all 0.3s cubic-bezier(0.1, 0.11, 0.36, 1);
+        }
+
+        .career-title-area {
+          @include flex("row", "space-between", "center");
+          width: inherit;
+          height: inherit;
+          border: 1px solid transparent;
+          background-color: #242424;
+          border-radius: 1.5rem;
+          padding: 2rem;
+          max-height: 6rem;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+
+          &.fold {
+            border-bottom-left-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+          }
+
+          p {
+            font-size: 1.7rem;
+            font-family: "Pretendard-Medium";
+            &:last-child {
+              display: flex;
+              align-items: center;
+              &::after {
+                content: "-";
+                font-size: 1.5rem;
+                margin-left: 1.5rem;
+              }
+              &.fold {
+                &::after {
+                  content: "+";
+                }
+              }
+            }
+          }
+        }
+
+        .career-info-area {
+          @include flex("column", "center", "center");
+          gap: 2.5rem;
+          width: 100%;
+          background-color: #242424;
+          padding: 0 1.5rem 1.5rem;
+          border-radius: 1.5rem;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+
+          .company-area {
+            @include flex("row", "flex-start", "center");
+            width: inherit;
+            gap: 5rem;
+            font-size: 1.5rem;
+
+            &:first-child {
+              &.fold {
+                transition: border-top 0.3s ease-in-out;
+                border-top: 1px solid transparent;
+              }
+              border-top: 1px solid #fff;
+              padding: 1.5rem 0 0;
+            }
+
+            .company-detail {
+              @include flex("row", "flex-start", "center");
+              color: #d9d9d9;
+              gap: 1rem;
+            }
+            .job-description {
+              line-height: 1.5rem;
+            }
+          }
         }
       }
     }
