@@ -4,4 +4,5 @@
   width: 100%;
   min-height: calc(100vh - 7.5rem);
   @include flex("column", "center", "center");
+  font-size: 2rem;
 }
