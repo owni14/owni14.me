@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 import Scroll from "@/components/ui/scroll/Scroll";
@@ -10,29 +10,28 @@ import "./styles.scss";
 
 import { NAMESPACE } from "../_plugins";
 
-import { SKILLS, getCareer } from "./consts";
-import { IFold } from "./types";
+import { SKILLS } from "./consts";
 
 const Home = () => {
   const { t } = useTranslation(NAMESPACE.ABOUT);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
-  const [isFold, setIsFold] = useState<IFold[]>([]);
+  // const [isFold, setIsFold] = useState<IFold[]>([]);
 
-  const careers = useMemo(() => {
-    return getCareer(t);
-  }, [t]);
+  // const careers = useMemo(() => {
+  //   return getCareer(t);
+  // }, [t]);
 
   /** Initial set up */
-  useEffect(() => {
-    setIsFold(careers.map(career => ({ id: career.id, state: true })));
-  }, [careers]);
+  // useEffect(() => {
+  //   setIsFold(careers.map(career => ({ id: career.id, state: true })));
+  // }, [careers]);
 
   /** Click plus or minus button */
-  const onClickFold = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    const { id } = e.currentTarget;
-    setIsFold(prev => prev.map(fold => (fold.id === id ? { ...fold, state: !fold.state } : fold)));
-  };
+  // const onClickFold = (e: React.MouseEvent<HTMLDivElement>) => {
+  //   e.preventDefault();
+  //   const { id } = e.currentTarget;
+  //   setIsFold(prev => prev.map(fold => (fold.id === id ? { ...fold, state: !fold.state } : fold)));
+  // };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
