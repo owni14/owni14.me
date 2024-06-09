@@ -6,24 +6,32 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "allowImportingTsExtensions": true,
     "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "baseUrl": "./app",
     "paths": {
-      "@/components/*": ["_components/*"],
-      "@/utils/*": ["_utils/*"],
-      "@/styles/*": ["_styles/*"],
-      "@/hooks/*": ["_hooks/*"]
+      "@/public/*": ["./public/*"],
+      "@/components/*": ["./app/_components/*"],
+      "@/utils/*": ["./app/_utils/*"],
+      "@/styles/*": ["./app/_styles/*"],
+      "@/hooks/*": ["./app/_hooks/*"]
     }
   },
   "include": [

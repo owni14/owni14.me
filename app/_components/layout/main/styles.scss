@@ -1,0 +1,15 @@
+@import "@/styles/variables.scss";
+
+/* Main section */
+#main {
+  width: 100%;
+  min-height: calc(100vh - 11rem);
+  .main-wrapper {
+    position: relative;
+    max-width: 1200px;
+    min-height: inherit;
+    padding: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

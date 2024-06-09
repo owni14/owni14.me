@@ -1,0 +1,101 @@
+@import "@/styles/variables.scss";
+
+/* Header section */
+#header {
+  width: 100%;
+  min-height: 6rem;
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  .header-wrapper {
+    max-width: 1200px;
+    padding: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2rem);
+    z-index: 100;
+    @include flex("row", "space-between", "center");
+
+    &.tablet {
+      background-color: #242424;
+      @include flex("column", "flex-start", "flex-start");
+    }
+
+    .tablet-header {
+      width: 100%;
+      @include flex("row", "space-between", "center");
+      .tablet-header-nav {
+        @include flex("row", "flex-end", "center");
+        gap: 1rem;
+      }
+    }
+
+    .title {
+      font-family: "Pretendard-Bold";
+      font-size: 2.2rem;
+      width: 10%;
+    }
+
+    .nav-wrapper {
+      @include flex("row", "flex-end", "center");
+      gap: 2.2rem;
+
+      &.tablet {
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem;
+        background-image: linear-gradient(180deg, #242424, #101010);
+        border-bottom-left-radius: 2.5rem;
+        border-bottom-right-radius: 2.5rem;
+        @include flex("column", "flex-start", "flex-start");
+        gap: 2rem;
+      }
+
+      &.hidden {
+        display: none;
+      }
+
+      .nav-link {
+        @include flex("row", "space-between", "center");
+        gap: 2.2rem;
+
+        &.tablet {
+          @include flex("column", "flex-start", "flex-start");
+          gap: 2rem;
+        }
+
+        li {
+          list-style: none;
+          font-size: 1.5rem;
+          color: $softGray;
+          transition: all 0.3s ease-in-out;
+          font-family: "Pretendard-Regular";
+
+          a {
+            padding: 0.5rem;
+          }
+
+          &:hover {
+            cursor: pointer;
+            color: white;
+            transition: all 0.3s ease-in-out;
+          }
+
+          &.active {
+            font-family: "Pretendard-Bold";
+            color: white;
+            transition: all 0.3s ease-in-out;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ import { localeEN, localeKR } from "./locales";
 
 i18next.use(initReactI18next).init({
   resources: { ko: localeKR, en: localeEN },
-  ns: ["about", "career", "project", "skill"],
+  ns: ["about", "blog", "category"],
   lng: "ko",
   fallbackLng: ["en", "ko"],
   supportedLngs: ["en", "ko"],

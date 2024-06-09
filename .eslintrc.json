@@ -12,7 +12,6 @@
     "plugin:@typescript-eslint/recommended", // TypeScript 플러그인의 권장 규칙 사용
     "prettier"
   ],
-  "files": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "!next.config.js"],
   "parser": "@typescript-eslint/parser", // TypeScript 파서 지정
   "parserOptions": {
     "ecmaFeatures": {
@@ -35,12 +34,19 @@
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "internal", ["parent", "sibling"], "index", "object", "type"],
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
         "alphabetize": {
           "order": "asc",
           "caseInsensitive": true
         },
-        "newlines-between": "always"
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
       }
     ],
     "import/first": "error",
