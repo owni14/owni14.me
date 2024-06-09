@@ -10,6 +10,15 @@
   backdrop-filter: blur(10px);
   z-index: 100;
   .header-wrapper {
+    max-width: 1200px;
+    padding: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2rem);
+    z-index: 100;
     @include flex("row", "space-between", "center");
 
     &.tablet {
@@ -25,16 +34,6 @@
         gap: 1rem;
       }
     }
-
-    max-width: 1200px;
-    padding: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    position: sticky;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(2rem);
-    z-index: 100;
 
     .title {
       font-family: "Pretendard-Bold";

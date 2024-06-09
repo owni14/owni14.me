@@ -1,13 +1,10 @@
 "use client";
 
-import cx from "classnames";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FaLink, FaLocationDot } from "react-icons/fa6";
 
 import Scroll from "@/components/ui/scroll/Scroll";
-import Tag from "@/components/ui/tag/Tag";
 import Me from "@/public/images/me.png";
 import "./styles.scss";
 
@@ -28,7 +25,7 @@ const Home = () => {
   /** Initial set up */
   useEffect(() => {
     setIsFold(careers.map(career => ({ id: career.id, state: true })));
-  }, []);
+  }, [careers]);
 
   /** Click plus or minus button */
   const onClickFold = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -71,10 +68,13 @@ const Home = () => {
           sectionRefs.current[0] = el;
         }}
       >
-        <Image src={Me} alt="me" />
-        <div className="introduce-sentence">
-          <p className="introduce-sentence">{t("topIntro")}</p>
-          <p className="introduce-sentence">{t("midIntro")}</p>
+        <div></div>
+        <div className="introduce-area">
+          <Image src={Me} alt="me" />
+          <div className="introduce-sentence">
+            <p className="introduce-sentence">{t("topIntro")}</p>
+            <p className="introduce-sentence">{t("midIntro")}</p>
+          </div>
         </div>
         <Scroll />
       </section>
@@ -97,7 +97,7 @@ const Home = () => {
           })}
         </div>
       </section>
-      <section
+      {/* <section
         className="career-wrapper"
         ref={el => {
           sectionRefs.current[2] = el;
@@ -153,7 +153,7 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </section>
   );
 };

@@ -5,30 +5,34 @@
   @include flex("column", "center", "center");
 
   .introduce-wapper {
-    position: relative;
+    @include flex("column", "space-between", "center");
     width: 100%;
-    min-height: calc(100vh - 6rem);
-    @include flex("row", "space-evenly", "center");
-    @include responsive(laptop) {
-      @include flex("column", "center", "center");
-      gap: 5rem;
-    }
+    min-height: calc(100vh - 7.5rem);
     transition: all 0.4s;
     opacity: 0;
+    .introduce-area {
+      width: inherit;
+      height: inherit;
+      @include flex("row", "space-evenly", "center");
+      @include responsive(laptop) {
+        @include flex("column", "center", "center");
+        gap: 5rem;
+      }
 
-    img {
-      height: 25rem;
-      width: 25rem;
-      border-radius: 50%;
-    }
-    .introduce-sentence {
-      @include flex("column", "flex-start", "flex-start");
-      font-size: 2rem;
-      white-space: pre-line;
-      line-height: 2.5rem;
-      max-width: 70rem;
-      p {
-        margin-top: 2.5rem;
+      img {
+        height: 25rem;
+        width: 25rem;
+        border-radius: 50%;
+      }
+      .introduce-sentence {
+        @include flex("column", "flex-start", "flex-start");
+        font-size: 2rem;
+        white-space: pre-line;
+        line-height: 2.5rem;
+        max-width: 70rem;
+        p {
+          margin-top: 2.5rem;
+        }
       }
     }
   }
