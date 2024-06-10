@@ -7,7 +7,7 @@ import { IHamburgerProps } from "./types";
 
 /**
  * Hamburger UI
- * @param {boolean} isClick click state
+ * @param {boolean} isClick Click state
  * @param {React.Dispatch<React.SetStateAction<boolean>>} setIsClick Change click state
  * @returns {JSX.Element} JSX element
  */

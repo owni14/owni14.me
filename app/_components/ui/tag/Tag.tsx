@@ -1,6 +1,11 @@
 import "./styles.scss";
 import { ITag } from "./types";
 
+/**
+ * Tag UI
+ * @param {string[]} tags Tag list
+ * @returns {JSX.Element} JSX element
+ */
 const Tag = ({ tags }: ITag) => {
   return (
     <div id="tag">
