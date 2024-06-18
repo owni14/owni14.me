@@ -2,5 +2,5 @@
 export const NAMESPACE = {
   ABOUT: "about",
   BLOG: "blog",
-  projects: "projects",
+  PROJECTS: "projects",
 };

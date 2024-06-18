@@ -1,0 +1,10 @@
+{
+  "todoList": {
+    "title": "TO DO list using TDD",
+    "desc": "I tried to apply TDD in the company, but I was not able to apply it directly due to a structural problems. So, I applied TDD that I heard a lot while developing it to my TO DO list."
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "desc": "This is a portfolio that introduces me and shows several projects and brief career information. In addition, it supports multiple languages ​​using i18n so that it can be viewed in English."
+  }
+}
