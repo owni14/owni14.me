@@ -1,0 +1,21 @@
+comment: |
+  🏷 I have applied any labels matching special text in your issue.
+  ✅ Please review the labels and make any necessary changes.
+
+labels:
+  "Bug":
+    - '\bBug\b'
+  "Docs":
+    - '\bDocs\b'
+  "Etc":
+    - '\bEtc\b'
+  "Feat":
+    - '\bFeat\b'
+  "Help":
+    - '\bHelp\b'
+  "Merge":
+    - '\bMerge\b'
+  "Refactor":
+    - '\bRefactor\b'
+  "Style":
+    - '\bStyle\b'
